@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="일본계 한국법인의 회계·세무·본사 보고를 공인회계사가 하나의 창구로 대응합니다.">
+<meta property="og:title" content="世淵（セヨン）会計法人">
+<meta property="og:description" content="일본계 한국법인의 회계·세무·본사 보고를 공인회계사가 하나의 창구로 대응합니다.">
+<meta property="og:image" content="https://seyeon-tax.com/img/meishi-jp.png">
+<link rel="alternate" hreflang="ja" href="https://seyeon-tax.com/">
+<link rel="alternate" hreflang="ko" href="https://seyeon-tax.com/ko.html">
+<link rel="alternate" hreflang="en" href="https://seyeon-tax.com/en.html">
+<title>세연회계법인｜일본계 한국법인 회계·세무</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#3E6DB0}a:hover{color:#163A75}
+</style>
+</helmet>
+<div style="font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; color: #222222; background: #FFFFFF; font-size: 15px; line-height: 1.7">
+
+<div style="background: #F6F8FB; border-bottom: 1px solid #DDE3EA">
+<div style="max-width: 1200px; margin: 0 auto; padding: 6px 16px; display: flex; justify-content: flex-end; gap: 14px; font-size: 13px; color: #555555">
+<a href="./" style="text-decoration: none">日本語</a>
+<span>｜</span>
+<span style="font-weight: 700; color: #3E6DB0">한국어（임직원용）</span>
+<span>｜</span>
+<a href="en.html" style="text-decoration: none">English</a>
+</div>
+</div>
+
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 16px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center">
+<button type="button" onClick="{{go.home}}" style="background: none; border: 0; padding: 0; cursor: pointer; text-align: left; font: inherit; color: inherit; display: flex; flex-direction: column">
+<span style="font-size: 24px; font-weight: 700; color: #3E6DB0; letter-spacing: 0.02em">세연회계법인</span>
+<span style="font-size: 12px; color: #555555">일본계 한국법인 회계·세무｜일본 본사와는 일본어, 한국 임직원과는 한국어로</span>
+</button>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+<div style="display: flex; flex-direction: column; line-height: 1.35">
+<span style="font-size: 12px; color: #9A3412; font-weight: 700">휴대폰·직통(추천) 담당 회계사에게 바로 연결됩니다</span>
+<a href="tel:+821039456101" style="font-size: 19px; font-weight: 700; color: #222222; text-decoration: none">+82-10-3945-6101</a>
+<span style="font-size: 12px; color: #555555">대표 02-6356-1105｜해외에서는 위 휴대폰 번호로</span>
+</div>
+<button type="button" onClick="{{go.service}}" style="min-height: 48px; padding: 0 18px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer; line-height: 1.3">무료 누락 진단<br><span style="font-size: 11px; font-weight: 400">관행대로 손해 보고 있지 않나요</span></button>
+</div>
+</div>
+
+<nav style="background: #D6E4F5; border-top: 1px solid #C3D6EE; border-bottom: 1px solid #C3D6EE">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap">
+<button type="button" onClick="{{go.home}}" style="{{homeTab}}">HOME</button>
+<sc-for list="{{top}}" as="m" hint-placeholder-count="6">
+<div onMouseEnter="{{m.enter}}" onMouseLeave="{{leave}}" style="position: relative">
+<button type="button" onClick="{{m.go}}" onFocus="{{m.enter}}" style="{{m.style}}">{{m.t}} ▾</button>
+<sc-if value="{{m.open}}" hint-placeholder-val="{{false}}">
+<div style="position: absolute; top: 100%; left: 0; z-index: 20; min-width: 230px; background: #FFFFFF; border: 1px solid #D8E2EE; border-top: 3px solid #B5532A; box-shadow: 0 4px 10px rgba(0,0,0,0.12); display: flex; flex-direction: column">
+<sc-for list="{{m.subs}}" as="sb" hint-placeholder-count="4">
+<button type="button" onClick="{{sb.go}}" style="min-height: 42px; padding: 0 16px; text-align: left; background: #FFFFFF; border: 0; border-bottom: 1px solid #EEF1F5; font: inherit; font-size: 14px; color: #222222; cursor: pointer">・{{sb.kw}}</button>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</nav>
+
+<sc-if value="{{on.home}}" hint-placeholder-val="{{true}}">
+<section style="background: #F1F6FD; border-bottom: 1px solid #D8E2EE">
+<div style="max-width: 1200px; margin: 0 auto; padding: 44px 16px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center">
+<div style="flex: 1 1 560px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 14px; font-weight: 700; color: #3E6DB0">■ 일본계 한국법인 임직원 여러분께</span>
+<h1 style="margin: 0; font-size: clamp(26px, 3.6vw, 38px); line-height: 1.45; font-weight: 700">지금 회계사무소와의 커뮤니케이션에<br>미진한 점은 없습니까?</h1>
+<p style="margin: 0; color: #333333; font-size: 16px">보고가 늦다, 의도가 전달되지 않는다, 본사 설명을 두 번 해야 한다.<br>현황을 듣고, 관행대로 점검되지 않은 부분도 하나씩 확인합니다.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px">
+<button type="button" onClick="{{go.check}}" style="min-height: 52px; padding: 0 20px; background: #3E6DB0; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">1분 셀프체크 ▶</button>
+<button type="button" onClick="{{go.service}}" style="min-height: 52px; padding: 0 20px; background: #FFFFFF; color: #B5532A; border: 2px solid #B5532A; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">무료 누락 진단이란</button>
+</div>
+</div>
+<div style="flex: 1 1 320px; background: #FFFFFF; border: 2px solid #3E6DB0; padding: 22px; display: flex; flex-direction: column; gap: 6px; text-align: center">
+<span style="font-size: 14px; color: #555555">회계·세무·감사부터 노무·법무까지</span>
+<span style="font-size: 40px; font-weight: 700; color: #3E6DB0; letter-spacing: 0.08em; line-height: 1.3">창구는 하나</span>
+<span style="font-size: 13px; color: #555555">（窓口はひとつ）</span>
+<span style="font-size: 14px; color: #333333; margin-top: 4px">모든 업무에서 공인회계사가 창구가 되어<br>실무 최종 검수까지 직접 책임집니다.</span>
+</div>
+</div>
+</section>
+
+<section style="border-bottom: 1px solid #D8E2EE; background: #FFFFFF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 20px 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">5년</span><span style="font-size: 14px"><b>도쿄 5년 거주</b><br><span style="color: #555555">일본 본사의 업무 감각을 압니다</span></span></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">CPA</span><span style="font-size: 14px"><b>한국·미국 공인회계사</b><br><span style="color: #555555">영어 본사 대응도 가능</span></span></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">부기</span><span style="font-size: 14px"><b>일본 부기 2급 취득</b><br><span style="color: #555555">일본 계정과목으로 소통</span></span></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">D</span><span style="font-size: 14px"><b>딜로이트 안진 출신</b><br><span style="color: #555555">감사 받는 쪽 준비까지</span></span></div>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 8px">
+<div style="border: 1px solid #D8E2EE; border-radius: 10px; overflow: hidden; display: flex; flex-wrap: wrap">
+<div style="flex: 1 1 380px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px"><b style="font-size: 18px">■ 한국 세무 캘린더　{{kr.title}}</b><span style="font-size: 13px; color: #5B2A86; font-weight: 700">{{kr.today}}</span></div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; text-align: center; font-size: 13px">
+<sc-for list="{{kr.head}}" as="h" hint-placeholder-count="7"><span style="{{h.style}}">{{h.t}}</span></sc-for>
+<sc-for list="{{kr.cells}}" as="c" hint-placeholder-count="35"><div style="{{c.style}}" title="{{c.tip}}"><span>{{c.d}}</span><sc-if value="{{c.ev}}" hint-placeholder-val="{{false}}"><span style="{{c.dot}}"></span></sc-if></div></sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #555555"><span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #5B2A86"></span> 오늘</span><span><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #3E6DB0"></span> 신고·납부 기한</span><span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #FDECEF; border: 1px solid #E8A9BA"></span> 공휴일</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px; border-top: 1px dashed #D8E2EE; padding-top: 10px">
+<b style="font-size: 14px">오늘 전후 1주일</b>
+<sc-for list="{{kr.near}}" as="n" hint-placeholder-count="2"><div style="{{n.style}}; font-size: 14px; display: flex; gap: 10px"><span style="flex: 0 0 auto; min-width: 72px">{{n.d}}</span><span>{{n.t}}</span></div></sc-for>
+</div>
+</div>
+<div style="flex: 1 1 320px; padding: 18px; background: #F6F9FD; border-left: 1px solid #D8E2EE; display: flex; flex-direction: column; gap: 14px">
+<sc-for list="{{kr.months}}" as="mo" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<b style="font-size: 15px; color: #2F5590">{{mo.t}}</b>
+<sc-for list="{{mo.items}}" as="it" hint-placeholder-count="2"><div style="font-size: 14px; display: flex; gap: 10px; padding: 3px 0; border-bottom: 1px solid #E6ECF3"><span style="flex: 0 0 auto; min-width: 72px; color: #555555">{{it.d}}</span><span>{{it.t}}</span></div></sc-for>
+</div>
+</sc-for>
+<span style="font-size: 12px; color: #6B7684">※ 기한이 주말·공휴일이면 다음 영업일. 매월 10일 원천세는 생략.</span>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 28px 16px 8px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; border: 1px solid #D8E2EE">
+<button type="button" onClick="{{go.books}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">기장·월차결산</b><span style="font-size: 12px; color: #555555">증빙 제출 안내</span></button>
+<button type="button" onClick="{{go.report}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">본사 보고</b><span style="font-size: 12px; color: #555555">월차·연결</span></button>
+<button type="button" onClick="{{go.check}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">1분 셀프체크</b><span style="font-size: 12px; color: #555555">누락 점검</span></button>
+<button type="button" onClick="{{go.members}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">구성원 소개</b><span style="font-size: 12px; color: #555555">한일 전문가</span></button>
+<button type="button" onClick="{{go.jpqa}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">일본 세무·노무</b><span style="font-size: 12px; color: #555555">Q&amp;A·캘린더</span></button>
+<button type="button" onClick="{{go.contact}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">상담·QR</b><span style="font-size: 12px; color: #555555">카카오·LINE</span></button>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 8px">
+<div style="border: 1px solid #D8E2EE">
+<div style="background: #D6E4F5; color: #1F3F6E; padding: 14px 18px; font-size: 19px; font-weight: 700">일본계 한국법인 — 놓치기 쉬운 포인트</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 32px; padding: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<b style="color: #9A3412; font-size: 17px; border-bottom: 1px solid #F0C3A6; padding-bottom: 6px">■ 토털 서포트</b>
+<b>・본사 보고(월차·일본어)</b>
+<span>・법인세 신고·세무조정</span>
+<span>・급여계산·4대보험</span>
+<span>・외부감사·내부통제 대응</span>
+<span>・이전가격·본사거래 정리</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<b style="color: #3E6DB0; font-size: 17px; border-bottom: 1px solid #B7CAE6; padding-bottom: 6px">■ 리스크·절세 체크</b>
+<b>・세액공제·감면 적용 누락</b>
+<span>・배당·로열티 원천세율</span>
+<span>・주재원 급여 처리·부담 구분</span>
+<span>・외국인 단일세율(조특법§18의2, 19%)</span>
+<span>・부가세 환급·영세율</span>
+</div>
+</div>
+<div style="border-top: 1px solid #D8E2EE; padding: 12px 18px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center">
+<b style="color: #3E6DB0">모든 업무는 공인회계사가 창구가 되어 실무 검수까지 직접 합니다</b>
+<button type="button" onClick="{{go.check}}" style="min-height: 44px; padding: 0 16px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer">우리 회사 상황 체크 ▶</button>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<div style="flex: 1 1 560px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; border: 1px solid #D8E2EE; padding: 18px">
+<img src="img/profile.jpg" alt="이규범 사진" style="width: 150px; height: 190px; object-fit: cover; object-position: top; border: 1px solid #D8E2EE">
+<div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 8px">
+<b style="font-size: 20px">담당 회계사 이규범</b>
+<span style="color: #333333">도쿄에서 생활하며 일했고, 일본 영주권을 가지고 지금도 한일을 오갑니다. 일본 본사가 무엇을 신경 쓰는지 알기 때문에, 한국 임직원 여러분과 본사 사이의 설명을 한 사람이 정리합니다.</span>
+<button type="button" onClick="{{go.about}}" style="align-self: flex-start; min-height: 40px; padding: 0 14px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 14px; cursor: pointer">경력 보기 ▶</button>
+</div>
+</div>
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 18px; padding-bottom: 8px; border-bottom: 2px solid #3E6DB0">■ 공지·제도 개정</h2>
+<div style="display: flex; flex-direction: column; font-size: 14px">
+<button type="button" onClick="{{go.staff}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>외국인 단일세율 19%→21%(개정안)</span><span style="color: #777777">2026.08</span></button>
+<button type="button" onClick="{{go.policy}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>2026년 법인세율 전 구간 1%p 인상</span><span style="color: #777777">2026.01</span></button>
+<button type="button" onClick="{{go.intl}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>국제거래자료 제출, 과태료 대상 명확화(안)</span><span style="color: #777777">2026.08</span></button>
+<button type="button" onClick="{{go.game}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>게임산업법 개정안 국회 통과</span><span style="color: #777777">2026.10</span></button>
+</div>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isSub}}" hint-placeholder-val="{{false}}">
+<div style="background: #E3EDF9; color: #1F3F6E; border-bottom: 1px solid #C3D6EE">
+<div style="max-width: 1200px; margin: 0 auto; padding: 26px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: flex-end">
+<span style="font-size: 26px; font-weight: 700">{{catTitle}}</span>
+<span style="font-size: 13px; color: #4A5A70">HOME ＞ {{catTitle}} ＞ {{pageTitle}}</span>
+</div>
+</div>
+
+<div style="max-width: 1200px; margin: 0 auto; padding: 28px 16px 48px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+<aside style="flex: 0 1 220px; min-width: 200px; border: 1px solid #D8E2EE">
+<div style="background: #D6E4F5; color: #1F3F6E; padding: 16px; font-size: 17px; font-weight: 700">{{catTitle}}</div>
+<sc-for list="{{side}}" as="it" hint-placeholder-count="4">
+<button type="button" onClick="{{it.go}}" style="{{it.style}}">{{it.t}}</button>
+</sc-for>
+<div style="padding: 14px; background: #F6F8FB; font-size: 13px; display: flex; flex-direction: column; gap: 4px">
+<b>상담 창구</b>
+<span>휴대폰 010-3945-6101(직통)</span>
+<span>대표 02-6356-1105</span>
+<span>gblee@seyeon-tax.com</span>
+</div>
+</aside>
+
+<main style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-size: 24px; padding-bottom: 10px; border-bottom: 2px solid #222222">{{pageTitle}}</h2>
+
+<sc-if value="{{on.books}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>AI로 빠르게, 판단은 회계사가. 그리고 회사 스스로 숫자를 확인할 수 있는 체계로.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-weight: 700">
+<span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">증빙 수령</span><span>→</span>
+<span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">AI 분개 후보</span><span>→</span>
+<span style="border: 1px solid #B5532A; padding: 10px 14px; background: #FFF4EC; color: #9A3412">회계사 전건 확인</span><span>→</span>
+<span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">월차 리포트(한·일)</span>
+</div>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ AI는 신중하게</b>→ 자동분개를 그대로 쓰지 않고, 계정과목·세금 구분은 회계사가 최종 판단</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 스스로 판별</b>→ 매월 「확인할 5가지」 체크표를 드려 사내에서도 이상을 알아챌 수 있게</div>
+<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center"><b>▶ 월차 제공 자료·증빙 제출</b><button type="button" onClick="{{tg.b1}}" style="min-height: 36px; padding: 0 12px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">{{lbl.b1}}</button></div>
+<sc-if value="{{op.b1}}" hint-placeholder-val="{{false}}"><span style="color: #333333">시산표(일본어 계정 병기)／전월·예산 대비 차이 코멘트／원천세·부가세 신고 일정／다음 달 논점 메모. 증빙은 매월 정해진 날까지 카카오·메일로 보내주시면 됩니다.</span></sc-if>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.report}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>본사 경리가 한국 숫자를 다시 읽어야 하는 수고를 없앱니다.</p>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 연결 패키지</b>→ 일본기준·IFRS 조정과 차이 설명</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 본사 일정</b>→ 월차·분기 마감에 맞춰 제출</div>
+<div style="padding: 12px 16px"><b>▶ 본사와의 소통</b>→ 일본어로 직접. 글로벌 본사와는 영어로도 대응(도쿄 마루노우치 외국계에서 본사 보고 담당)</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.intl}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>본사와의 거래는 세무조사에서 가장 먼저 보는 논점입니다.</p>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 이전가격</b>→ 로열티·용역수수료의 요율 근거와 계약서</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 조세조약</b>→ 배당 5%(지분 25% 이상)／15%, 사용료 10% 제한세율 적용 신청</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 부가세</b>→ 환급·영세율 대상 거래 확인</div>
+<div style="padding: 12px 16px"><b>▶ 국제거래자료 제출</b>→ 2027년부터 중대한 오류도 과태료 대상 명확화(개정안)</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.staff}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>주재원 세금과 보험은 정리만 해도 부담이 달라질 수 있습니다.</p>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 외국인 단일세율</b>(조특법§18의2)→ 현행 19%, 2027년부터 21%안(기한 2029년 말까지 연장안)</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 부담 구분</b>→ 본사 부담분·한국법인 부담분 정리와 파견계약 확인</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 한일 사회보장협정</b>→ 연금 이중가입 회피</div>
+<div style="padding: 12px 16px"><b>▶ 급여계산·4대보험·연말정산</b>→ 한국인 임직원분도 같은 창구에서</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.audit}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>감사를 「받는 쪽」의 준비도, 대형 회계법인 출신 회계사가 정리합니다.</p>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 법정 외부감사</b>→ 일정 규모(자산·매출 500억 원 이상 등) 이상 의무. 대상 판정부터 준비까지</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 내부통제</b>→ 딜로이트 안진에서 K-SOX 설계·운영평가 경험</div>
+<div style="padding: 12px 16px"><b>▶ 본사 감사인 대응</b>→ 일본 감사법인의 질문에 일본어로 회신</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.check}}" hint-placeholder-val="{{false}}">
+<div style="background: #EFF5FC; border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 4px">
+<b style="font-size: 17px">10문항에 「예／아니오」로 답하면 1분이면 끝납니다.</b>
+<span style="font-size: 14px; color: #333333">정상이라면 모두 「예」가 나오도록 만들었습니다. 「아니오」가 나온 항목은 관행대로 놓치고 있을 수 있는 부분입니다. 지금 사무소에 불만이 없다면 바꿀 필요는 없습니다.</span>
+</div>
+<div style="display: flex; flex-direction: column; border-top: 2px solid #3E6DB0">
+<sc-for list="{{checks}}" as="c" hint-placeholder-count="10">
+<div style="{{c.rowStyle}}">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center">
+<span style="{{c.qStyle}}">Q{{c.no}}．{{c.q}}</span>
+<div style="display: flex; gap: 6px">
+<button type="button" onClick="{{c.yes}}" style="{{c.yesStyle}}">예</button>
+<button type="button" onClick="{{c.no_}}" style="{{c.noStyle}}">아니오</button>
+</div>
+</div>
+<sc-if value="{{c.isNo}}" hint-placeholder-val="{{false}}">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px; margin-top: 10px; font-size: 14px">
+<div style="background: #FFF4EC; border: 1px solid #F0C3A6; padding: 10px 12px"><b style="color: #9A3412">받지 못하면</b><br>{{c.loss}}</div>
+<div style="background: #EFF5FC; border: 1px solid #B7CAE6; padding: 10px 12px"><b style="color: #3E6DB0">세연이라면</b><br>{{c.fix}}</div>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+<div style="border: 2px solid #3E6DB0; padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 14px; color: #555555">응답 {{answered}}／10　・　「아니오」 {{noCount}}건</span>
+<b style="font-size: 18px">{{chkTitle}}</b>
+<span style="color: #333333">{{chkBody}}</span>
+<div style="margin-top: 6px"><button type="button" onClick="{{go.service}}" style="min-height: 46px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer">이 결과로 누락 진단 신청(무료)</button></div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.service}}" hint-placeholder-val="{{false}}">
+<div style="background: #FFF8F3; border: 1px solid #F0C3A6; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+<b style="font-size: 19px">관행대로 해온 처리로 몇 년째 손해 보고 있지 않습니까?</b>
+<span style="color: #333333">「전임자 방식 그대로」「사무소에 맡긴 그대로」. 확인하려 하지 않으면 누락은 몇 년이고 이어집니다. AI에 물어도 일반론은 나오지만, 중요한 것은 회사 상황을 말로 정리해 「이렇게 되어 있지 않습니까」하고 하나씩 확인하는 것입니다.</span>
+</div>
+<p style="margin: 0; font-size: 16px"><b>결론：</b>먼저 무료 「누락 진단」부터. 비용 이야기는 필요한 것이 분명해진 뒤에 해도 충분합니다.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-weight: 700">
+<span style="border: 1px solid #3E6DB0; padding: 12px 16px; background: #EFF5FC">① 목표 청취</span><span>→</span>
+<span style="border: 1px solid #3E6DB0; padding: 12px 16px; background: #EFF5FC">② 현황 청취·자료 제출</span><span>→</span>
+<span style="border: 1px solid #3E6DB0; padding: 12px 16px; background: #EFF5FC">③ 누락 사항 서면 회신</span>
+</div>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 비용：무료</b>(한국어·일본어, 온라인 가능)</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 자료 제출</b>→ 결산서·신고서 등 필요한 자료와 확인사항은 별도로 연락드립니다</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 결과 회신</b>→ 자료를 받은 뒤 최대 3일 이내에 서면으로 드립니다</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 이후 의뢰</b>→ 필요한 범위만 견적. 기존 사무소와 병행도 가능</div>
+<div style="padding: 12px 16px"><b>▶ 진단 결과 「지금 그대로 충분」</b>→ 그것도 하나의 성과입니다. 무리한 제안은 하지 않습니다</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.members}}" hint-placeholder-val="{{false}}">
+<div style="background: #EFF5FC; border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 4px">
+<b style="font-size: 18px">창구는 하나. 그 뒤에 한일 전문가.</b>
+<span style="color: #333333">어떤 분야의 상담이든 공인회계사가 창구가 되어, 각 전문가의 실무를 끝까지 검수한 뒤 전달합니다. 담당자가 전문가마다 다시 설명할 필요가 없습니다.</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
+<div style="border: 2px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center">
+<img src="img/profile.jpg" alt="이규범 사진" style="width: 120px; height: 150px; object-fit: cover; object-position: top">
+<span style="font-size: 12px; background: #3E6DB0; color: #FFFFFF; padding: 2px 8px">창구·총괄</span>
+<b style="font-size: 17px">이규범</b>
+<span style="font-size: 13px; color: #555555">부대표｜공인회계사(한국·미국)</span>
+</div>
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center">
+<div style="width: 120px; height: 150px; background: #E3E8EF; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #555555">［사진］</div>
+<span style="font-size: 12px; border: 1px solid #3E6DB0; color: #3E6DB0; padding: 2px 8px">한국 회계·세무</span>
+<b style="font-size: 17px">［성명］</b>
+<span style="font-size: 13px; color: #555555">공인회계사／세무사(한국)</span>
+</div>
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center">
+<div style="width: 120px; height: 150px; background: #E3E8EF; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #555555">［사진］</div>
+<span style="font-size: 12px; border: 1px solid #555555; color: #555555; padding: 2px 8px">제휴｜한국 법무</span>
+<b style="font-size: 17px">［성명］</b>
+<span style="font-size: 13px; color: #555555">변호사(한국)</span>
+</div>
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center">
+<div style="width: 120px; height: 150px; background: #E3E8EF; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #555555">［사진］</div>
+<span style="font-size: 12px; border: 1px solid #555555; color: #555555; padding: 2px 8px">제휴｜한국 노무</span>
+<b style="font-size: 17px">［성명］</b>
+<span style="font-size: 13px; color: #555555">공인노무사(한국)</span>
+</div>
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center">
+<div style="width: 120px; height: 150px; background: #E3E8EF; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #555555">［사진］</div>
+<span style="font-size: 12px; border: 1px solid #555555; color: #555555; padding: 2px 8px">제휴｜일본 세무</span>
+<b style="font-size: 17px">［성명］</b>
+<span style="font-size: 13px; color: #555555">세리사(일본 세무사)</span>
+</div>
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center">
+<div style="width: 120px; height: 150px; background: #E3E8EF; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #555555">［사진］</div>
+<span style="font-size: 12px; border: 1px solid #555555; color: #555555; padding: 2px 8px">제휴｜일본 노무</span>
+<b style="font-size: 17px">［성명］</b>
+<span style="font-size: 13px; color: #555555">사회보험노무사(일본)</span>
+</div>
+</div>
+<span style="font-size: 13px; color: #555555">※ 노무·법무는 제휴 노무사·변호사와 연계해 대응합니다. 창구와 최종 검수는 공인회계사가 합니다.</span>
+</sc-if>
+
+<sc-if value="{{on.about}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<img src="img/profile.jpg" alt="이규범 사진" style="flex: 0 0 auto; width: 180px; height: 230px; object-fit: cover; object-position: top; border: 1px solid #D8E2EE">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; color: #3E6DB0; font-weight: 700">한국어·일본어·영어 대응</span>
+<b style="font-size: 24px">이규범（李圭範）</b>
+<span style="color: #555555">LEE GYUBUM｜부대표｜공인회계사(한국·미국 워싱턴주)</span>
+<p style="margin: 4px 0 0; color: #333333">도쿄에서 생활하며 일했고, 일본 영주권을 가지고 지금도 한일을 오갑니다. 일본 본사의 보고 방식과 업무 속도를 이해하고 있어, 한국 임직원 여러분이 본사에 설명하기 어려운 부분을 대신 정리해 드립니다.</p>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; border-top: 2px solid #222222; font-size: 14px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 4px 16px; padding: 10px 0; border-bottom: 1px solid #D8E2EE"><b>2024.08 – 2025.01</b><span style="grid-column: span 3"><b>Colliers International Japan</b>(도쿄 마루노우치 니주바시빌딩) 파이낸스 시니어 매니저<br><span style="color: #555555">미국·캐나다 상장 부동산 서비스 기업. 월차·분기·연말 결산, 연결 주석, 본사 보고, 세무, 외부감사 대응</span></span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 4px 16px; padding: 10px 0; border-bottom: 1px solid #D8E2EE"><b>2020.09 – 2024.07</b><span style="grid-column: span 3"><b>대형 건설기계 제조사 일본법인</b>(요코하마) 재무·회계·인사 컨트롤러<br><span style="color: #555555">IFRS 재무제표, 본사 보고, 소비세·원천세 신고, 자금계획, 노무사 대응·채용</span></span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 4px 16px; padding: 10px 0; border-bottom: 1px solid #D8E2EE"><b>2019.09 – 2020.08</b><span style="grid-column: span 3"><b>회계법인</b>(서울)<br><span style="color: #555555">일본계 기업 회계감사·세무·내부관리 컨설팅, 일본 자본의 한국 투자방법 비교, 재무실사</span></span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 4px 16px; padding: 10px 0; border-bottom: 1px solid #D8E2EE; background: #F5F8FC"><b>2016.09 – 2019.07</b><span style="grid-column: span 3"><b>딜로이트 안진회계법인</b>(서울) 감사본부 → 부동산 Deal 부서<br><span style="color: #555555">IFRS 연결감사, 내부회계관리제도(K-SOX) 평가, 재무실사, DCF·멀티플 밸류에이션</span></span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 4px 16px; padding: 10px 0; border-bottom: 1px solid #D8E2EE"><b>2015.09 – 2016.08</b><span style="grid-column: span 3"><b>회계법인</b>(서울 강남)<br><span style="color: #555555">회계감사, 세무조정·신고</span></span></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; font-size: 14px">
+<div style="border: 1px solid #D8E2EE; padding: 14px; display: flex; flex-direction: column; gap: 4px"><b style="color: #3E6DB0">자격</b><span>한국공인회계사(2015)</span><span>JLPT N1(2019)</span><span>미국공인회계사·워싱턴주(2021)</span><span>일본 상공회의소 부기 2급(2021)</span></div>
+<div style="border: 1px solid #D8E2EE; padding: 14px; display: flex; flex-direction: column; gap: 4px"><b style="color: #3E6DB0">학력·공직·언어</b><span>성균관대학교 경제학 학사</span><span>서울 강남세무서 정보공개심의회 위원</span><span>한국어·일본어·영어</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.cases}}" hint-placeholder-val="{{false}}">
+<div style="background: #F6F8FB; border: 1px solid #DDE3EA; padding: 12px 16px; font-size: 13px; color: #555555">※공개 보도에 근거한 사례로, 당 법인 사례가 아닙니다. 수치는 각 보도 시점 기준입니다.</div>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 16px; border-bottom: 1px solid #D8E2EE; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center"><b>▶ 게임：「우마무스메」(Cygames) — 국내 퍼블리셔 제휴</b><button type="button" onClick="{{tg.c1}}" style="min-height: 36px; padding: 0 12px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">{{lbl.c1}}</button></div>
+<span style="color: #333333">국내 출시 1년 누적 매출 약 1,000억 원 보도(2023년).</span>
+<sc-if value="{{op.c1}}" hint-placeholder-val="{{false}}"><span style="color: #333333; background: #F8FAFD; padding: 10px 12px">주효한 점 → 일본 1위 실적과 IP 인지도, 국내 파트너 운영.<br>배울 점 → 이용자 대응 창구는 처음부터 정해야 할 논점.</span></sc-if>
+</div>
+<div style="padding: 16px; border-bottom: 1px solid #D8E2EE; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center"><b>▶ IP：「더 퍼스트 슬램덩크」 — 30~40대 원작 세대</b><button type="button" onClick="{{tg.c2}}" style="min-height: 36px; padding: 0 12px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">{{lbl.c2}}</button></div>
+<span style="color: #333333">국내 약 482만 명 관람(370일 상영, 2024년 보도). 경제력이 있고 앞으로의 소비를 이끌 세대.</span>
+<sc-if value="{{op.c2}}" hint-placeholder-val="{{false}}"><span style="color: #333333; background: #F8FAFD; padding: 10px 12px">주효한 점 → 원작 세대의 향수, 팝업·콜라보 상품으로 확장.<br>배울 점 → 수익 주체별 원천세·부가세 정리 필요.</span></sc-if>
+</div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center"><b>▶ 외식：츠키시마 몬자 모헤지 — 2026년 8월 서울 1호점</b><button type="button" onClick="{{tg.c3}}" style="min-height: 36px; padding: 0 12px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">{{lbl.c3}}</button></div>
+<span style="color: #333333">종로3가 한국 1호점. 진행 중 사례.</span>
+<sc-if value="{{op.c3}}" hint-placeholder-val="{{false}}"><span style="color: #333333; background: #F8FAFD; padding: 10px 12px">전략 → 일본 현지 메뉴와 체험가치 그대로.<br>배울 점 → 라이선스냐 직영이냐에 따라 원천세·이전가격 처리가 달라집니다.</span></sc-if>
+</div>
+</div>
+<span style="font-size: 13px; color: #555555">출처：글로벌이코노믹（2023.7）、서울경제、아시아경제（2026.8.7）</span>
+</sc-if>
+
+<sc-if value="{{on.policy}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>제도 변경을 미리 알면 당황하지 않습니다.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px">
+<div style="border: 1px solid #D8E2EE; border-top: 4px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 8px"><b>1년차　~2027.9</b><span style="font-size: 14px">・2026.12 세법개정안 확정<br>・2027.1 외국인 단일세율 21%(안)<br>・2027.3 법인세율 인상 후 첫 신고<br>・2027 국제거래자료 과태료 명확화(안)</span></div>
+<div style="border: 1px solid #D8E2EE; border-top: 4px solid #4A72B8; padding: 16px; display: flex; flex-direction: column; gap: 8px"><b>2년차　~2028.9</b><span style="font-size: 14px">・외국인투자 보조금 새 체계 운용<br>・국제거래 자료·오류 지적 엄격화</span></div>
+<div style="border: 1px solid #D8E2EE; border-top: 4px solid #8FA8D4; padding: 16px; display: flex; flex-direction: column; gap: 8px"><b>3년차　~2029</b><span style="font-size: 14px">・2029.12 외국인 단일세율 기한(연장안)<br>・주재원 급여 설계 재검토</span></div>
+</div>
+<span style="font-size: 13px; color: #555555">※「안」은 국회 심의로 바뀔 수 있습니다.</span>
+</sc-if>
+
+<sc-if value="{{on.roadmap}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>같은 담당자가 오래 함께합니다.</p>
+<div style="display: flex; flex-direction: column; border-left: 3px solid #3E6DB0; margin-left: 8px">
+<div style="padding: 0 0 18px 20px; display: flex; flex-direction: column; gap: 2px"><b style="color: #3E6DB0">1~3년｜점검</b><span>관행 처리를 점검하고 본사 보고 틀을 만듦 → 제도 변경에 선제 대응</span></div>
+<div style="padding: 0 0 18px 20px; display: flex; flex-direction: column; gap: 2px"><b style="color: #3E6DB0">~10년｜성장</b><span>규모 확대로 외부감사 대상 → 감사 대응·내부통제도 같은 회계사가 설계</span></div>
+<div style="padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 2px"><b style="color: #3E6DB0">~20년｜승계·재편</b><span>조직재편, 사업매각, 철수·청산까지 → 경위를 아는 담당자가 끝까지</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.contact}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px">한국어·일본어·영어로 상담합니다. 카카오톡으로 편하게 문의하세요(누락 진단 무료).</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 8px"><img src="img/line-qr.png" alt="LINE QR코드" style="width: 150px; height: 150px"><a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="display: flex; align-items: center; justify-content: center; min-height: 44px; width: 100%; background: #06813C; color: #FFFFFF; text-decoration: none; font-weight: 700; border-radius: 3px">LINE 상담</a></div>
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 8px"><img src="img/kakao-qr.png" alt="카카오톡 QR코드" style="width: 150px; height: 150px"><a href="https://open.kakao.com/o/sF4UcUPi" style="display: flex; align-items: center; justify-content: center; min-height: 44px; width: 100%; background: #FEE500; color: #191919; text-decoration: none; font-weight: 700; border-radius: 3px">카카오톡 상담</a></div>
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+<b>공식 메일</b><a href="mailto:gblee@seyeon-tax.com" style="font-weight: 700">gblee@seyeon-tax.com</a>
+<b style="margin-top: 6px">휴대폰·직통(추천)</b><a href="tel:+821039456101" style="font-weight: 700">+82-10-3945-6101</a>
+<span style="font-size: 13px; color: #555555">담당 회계사에게 바로 연결됩니다.</span>
+<b style="margin-top: 6px">대표</b><span>02-6356-1105｜팩스 02-6499-1106</span>
+</div>
+</div>
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
+<b>일본어 명함(본사 전달용)</b>
+<img src="img/meishi-jp.png" alt="이규범 일본어 명함" style="width: 100%; max-width: 640px; height: auto; border: 1px solid #D8E2EE">
+</div>
+</sc-if>
+
+<sc-if value="{{on.forms}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>목적에 따라 정해집니다. 고민되면 <button type="button" onClick="{{go.diag}}" style="background: none; border: 0; padding: 0; color: #3E6DB0; text-decoration: underline; font: inherit; cursor: pointer">단계 진단</button>으로.</p>
+<div style="display: flex; flex-direction: column; border-top: 2px solid #3E6DB0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; background: #EFF5FC; font-weight: 700; font-size: 14px"><span>형태</span><span>장점</span><span>주의점</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>거점 없음(국경 간 판매)</b><span>가장 빠르고 저비용. 법인세 원칙 없음</span><span>부가세 간편사업자 등록. 게임은 국내대리인 의무 가능</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>연락사무소</b><span>시장조사 거점. 법인세 없음</span><span>영업·매출 불가</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>지점</b><span>본사 일부로 영업 가능</span><span>책임이 본사에 직접 미침</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>현지법인 신설</b><span>계약·채용·보조금 주체</span><span>외국인투자 신고(1억 원 이상·지분 10% 이상)</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>인수→흡수합병</b><span>인력·IP·고객을 한 번에</span><span>직접 합병은 원칙 불가→한국 자회사를 통해</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.taxcmp}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>같은 이익이라도 한국의 법인세 부담이 가볍고, 외국기업 우대도 있습니다.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+<div style="border: 1px solid #D8E2EE; padding: 20px; text-align: center; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; color: #555555">일본(대법인 법정실효세율)</span><b style="font-size: 36px; color: #555555">약 30%</b></div>
+<div style="border: 2px solid #3E6DB0; padding: 20px; text-align: center; background: #EFF5FC; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; color: #3E6DB0">한국(과표 2억~200억 원·지방세 포함)</span><b style="font-size: 36px; color: #3E6DB0">22.0%</b></div>
+</div>
+<span style="font-size: 13px; color: #555555">※비교용 개산. 한국 2억 원 이하 구간 11.0%.</span>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 주재원：</b>외국인 단일세율(조특법§18의2, 19%) → 일본에 없는 제도</div>
+<div style="padding: 12px 16px"><b>▶ 본사 송금：</b>한일 조세조약 배당 5%／15%, 사용료 10% 상한</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.ma}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>일본법인이 한국법인을 직접 합병하는 것은 원칙적으로 불가. 한국 자회사를 통합니다.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-weight: 700">
+<span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">① 한국 자회사</span><span>→</span>
+<span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">② 대상회사 인수(실사)</span><span>→</span>
+<span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">③ 자회사가 흡수합병</span>
+</div>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 적격합병</b>(법법§44) → 양도차익 과세이연</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 이월결손금</b>(법법§45) → 승계 제한</div>
+<div style="padding: 12px 16px"><b>▶ 재무실사</b>→ 딜로이트 안진 Deal 부서 출신 회계사가 직접 확인</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.game}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>「국내대리인」은 현지법인이 있으면 일원화할 수 있습니다.</p>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 국내대리인 지정 의무</b>(게임산업법§31의2) → 매출 1조 원 이상 또는 일평균 설치 1,000건 이상</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 2026.10.1 개정안 국회 통과</b>→ 자사 설립 한국법인 우선 지정, 공포 6개월 후 시행</div>
+<div style="padding: 12px 16px"><b>▶ 본사 로열티</b>→ 조약 상한 10%, 이전가격 자료와 함께</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.incent}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px"><b>결론：</b>한국법인이 신청 주체. 외투기업 법인세 감면은 2019년 이후 신규 불가.</p>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 외국인투자 현금지원</b>→ 2027년부터 보조비율 상한 방식, 비수도권 우대</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 통합고용세액공제</b>(조특법§29의8)</div>
+<div style="padding: 12px 16px"><b>▶ 연구·인력개발비 세액공제</b>(조특법§10)</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.diag}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px">질문이 하나씩 나옵니다. 예／아니오로 답하면 됩니다.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<div style="flex: 1 1 400px; display: flex; flex-direction: column">
+<sc-for list="{{steps}}" as="st" hint-placeholder-count="0">
+<div style="display: flex; flex-direction: column; align-items: flex-start">
+<div style="border: 1px solid #D8E2EE; background: #F8FAFD; padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center"><span style="font-size: 14px; color: #555555">{{st.q}}</span><b style="{{st.aStyle}}">{{st.a}}</b></div>
+<span style="padding: 2px 0 2px 24px; color: #3E6DB0; font-weight: 700">↓</span>
+</div>
+</sc-for>
+<sc-if value="{{curIsQ}}" hint-placeholder-val="{{true}}">
+<div style="border: 2px solid #3E6DB0; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; color: #3E6DB0; font-weight: 700">질문 {{stepNo}}</span>
+<b style="font-size: 18px">{{curQ}}</b>
+<div style="display: flex; gap: 10px">
+<button type="button" onClick="{{ansYes}}" style="min-height: 48px; min-width: 110px; background: #3E6DB0; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer">예</button>
+<button type="button" onClick="{{ansNo}}" style="min-height: 48px; min-width: 110px; background: #FFFFFF; color: #3E6DB0; border: 2px solid #3E6DB0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer">아니오</button>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{hasResult}}" hint-placeholder-val="{{false}}">
+<div style="border: 2px solid #B5532A; background: #FFF8F3; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; color: #9A3412; font-weight: 700">진단 결과</span>
+<b style="font-size: 19px">{{resTitle}}</b>
+<span style="color: #333333">{{resBody}}</span>
+<span style="font-size: 13px; color: #555555; border-top: 1px dotted #D9A88A; padding-top: 8px; margin-top: 4px">※간이 결과입니다. 정확한 안내는 오른쪽 QR로 직접 연락주세요.</span>
+</div>
+</sc-if>
+<div style="display: flex; gap: 10px; margin-top: 12px">
+<button type="button" onClick="{{back}}" style="min-height: 40px; padding: 0 14px; background: #FFFFFF; border: 1px solid #AAB6C5; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">← 이전</button>
+<button type="button" onClick="{{reset}}" style="min-height: 40px; padding: 0 14px; background: #FFFFFF; border: 1px solid #AAB6C5; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">처음부터</button>
+</div>
+</div>
+<div style="flex: 0 1 260px; border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center">
+<b style="font-size: 14px">직접 상담</b>
+<div style="display: flex; gap: 12px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px"><img src="img/line-qr.png" alt="LINE QR코드" style="width: 104px; height: 104px"><span style="font-size: 12px; font-weight: 700; color: #06813C">LINE</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px"><img src="img/kakao-qr.png" alt="카카오톡 QR코드" style="width: 104px; height: 104px"><span style="font-size: 12px; font-weight: 700">카카오톡</span></div>
+</div>
+<span style="font-size: 12px; color: #555555">gblee@seyeon-tax.com</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{on.jpqa}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px">일본 본사와 일할 때 자주 궁금해지는 일본 회계·세무·노무 질문을 모았습니다. 질문을 누르면 답이 열립니다.</p>
+<div style="display: flex; flex-direction: column; border-top: 2px solid #3E6DB0">
+<sc-for list="{{qa}}" as="q" hint-placeholder-count="10">
+<div style="{{q.rowStyle}}">
+<button type="button" onClick="{{q.toggle}}" style="width: 100%; min-height: 48px; padding: 10px 12px; background: none; border: 0; text-align: left; font: inherit; font-weight: 700; color: #222222; cursor: pointer; display: flex; justify-content: space-between; gap: 10px"><span>Q{{q.no}}．{{q.q}}</span><span style="color: #3E6DB0">{{q.sign}}</span></button>
+<sc-if value="{{q.open}}" hint-placeholder-val="{{false}}"><div style="padding: 0 12px 14px 40px; color: #333333">{{q.a}}</div></sc-if>
+</div>
+</sc-for>
+</div>
+<span style="font-size: 13px; color: #555555">※ 2026년 10월 기준 일반적인 취급입니다. 개별 판단은 사실관계에 따라 다릅니다.</span>
+</sc-if>
+
+<sc-if value="{{on.jpcal}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px">일본의 주요 세무·노무 기한과 공휴일입니다. 월을 바꿔 확인할 수 있습니다.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<div style="flex: 1 1 360px; border: 1px solid #D8E2EE; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<button type="button" onClick="{{jpPrev}}" aria-label="이전 달" style="min-height: 40px; min-width: 44px; background: #FFFFFF; border: 1px solid #D8E2EE; border-radius: 6px; font: inherit; cursor: pointer">◀</button>
+<b style="font-size: 18px">{{jp.title}}</b>
+<button type="button" onClick="{{jpNext}}" aria-label="다음 달" style="min-height: 40px; min-width: 44px; background: #FFFFFF; border: 1px solid #D8E2EE; border-radius: 6px; font: inherit; cursor: pointer">▶</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; text-align: center; font-size: 13px">
+<sc-for list="{{jp.head}}" as="h" hint-placeholder-count="7"><span style="{{h.style}}">{{h.t}}</span></sc-for>
+<sc-for list="{{jp.cells}}" as="c" hint-placeholder-count="35"><div style="{{c.style}}" title="{{c.tip}}"><span>{{c.d}}</span><sc-if value="{{c.ev}}" hint-placeholder-val="{{false}}"><span style="{{c.dot}}"></span></sc-if></div></sc-for>
+</div>
+</div>
+<div style="flex: 1 1 320px; display: flex; flex-direction: column">
+<b style="font-size: 16px; padding-bottom: 6px; border-bottom: 2px solid #3E6DB0">{{jp.title}} 일정</b>
+<sc-for list="{{jp.list}}" as="it" hint-placeholder-count="5"><div style="{{it.rowStyle}}"><span style="flex: 0 0 auto; min-width: 76px">{{it.d}}</span><span style="{{it.tagStyle}}">{{it.tag}}</span><span>{{it.t}}</span></div></sc-for>
+<span style="font-size: 12px; color: #6B7684; margin-top: 8px">※ 기한이 주말·공휴일이면 다음 영업일. 고정자산세·주민세 날짜는 시정촌마다 다릅니다.</span>
+</div>
+</div>
+</sc-if>
+
+</main>
+
+<div style="flex: 0 1 120px; min-width: 110px; display: flex; flex-direction: column; border: 1px solid #D8E2EE; text-align: center; font-size: 13px">
+<div style="background: #D6E4F5; color: #1F3F6E; padding: 8px; font-weight: 700">QUICK</div>
+<button type="button" onClick="{{go.service}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; font-weight: 700; color: #9A3412; cursor: pointer">누락 진단<br><span style="font-size: 11px; font-weight: 400">무료</span></button>
+<button type="button" onClick="{{go.check}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer">1분 체크</button>
+<button type="button" onClick="{{go.members}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer">구성원</button>
+<a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="display: flex; align-items: center; justify-content: center; min-height: 56px; border-bottom: 1px solid #D8E2EE; text-decoration: none; color: #06813C; font-weight: 700">LINE</a>
+<a href="https://open.kakao.com/o/sF4UcUPi" style="display: flex; align-items: center; justify-content: center; min-height: 56px; border-bottom: 1px solid #D8E2EE; text-decoration: none; color: #191919; font-weight: 700; background: #FEE500">카카오</a>
+<a href="mailto:gblee@seyeon-tax.com" style="display: flex; align-items: center; justify-content: center; min-height: 56px; text-decoration: none; color: #3E6DB0; font-weight: 700">메일</a>
+</div>
+
+</div>
+</sc-if>
+
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 16px 16px; font-size: 13px; color: #555555">※ 노무·법무는 제휴 노무사·변호사와 연계해 대응합니다(창구·최종 검수는 공인회계사).</div>
+
+<footer style="background: #EEF2F7; color: #4A5565; border-top: 1px solid #D8E2EE">
+<div style="max-width: 1200px; margin: 0 auto; padding: 28px 16px; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; font-size: 13px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<b style="color: #1F3F6E; font-size: 15px">세연회계법인</b>
+<span>(06024) 서울특별시 강남구 언주로159길 27 3층｜담당 이규범</span>
+<span>휴대폰 010-3945-6101｜대표 02-6356-1105｜팩스 02-6499-1106｜gblee@seyeon-tax.com</span>
+<span>Blog blog.naver.com/taxcraft-</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; max-width: 460px">
+<span>본 사이트 정보는 2026년 10월 기준입니다. 개별 판단은 사실관계에 따라 다릅니다.</span>
+<span>© Seyeon Accounting Corp.</span>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2400}}'>
+var PAGE_LANG = 'ko';
+var MENU = [
+  { t: '일본계 법인 서포트', subs: [['books', '기장·월차결산(AI 활용)', '기장·월차(증빙 제출)'], ['report', '본사 보고·연결', '본사 보고(일본어)'], ['intl', '국제조세·이전가격·부가세', '이전가격·원천세·부가세'], ['staff', '주재원·급여·4대보험', '주재원·4대보험'], ['audit', '외부감사·내부통제', '외부감사·내부통제']] },
+  { t: '누락 진단', subs: [['service', '무료 누락 진단 안내', '무료 누락 진단'], ['check', '1분 셀프체크', '1분 셀프체크']] },
+  { t: '구성원 소개', subs: [['members', '구성원 소개', '한일 전문가 팀'], ['about', '담당 회계사 프로필', '이규범 경력']] },
+  { t: '사례·칼럼', subs: [['cases', '보도로 보는 성공사례', '성공사례'], ['policy', '향후 1·2·3년 제도 변경', '1·2·3년 제도 변경'], ['roadmap', '10년·20년 동행', '10년·20년']] },
+  { t: '상담', subs: [['contact', '문의·QR·명함', '카카오·LINE·명함']] },
+  { t: '일본 세무·노무', subs: [['jpqa', '일본 세무·노무 Q&A', 'Q&A(23문항)'], ['jpcal', '일본 세무 캘린더', '세무 캘린더·공휴일']] },
+  { t: '한국 진출', subs: [['forms', '진출 형태 비교', '신설 vs 인수'], ['diag', '단계 진단', '진출 형태 진단'], ['taxcmp', '일본과 세제 비교', '실효세율 차이'], ['ma', '인수·흡수합병', 'M&A·합병'], ['game', '게임·IP 기업 논점', '게임·IP'], ['incent', '보조금·우대제도', '보조금·우대']] }
+];
+var DETAILS = ['b1', 'c1', 'c2', 'c3'];
+var NODES = {
+  start: { q: '1년 이내에 한국에서 매출을 낼 예정입니까?', y: 'new2', n: 'R_test' },
+  new2: { q: '한국의 개발팀·고객·라이선스를 빨리 확보하고 싶습니까?', y: 'R_ma', n: 'new3' },
+  new3: { q: '게임을 한국에서 서비스합니까?', y: 'R_game', n: 'R_sub' }
+};
+var RES = {
+  R_test: ['거점 없음(국경 간 판매) 또는 연락사무소부터', '시장 반응을 보는 단계입니다. 매출 전망이 서면 법인화를 검토합니다.'],
+  R_ma: ['인수 → 한국 자회사 흡수합병 검토', '인력·IP를 한 번에 확보합니다. 적격합병 요건과 실사가 핵심입니다.'],
+  R_game: ['현지법인 신설(국내대리인 겸임)', '개정 게임법 시행 후에는 자사 설립 한국법인이 대리인으로 우선됩니다.'],
+  R_sub: ['현지법인 신설', '계약·채용·보조금 신청 주체가 됩니다. 외국인투자 신고와 배당·로열티 설계부터 시작합니다.']
+};
+var CHECKS = [
+  ['본사 월차 보고가 일본어로, 마감일까지 나가고 있습니까?', '본사에서 번역·확인 수고가 매달 발생', '일본어 월차 리포트를 본사 일정에 맞춰 제출'],
+  ['본사 담당자가 회계사와 일본어로 직접 소통하고 있습니까?', '통역을 거칠 때마다 의도가 어긋남', '본사와 일본어로 직접 협의(영어도 가능)'],
+  ['한국인 임직원도 같은 회계사에게 한국어로 상담하고 있습니까?', '현지와 본사의 설명이 엇갈림', '같은 담당이 두 언어로 대응해 정보를 일원화'],
+  ['세액공제·감면 누락이 없는지 매년 확인받고 있습니까?', '쓸 수 있는 공제를 몇 년째 놓치고 있을 가능성', '매년 고용·투자 계획에 맞춰 점검'],
+  ['배당·로열티 송금에 조세조약 제한세율을 적용하고 있습니까?', '5~15%면 될 원천세를 더 내고 있을 가능성', '제한세율 적용 신청과 송금 설계'],
+  ['주재원 급여 처리와 본사·한국법인 부담 구분이 정리되어 있습니까?', '비용 계상·원천징수 오류가 조사에서 지적될 위험', '파견계약과 부담 구분 정리'],
+  ['주재원에 대해 외국인 단일세율(조특법§18의2, 19%)을 검토했습니까?', '유리한 과세방식을 선택하지 않고 납부하고 있을 가능성', '일반세율과 비교 시산 작성'],
+  ['부가세 환급·영세율 대상 거래를 확인하고 있습니까?', '돌려받을 부가세를 못 받고 있을 가능성', '대상 거래 점검과 환급 신청'],
+  ['본사 거래(로열티·용역료)에 이전가격 근거자료가 있습니까?', '조사에서 요율이 부인될 위험', '요율 근거와 계약서 정비'],
+  ['기장에 AI·자동분개를 쓸 때 회계사가 최종 확인하고 있습니까?', '잘못된 자동분개가 신고까지 남음', 'AI는 후보 작성, 판단은 회계사가 전건 확인']
+];
+var KR_HOL = { '2026-1-1': '신정', '2026-2-16': '설날', '2026-2-17': '설날', '2026-2-18': '설날', '2026-3-2': '삼일절 대체', '2026-5-5': '어린이날', '2026-5-25': '부처님오신날 대체', '2026-6-3': '지방선거', '2026-8-17': '광복절 대체', '2026-9-24': '추석', '2026-9-25': '추석', '2026-9-26': '추석', '2026-10-5': '개천절 대체', '2026-10-9': '한글날', '2026-12-25': '성탄절',
+  '2027-1-1': '신정', '2027-2-8': '설날', '2027-2-9': '설날 대체', '2027-3-1': '삼일절', '2027-5-5': '어린이날', '2027-5-13': '부처님오신날', '2027-8-16': '광복절 대체', '2027-9-14': '추석', '2027-9-15': '추석', '2027-9-16': '추석', '2027-10-4': '개천절 대체', '2027-10-11': '한글날 대체', '2027-12-27': '성탄절 대체' };
+var JP_HOL = { '2026-1-1': '元日', '2026-1-12': '成人の日', '2026-2-11': '建国記念の日', '2026-2-23': '天皇誕生日', '2026-3-20': '春分の日', '2026-4-29': '昭和の日', '2026-5-3': '憲法記念日', '2026-5-4': 'みどりの日', '2026-5-5': 'こどもの日', '2026-5-6': '振替休日', '2026-7-20': '海の日', '2026-8-11': '山の日', '2026-9-21': '敬老の日', '2026-9-22': '国民の休日', '2026-9-23': '秋分の日', '2026-10-12': 'スポーツの日', '2026-11-3': '文化の日', '2026-11-23': '勤労感謝の日',
+  '2027-1-1': '元日', '2027-1-11': '成人の日', '2027-2-11': '建国記念の日', '2027-2-23': '天皇誕生日', '2027-3-21': '春分の日', '2027-3-22': '振替休日', '2027-4-29': '昭和の日', '2027-5-3': '憲法記念日', '2027-5-4': 'みどりの日', '2027-5-5': 'こどもの日', '2027-7-19': '海の日', '2027-8-11': '山の日', '2027-9-20': '敬老の日', '2027-9-23': '秋分の日', '2027-10-11': 'スポーツの日', '2027-11-3': '文化の日', '2027-11-23': '勤労感謝の日' };
+// [month(1-12 or 0=every), day(0=month end), ja, ko, major]
+var KR_RULES = [
+  [0, 10, '源泉税・地方所得税 申告納付', '원천세·지방소득세 신고납부', false],
+  [0, 0, '簡易支払明細書（事業所得等）提出', '간이지급명세서(사업소득 등) 제출', false],
+  [1, 25, '付加価値税 第2期 確定申告', '부가세 2기 확정신고', true],
+  [2, 0, '支払明細書（利子・配当・その他）提出', '지급명세서(이자·배당·기타) 제출', true],
+  [3, 10, '年末調整分 源泉税・勤労所得 支払明細書', '연말정산분 원천세·근로소득 지급명세서', true],
+  [3, 31, '法人税申告（12月決算）・国際取引明細書', '법인세 신고(12월 결산)·국제거래명세서', true],
+  [4, 25, '付加価値税 第1期 予定申告', '부가세 1기 예정신고', true],
+  [4, 30, '法人地方所得税 申告（12月決算）', '법인지방소득세 신고(12월 결산)', true],
+  [5, 31, '総合所得税 確定申告（個人・駐在員）', '종합소득세 신고(개인·주재원)', true],
+  [6, 30, '海外金融口座 申告', '해외금융계좌 신고', true],
+  [7, 25, '付加価値税 第1期 確定申告', '부가세 1기 확정신고', true],
+  [7, 31, '財産税（建物）納付', '재산세(건축물) 납부', false],
+  [8, 31, '法人税 中間予納（12月決算）', '법인세 중간예납(12월 결산)', true],
+  [9, 30, '財産税（土地）納付', '재산세(토지) 납부', false],
+  [10, 25, '付加価値税 第2期 予定申告', '부가세 2기 예정신고', true],
+  [12, 15, '総合不動産税 納付', '종합부동산세 납부', true]
+];
+var JP_RULES = [
+  [0, 10, '源泉所得税・住民税（特別徴収）納付', '원천소득세·주민세(특별징수) 납부', false],
+  [1, 20, '源泉所得税 納期の特例（7〜12月分）', '원천세 납기특례(7~12월분)', true],
+  [1, 31, '法定調書・給与支払報告書・償却資産申告', '법정조서·급여지불보고서·상각자산 신고', true],
+  [2, 0, '12月決算法人 確定申告・納付', '12월 결산법인 확정신고·납부', true],
+  [3, 15, '所得税 確定申告（個人）', '소득세 확정신고(개인)', true],
+  [4, 30, '固定資産税 第1期（市町村により異なる）', '고정자산세 1기(시정촌별 상이)', false],
+  [5, 31, '3月決算法人 確定申告・納付', '3월 결산법인 확정신고·납부', true],
+  [6, 30, '住民税 特別徴収 開始（6月分〜）', '주민세 특별징수 개시(6월분~)', false],
+  [7, 10, '源泉 納期の特例（1〜6月分）・労働保険 年度更新・算定基礎届', '원천세 납기특례(1~6월분)·노동보험 갱신·산정기초신고', true],
+  [8, 0, '12月決算法人 中間申告', '12월 결산법인 중간신고', true],
+  [11, 0, '3月決算法人 中間申告', '3월 결산법인 중간신고', true],
+  [12, 25, '年末調整（12月の給与で精算）', '연말정산(12월 급여로 정산)', true]
+];
+var LANG_JA = (typeof PAGE_LANG === 'undefined') || PAGE_LANG === 'ja';
+var WK_JA = ['日', '月', '火', '水', '木', '金', '土'], WK_KO = ['일', '월', '화', '수', '목', '금', '토'];
+function dkey(d) { return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
+function shiftBiz(d, hol) { var x = new Date(d.getFullYear(), d.getMonth(), d.getDate()); while (x.getDay() === 0 || x.getDay() === 6 || hol[dkey(x)]) x.setDate(x.getDate() + 1); return x; }
+function genEvents(rules, hol, y, m) {
+  var out = [];
+  [m - 1, m].forEach(function (mm) {
+    var base = new Date(y, mm, 1); var yy = base.getFullYear(), m0 = base.getMonth();
+    rules.forEach(function (r) {
+      if (r[0] !== 0 && r[0] !== m0 + 1) return;
+      var day = r[1] === 0 ? new Date(yy, m0 + 1, 0).getDate() : Math.min(r[1], new Date(yy, m0 + 1, 0).getDate());
+      var d = shiftBiz(new Date(yy, m0, day), hol);
+      var tgt = new Date(y, m, 1);
+      if (d.getFullYear() === tgt.getFullYear() && d.getMonth() === tgt.getMonth()) out.push({ date: d, t: LANG_JA ? r[2] : r[3], major: r[4] });
+    });
+  });
+  return out.sort(function (a, b) { return a.date - b.date; });
+}
+function fmt(d) { var w = (LANG_JA ? WK_JA : WK_KO)[d.getDay()]; return (d.getMonth() + 1) + '/' + d.getDate() + '（' + w + '）'; }
+function buildGrid(y, m, today, evs, hol, holColor) {
+  var first = new Date(y, m, 1), start = new Date(y, m, 1 - first.getDay());
+  var evKeys = {}; evs.forEach(function (e) { evKeys[dkey(e.date)] = (evKeys[dkey(e.date)] ? evKeys[dkey(e.date)] + ' / ' : '') + e.t; });
+  var cells = [];
+  var weeks = Math.ceil((first.getDay() + new Date(y, m + 1, 0).getDate()) / 7);
+  for (var i = 0; i < weeks * 7; i++) {
+    var d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
+    var k = dkey(d), inM = d.getMonth() === m, isT = k === dkey(today), h = hol[k];
+    var color = !inM ? '#B8C2CE' : (isT ? '#FFFFFF' : (h || d.getDay() === 0 ? holColor : (d.getDay() === 6 ? '#3E6DB0' : '#333333')));
+    cells.push({
+      d: d.getDate(), ev: inM && !!evKeys[k], tip: (h ? h + ' ' : '') + (evKeys[k] || ''),
+      style: 'min-height: 40px; padding: 4px 0; border-radius: 6px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-weight: ' + (isT ? '700' : '400') + '; color: ' + color + '; background: ' + (isT ? '#5B2A86' : (inM && h ? '#FDECEF' : (inM ? '#FFFFFF' : 'transparent'))) + ';',
+      dot: 'width: 6px; height: 6px; border-radius: 50%; background: ' + (isT ? '#FFFFFF' : '#3E6DB0') + ';'
+    });
+  }
+  var head = (LANG_JA ? WK_JA : WK_KO).map(function (w, i) { return { t: w, style: 'font-weight: 700; padding: 4px 0; color: ' + (i === 0 ? holColor : (i === 6 ? '#3E6DB0' : '#555555')) + ';' }; });
+  return { cells: cells, head: head };
+}
+function calKR(today) {
+  var y = today.getFullYear(), m = today.getMonth();
+  var evs = genEvents(KR_RULES, KR_HOL, y, m);
+  var g = buildGrid(y, m, today, evs, KR_HOL, '#C2416B');
+  var near = [];
+  [-1, 0, 1].forEach(function (o) { var b = new Date(y, m + o, 1); genEvents(KR_RULES, KR_HOL, b.getFullYear(), b.getMonth()).forEach(function (e) { var diff = (e.date - new Date(y, m, today.getDate())) / 86400000; if (diff >= -7 && diff <= 7) near.push({ d: fmt(e.date), t: e.t, style: diff < 0 ? 'color: #8A94A3' : (diff === 0 ? 'color: #5B2A86; font-weight: 700' : 'color: #222222') }); }); });
+  var months = [0, 1, 2].map(function (o) {
+    var b = new Date(y, m + o, 1);
+    var items = genEvents(KR_RULES, KR_HOL, b.getFullYear(), b.getMonth()).filter(function (e) { return e.major; }).map(function (e) { return { d: fmt(e.date), t: e.t }; });
+    if (!items.length) items = [{ d: '', t: LANG_JA ? '主要な申告期限なし（毎月10日の源泉税のみ）' : '주요 신고기한 없음(매월 10일 원천세만)' }];
+    return { t: LANG_JA ? (b.getFullYear() + '年' + (b.getMonth() + 1) + '月' + (o === 0 ? '（今月）' : (o === 1 ? '（来月）' : '（再来月）'))) : (b.getFullYear() + '년 ' + (b.getMonth() + 1) + '월' + (o === 0 ? '(이번 달)' : (o === 1 ? '(다음 달)' : '(다다음 달)'))), items: items };
+  });
+  return { title: LANG_JA ? (y + '年' + (m + 1) + '月') : (y + '년 ' + (m + 1) + '월'), today: (LANG_JA ? '今日 ' : '오늘 ') + fmt(today), head: g.head, cells: g.cells, near: near.length ? near : [{ d: '', t: LANG_JA ? '前後1週間に期限はありません' : '전후 1주일 내 기한 없음', style: 'color: #8A94A3' }], months: months };
+}
+function calJP(today, off) {
+  var b = new Date(today.getFullYear(), today.getMonth() + off, 1), y = b.getFullYear(), m = b.getMonth();
+  var evs = genEvents(JP_RULES, JP_HOL, y, m);
+  var g = buildGrid(y, m, today, evs, JP_HOL, '#C2416B');
+  var list = evs.map(function (e) { return { date: e.date, d: fmt(e.date), t: e.t, tag: LANG_JA ? '税務' : '세무', tagStyle: 'font-size: 12px; padding: 1px 8px; border-radius: 10px; background: #E3EDF9; color: #2F5590;', rowStyle: 'display: flex; gap: 10px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid #E6ECF3;' }; });
+  Object.keys(JP_HOL).forEach(function (k) { var p = k.split('-'); var d = new Date(+p[0], +p[1] - 1, +p[2]); if (d.getFullYear() === y && d.getMonth() === m) list.push({ date: d, d: fmt(d), t: JP_HOL[k], tag: LANG_JA ? '祝日' : '공휴일', tagStyle: 'font-size: 12px; padding: 1px 8px; border-radius: 10px; background: #FDECEF; color: #A3264F;', rowStyle: 'display: flex; gap: 10px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid #E6ECF3; color: #A3264F;' }); });
+  list.sort(function (a, b2) { return a.date - b2.date; });
+  return { title: LANG_JA ? (y + '年' + (m + 1) + '月') : (y + '년 ' + (m + 1) + '월'), head: g.head, cells: g.cells, list: list };
+}
+var QA_KO = [
+  ['신칸센 통근수당도 비과세가 되나요?', '가장 경제적·합리적인 경로라면 신칸센도 인정됩니다. 비과세 한도는 월 15만엔입니다.'],
+  ['일본 최저시급은 전국이 같은가요?', '아닙니다. 도도부현별로 정합니다. 2026년도 전국 가중평균은 1,177엔(전년 대비 +56엔). 도쿄 1,280엔이 가장 높고 고치 1,086엔이 가장 낮습니다. 발효일도 지역마다 달라 10월 1일~12월 초에 순차 적용됩니다.'],
+  ['사원여행 비용을 회사가 내면 급여가 되나요?', '4박5일 이내(해외는 현지 체재일 기준), 참가자 50% 이상, 회사부담액이 사회통념상 적정하면 복리후생비로 처리할 수 있습니다.'],
+  ['일본도 퇴직금 지급이 의무인가요?', '법적 의무는 없습니다(한국의 퇴직급여 의무와 다름). 다만 취업규칙이나 퇴직금 규정에 정해 두었다면 지급 의무가 생깁니다.'],
+  ['결산상여를 결산일 후에 지급해도 당기 비용이 되나요?', '전원에게 개별 통지하고, 결산일 후 1개월 이내에 지급하고, 당기에 비용 처리했다면 당기 손금이 됩니다.'],
+  ['임원 보수를 매출 실적에 연동해도 되나요?', '중소기업은 매월 같은 금액(정기동액급여)이 원칙입니다. 실적에 따라 늘어난 부분은 손금이 되지 않습니다.'],
+  ['소모품은 얼마까지 바로 비용 처리할 수 있나요?', '10만엔 미만은 즉시 비용입니다. 중소기업 특례(청색신고)는 30만엔 미만이었고, 2026년도 개정으로 40만엔 미만으로 올라갑니다. 판정 금액은 소비세 경리방식(세포함/세별)을 따릅니다.'],
+  ['연차유급휴가와 연차수당은 의무인가요?', '연차 부여는 의무입니다. 6개월 근속·80% 이상 출근 시 10일부터 시작하고, 10일 이상 부여자에게는 연 5일을 반드시 쓰게 해야 합니다. 반면 미사용 연차를 돈으로 사는 「연차수당」은 원칙적으로 금지입니다(퇴직 시·시효 소멸분만 예외). 한국과 가장 다른 부분입니다.'],
+  ['전시회에 고객을 초대한 비용은 접대비인가요?', '교통비·숙박비는 판매촉진비, 연회와 선물은 교제비로 나눕니다.'],
+  ['업무 중 주차위반 범칙금을 회사가 내면?', '범칙금은 비용이 되지 않습니다. 견인비·보관료 같은 실비는 업무 중이라면 비용 처리할 수 있습니다.'],
+  ['헤드헌팅 회사에 수수료를 내면 원천징수가 필요한가요?', '법인인 헤드헌팅 회사에 내는 수수료는 원천징수 대상이 아닙니다. 채용되는 개인에게 계약금을 줄 때는 10.21%(100만엔 초과분 20.42%) 원천징수가 필요합니다.'],
+  ['1년치 사무실 임대료를 미리 내면 전액 비용인가요?', '계속적 계약이고, 지급일부터 1년 이내 분이며, 매년 같은 처리를 계속한다면 지급한 연도의 비용으로 인정됩니다.'],
+  ['홈페이지 제작비는 자산인가요?', '원칙적으로 지출 시 비용입니다. 다만 검색·DB 같은 프로그램 부분은 소프트웨어로 5년 상각합니다.'],
+  ['사택을 제공하면 직원에게 과세되나요?', '규정 산식으로 계산한 임대료 상당액의 50% 이상을 직원에게 받으면 과세되지 않습니다.'],
+  ['자사 제품을 직원에게 싸게 팔아도 되나요?', '판매가가 원가 이상이면서 통상 판매가의 70% 이상, 할인율이 일률적, 자가소비 정도의 양이라면 과세되지 않습니다.'],
+  ['직원 영어학원비를 회사가 내면 급여인가요?', '업무에 필요하고 금액이 적정하면 급여로 보지 않습니다.'],
+  ['송년회 비용은 어떤 계정인가요?', '원칙적으로 복리후생비입니다. 2차·3차나 지나치게 호화로운 경우는 교제비나 급여가 될 수 있습니다.'],
+  ['거래처가 1년 넘게 대금을 안 주면 대손 처리할 수 있나요?', '거래 정지 후(또는 마지막 변제 후) 1년 이상 지나면 비망가 1엔을 남기고 대손 처리할 수 있습니다.'],
+  ['거래처마다 매출 인식 기준을 달리해도 되나요?', '합리적인 이유가 있고 계속 적용한다면 출하기준·검수기준을 거래처별로 쓸 수 있습니다.'],
+  ['잔업 직원에게 식대를 주면?', '현물 식사는 비과세, 현금으로 주면 급여가 됩니다.'],
+  ['임원 퇴직금은 언제 비용이 되나요?', '주주총회 결의로 금액이 확정된 사업연도가 원칙입니다. 실제 지급하고 비용 처리했다면 지급한 연도도 인정됩니다.'],
+  ['테이블과 의자를 따로 사면 각각 소모품인가요?', '세트로 쓰는 것은 세트 단위로 판정합니다. 합계 60만엔이면 자산으로 상각합니다.'],
+  ['2026년 10월부터 인보이스 제도에서 바뀌는 점은?', '면세사업자로부터의 매입에 대한 경과조치 공제율이 80%에서 50%로 줄었습니다(2029년 9월까지).']
+];
+var QA_JA = [
+  ['新幹線通勤の通勤手当も非課税になりますか？', '最も経済的かつ合理的な経路であれば新幹線も認められます。非課税限度は月15万円です。'],
+  ['日本の最低賃金は全国一律ですか？', 'いいえ、都道府県ごとに決まります。2026年度の全国加重平均は1,177円（前年比+56円）。最高は東京1,280円、最低は高知1,086円。発効日も地域により10月1日〜12月初めと異なります。'],
+  ['社員旅行の費用を会社が負担すると給与になりますか？', '4泊5日以内（海外は現地滞在日数）、参加者50%以上、会社負担額が社会通念上相当であれば福利厚生費で処理できます。'],
+  ['日本でも退職金の支給は義務ですか？', '法律上の義務はありません（韓国の退職給付義務とは異なります）。ただし就業規則・退職金規程に定めれば支給義務が生じます。'],
+  ['決算賞与を決算日後に支払っても当期の損金になりますか？', '全員への個別通知、決算日後1か月以内の支払い、当期の損金経理の3要件を満たせば当期の損金です。'],
+  ['役員報酬を売上実績に連動させてもよいですか？', '中小企業は定期同額給与が原則です。実績で増えた部分は損金になりません。'],
+  ['消耗品はいくらまで一括で費用にできますか？', '10万円未満は即時費用。中小企業の特例（青色申告）は30万円未満でしたが、令和8年度改正で40万円未満に引上げ。判定は税込・税抜の経理方式に従います。'],
+  ['年次有給休暇と「有給の買取り」は義務ですか？', '付与は義務です（6か月勤続・出勤率80%以上で10日から）。10日以上付与者には年5日の取得義務もあります。一方、未消化分の買取りは原則禁止（退職時・時効消滅分のみ例外）。韓国の「年次手当」と最も違う点です。'],
+  ['展示会に顧客を招いた費用は交際費ですか？', '交通費・宿泊費は販売促進費、宴会・手土産は交際費に分けます。'],
+  ['業務中の駐車違反の反則金を会社が払ったら？', '反則金は損金になりません。レッカー代・保管料などの実費は業務中なら損金にできます。'],
+  ['人材紹介会社への手数料は源泉徴収が必要ですか？', '法人の紹介会社への手数料は不要です。採用される個人へ契約金を払う場合は10.21%（100万円超部分20.42%）の源泉徴収が必要です。'],
+  ['1年分の事務所家賃を前払いしたら全額費用ですか？', '継続的な契約で、支払日から1年以内の分を毎期継続して処理していれば、支払った期の費用にできます（短期前払費用）。'],
+  ['ホームページ制作費は資産ですか？', '原則は支出時の費用です。検索・データベース等のプログラム部分はソフトウェアとして5年で償却します。'],
+  ['社宅を提供すると社員に課税されますか？', '所定の算式による賃料相当額の50%以上を社員から徴収していれば課税されません。'],
+  ['自社製品を社員に安く売ってもよいですか？', '取得価額以上かつ通常価格の70%以上、値引率が一律、自家消費程度の数量であれば課税されません。'],
+  ['社員の英会話スクール代を会社が払うと給与ですか？', '業務に必要で金額が相当であれば給与とはされません。'],
+  ['忘年会の費用はどの勘定科目ですか？', '原則は福利厚生費。二次会以降や過度に豪華な場合は交際費・給与になり得ます。'],
+  ['取引先が1年以上支払わない場合、貸倒れにできますか？', '取引停止（または最後の弁済）から1年以上経過すれば、備忘価額1円を残して貸倒損失にできます。'],
+  ['取引先ごとに売上計上基準を変えてもよいですか？', '合理的な理由があり継続適用するなら、出荷基準・検収基準の併用が認められます。'],
+  ['残業者に食事代を渡すと課税されますか？', '現物の食事は非課税、現金で渡すと給与です。'],
+  ['役員退職金はいつ損金になりますか？', '株主総会で金額が確定した事業年度が原則。実際に支払い損金経理した場合は支払年度も認められます。'],
+  ['机と椅子を別々に買えばそれぞれ少額資産ですか？', 'セットで使うものはセット単位で判定します。合計60万円なら資産計上して償却します。'],
+  ['2026年10月からインボイス制度で変わる点は？', '免税事業者からの仕入れに係る経過措置の控除割合が80%から50%に縮小しました（2029年9月まで）。']
+];
+var QA = LANG_JA ? QA_JA : QA_KO;
+var TAB = 'min-height: 52px; padding: 0 18px; border: 0; font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; ';
+var SIDE = 'display: block; width: 100%; min-height: 46px; padding: 0 16px; text-align: left; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; font-size: 14px; cursor: pointer; ';
+class Component extends DCLogic {
+  renderVals() {
+    var s = this.state || {};
+    var self = this;
+    var page = s.page || 'home';
+    var go = {}, on = {}, titles = {};
+    var cat = null;
+    var nav = function (k) { return function () { self.setState({ page: k, hover: null }); try { window.scrollTo(0, 0); } catch (e) {} }; };
+    go.home = nav('home');
+    on.home = page === 'home';
+    MENU.forEach(function (m) {
+      m.subs.forEach(function (sb) {
+        titles[sb[0]] = sb[1];
+        on[sb[0]] = page === sb[0];
+        if (page === sb[0]) cat = m;
+        go[sb[0]] = nav(sb[0]);
+      });
+    });
+    var hover = s.hover;
+    var top = MENU.map(function (m, mi) {
+      var act = cat === m || hover === mi;
+      return {
+        t: m.t, go: nav(m.subs[0][0]),
+        enter: function () { self.setState({ hover: mi }); },
+        open: hover === mi,
+        subs: m.subs.map(function (sb) { return { kw: sb[2], go: nav(sb[0]) }; }),
+        style: TAB + (act ? 'background: #FFFFFF; color: #2F5590;' : 'background: transparent; color: #1F3F6E;')
+      };
+    });
+    var side = cat ? cat.subs.map(function (sb) {
+      var act = sb[0] === page;
+      return { t: sb[1], go: go[sb[0]], style: SIDE + (act ? 'background: #EFF5FC; color: #3E6DB0; font-weight: 700;' : 'background: #FFFFFF; color: #222222;') };
+    }) : [];
+    var openS = s.open || {};
+    var op = {}, tg = {}, lbl = {};
+    DETAILS.forEach(function (k) {
+      op[k] = !!openS[k];
+      lbl[k] = op[k] ? '닫기 ▲' : '자세히 보기 ▼';
+      tg[k] = function () { var o = Object.assign({}, (self.state || {}).open || {}); o[k] = !o[k]; self.setState({ open: o }); };
+    });
+    var path = s.path || [];
+    var cur = 'start';
+    var steps = path.map(function (p) {
+      var node = NODES[p.id];
+      cur = p.a ? node.y : node.n;
+      return { q: node.q, a: p.a ? '예' : '아니오', aStyle: p.a ? 'color: #3E6DB0' : 'color: #9A3412' };
+    });
+    var curIsQ = !!NODES[cur];
+    var res = RES[cur] || ['', ''];
+    var answer = function (a) { var p = ((self.state || {}).path || []).slice(); p.push({ id: cur, a: a }); self.setState({ path: p }); };
+    var today = new Date();
+    var kr = calKR(today);
+    var jpOff = s.jpOff || 0;
+    var jp = calJP(today, jpOff);
+    var qaOpen = s.qa || {};
+    var qaItems = QA.map(function (q, i) { var o = !!qaOpen[i]; return { no: i + 1, q: q[0], a: q[1], open: o, sign: o ? '−' : '＋', rowStyle: 'border-bottom: 1px solid #E1E8F0; background: ' + (i % 2 ? '#F6F9FD' : '#FFFFFF') + ';', toggle: function () { var x = Object.assign({}, (self.state || {}).qa || {}); x[i] = !x[i]; self.setState({ qa: x }); } }; });
+    var ans = s.ans || {};
+    var noCount = 0, answered = 0;
+    var BTN = 'min-height: 40px; min-width: 72px; border-radius: 20px; font: inherit; font-weight: 700; cursor: pointer; ';
+    var setAns = function (i, v) { var o = Object.assign({}, (self.state || {}).ans || {}); o[i] = v; self.setState({ ans: o }); };
+    var checks = CHECKS.map(function (c, i) {
+      var v = ans[i];
+      var isNo = v === 'no';
+      if (v) answered++;
+      if (isNo) noCount++;
+      var even = i % 2 === 1;
+      return {
+        no: i + 1, q: c[0], loss: c[1], fix: c[2], isNo: isNo,
+        yes: function () { setAns(i, 'yes'); },
+        no_: function () { setAns(i, 'no'); },
+        rowStyle: 'padding: 14px 12px; border-bottom: 1px solid #D8E2EE; background: ' + (isNo ? '#FFFBF7' : (even ? '#EEF4FC' : '#FFFFFF')) + ';',
+        qStyle: 'flex: 1 1 360px; font-weight: 700; color: ' + (even ? '#163A75' : '#222222') + ';',
+        yesStyle: BTN + (v === 'yes' ? 'background: #3E6DB0; color: #FFFFFF; border: 1px solid #3E6DB0;' : 'background: #FFFFFF; color: #3E6DB0; border: 1px solid #9FB4D6;'),
+        noStyle: BTN + (isNo ? 'background: #B5532A; color: #FFFFFF; border: 1px solid #B5532A;' : 'background: #FFFFFF; color: #9A3412; border: 1px solid #E5B79A;')
+      };
+    });
+    var chkTitle, chkBody;
+    if (answered === 0) { chkTitle = '각 질문에 「예／아니오」로 답해 주세요.'; chkBody = '정상이라면 모두 「예」가 나옵니다.'; }
+    else if (noCount <= 2) { chkTitle = '지금 체계로 대체로 충분합니다.'; chkBody = '신경 쓰이는 항목만 세컨드 오피니언으로 상담하세요.'; }
+    else if (noCount <= 5) { chkTitle = '일부 누락이 있습니다.'; chkBody = '기존 사무소는 그대로 두고 부족한 부분만 함께할 수도 있습니다.'; }
+    else { chkTitle = '관행대로 점검되지 않은 부분이 많아 보입니다.'; chkBody = '현황을 한번 들려주세요. 바꿔야 할지부터 함께 판단합니다.'; }
+    return {
+      go: go, on: on, top: top, side: side, isSub: page !== 'home',
+      homeTab: TAB + (page === 'home' ? 'background: #FFFFFF; color: #2F5590;' : 'background: transparent; color: #1F3F6E;'),
+      catTitle: cat ? cat.t : '', pageTitle: titles[page] || '',
+      op: op, tg: tg, lbl: lbl,
+      steps: steps, curIsQ: curIsQ, curQ: curIsQ ? NODES[cur].q : '', stepNo: path.length + 1,
+      hasResult: !curIsQ, resTitle: res[0], resBody: res[1],
+      ansYes: function () { answer(true); }, ansNo: function () { answer(false); },
+      back: function () { var p = ((self.state || {}).path || []).slice(); p.pop(); self.setState({ path: p }); },
+      reset: function () { self.setState({ path: [] }); },
+      kr: kr, jp: jp, qa: qaItems,
+      jpPrev: function () { self.setState({ jpOff: ((self.state || {}).jpOff || 0) - 1 }); },
+      jpNext: function () { self.setState({ jpOff: ((self.state || {}).jpOff || 0) + 1 }); },
+      checks: checks, noCount: noCount, answered: answered, chkTitle: chkTitle, chkBody: chkBody,
+      leave: function () { if ((self.state || {}).hover != null) self.setState({ hover: null }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
