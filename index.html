@@ -36,9 +36,9 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 
 <div style="max-width: 1200px; margin: 0 auto; padding: 18px 16px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center">
-<button type="button" onClick="{{go.home}}" style="background: none; border: 0; padding: 0; cursor: pointer; text-align: left; font: inherit; color: inherit; display: flex; flex-direction: column">
+<button type="button" onClick="{{go.home}}" style="background: none; border: 0; padding: 0; cursor: pointer; text-align: left; font: inherit; color: inherit; display: flex; align-items: center; gap: 10px">
+<img src="img/logo.png" alt="" style="width: 44px; height: 41px">
 <span style="font-size: 24px; font-weight: 700; color: #3E6DB0; letter-spacing: 0.02em">世淵（セヨン）会計法人</span>
-<span style="font-size: 12px; color: #555555">在韓日系法人の会計・税務｜日本語で完結・渡韓不要</span>
 </button>
 <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
 <div style="display: flex; flex-direction: column; line-height: 1.35">
@@ -67,36 +67,85 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </sc-for>
 </div>
 </nav>
+<div style="background: #FFFFFF; border-bottom: 1px solid #E6ECF3"><div style="max-width: 1200px; margin: 0 auto; padding: 8px 16px; font-size: 13px; color: #4A5565">在韓日系法人・日本人個人の会計・税務｜日本語で完結・渡韓不要</div></div>
+<sc-if value="{{showPopup}}" hint-placeholder-val="{{false}}">
+<div style="position: fixed; inset: 0; z-index: 60; background: rgba(20,30,50,0.45); display: flex; align-items: center; justify-content: center; padding: 16px">
+<div role="dialog" aria-label="2026年 韓国税制改正" style="background: #FFFFFF; border-radius: 12px; max-width: 560px; width: 100%; padding: 24px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.25)">
+<span style="font-size: 13px; font-weight: 700; color: #B5532A">見落としチェック</span>
+<b style="font-size: 20px; line-height: 1.4">2026年 韓国税制改正 — 在韓日系法人が確認すべき点</b>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #333333">
+<span>・法人税率 全区間1%引上げ（10/20/22/25%、2026年開始事業年度〜）</span>
+<span>・外国人勤労者の単一税率 19%→21%、適用期限は2029年末まで延長（租特法§18の2・改正案）</span>
+<span>・外国人技術者の所得税減免、対象を理工系博士等に限定（租特法§18・2027年4月〜・改正案）</span>
+<span>・国際取引資料の重大な誤りも過料対象に明確化（改正案）</span>
+<span>・グローバル・ミニマム課税の調整、外国子会社配当の益金不算入100%（2027年〜・改正案）</span>
+</div>
+<span style="font-size: 12px; color: #6B7684">※ 改正案は国会審議で変わる可能性があります。</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px">
+<button type="button" onClick="{{popToCheck}}" style="min-height: 46px; padding: 0 18px; background: #3E6DB0; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">1分 見落としチェックへ</button>
+<button type="button" onClick="{{popClose}}" style="min-height: 46px; padding: 0 18px; background: #FFFFFF; color: #333333; border: 1px solid #C3D0DF; border-radius: 4px; font: inherit; cursor: pointer">閉じる</button>
+</div>
+</div>
+</div>
+</sc-if>
 
 <sc-if value="{{on.home}}" hint-placeholder-val="{{true}}">
 <section style="background: #F1F6FD; border-bottom: 1px solid #D8E2EE">
 <div style="max-width: 1200px; margin: 0 auto; padding: 44px 16px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center">
 <div style="flex: 1 1 560px; display: flex; flex-direction: column; gap: 14px">
-<span style="font-size: 14px; font-weight: 700; color: #3E6DB0">■ 韓国に進出して数年の、日系法人の皆さまへ</span>
-<h1 style="margin: 0; font-size: clamp(26px, 3.6vw, 38px); line-height: 1.45; font-weight: 700">会計事務所とのやりとり、<br>行き届いていますか。</h1>
-<p style="margin: 0; color: #333333; font-size: 16px">報告の遅れや本社への二度手間を、日本語で一つずつ解消します。</p>
+<span style="font-size: 14px; font-weight: 700; color: #3E6DB0">■ 在韓の日系法人・日本人の皆さまへ</span>
+<h1 style="margin: 0; font-size: clamp(22px, 2.8vw, 31px); line-height: 1.5; font-weight: 700">税理士事務所・会計法人とのやりとり、<br>足りない点はありませんか。</h1>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px">
 <button type="button" onClick="{{go.check}}" style="min-height: 52px; padding: 0 20px; background: #3E6DB0; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">1分セルフチェック ▶</button>
 <button type="button" onClick="{{go.service}}" style="min-height: 52px; padding: 0 20px; background: #FFFFFF; color: #B5532A; border: 2px solid #B5532A; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">無料・見落とし診断とは</button>
 </div>
 </div>
-<div style="flex: 1 1 320px; background: #FFFFFF; border: 2px solid #3E6DB0; padding: 22px; display: flex; flex-direction: column; gap: 6px; text-align: center">
-<img src="img/profile.jpg" alt="担当会計士 イ・ギュボム" style="width: 64px; height: 80px; object-fit: cover; object-position: top; border-radius: 6px; border: 2px solid #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.15); align-self: center">
-<span style="font-size: 12px; color: #555555">担当会計士 イ・ギュボム</span>
-<span style="font-size: 14px; color: #555555">会計・税務・監査から労務・法務まで</span>
-<span style="font-size: 40px; font-weight: 700; color: #3E6DB0; letter-spacing: 0.12em; line-height: 1.3">窓口はひとつ</span>
-<span style="font-size: 13px; color: #555555">（まどぐちは ひとつ）</span>
-<span style="font-size: 14px; color: #333333; margin-top: 4px">すべての案件で公認会計士が窓口となり、<br>実務の最終チェックまで直接責任を持ちます。</span>
+<div style="flex: 1 1 320px; background: #FFFFFF; border: 2px solid #3E6DB0; padding: 22px; display: flex; flex-direction: column; gap: 8px; text-align: center">
+<div style="display: flex; gap: 14px; align-items: center; justify-content: center">
+<img src="img/profile.jpg" alt="韓国公認会計士 イ・ギュボム" style="width: 92px; height: 116px; object-fit: cover; object-position: top; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.15)">
+<div style="display: flex; flex-direction: column; text-align: left; gap: 2px"><span style="font-size: 13px; color: #555555">韓国公認会計士</span><b style="font-size: 20px">イ・ギュボム</b><span style="font-size: 13px; color: #3E6DB0">「ピーター」とお呼びください</span></div>
+</div>
+<span style="font-size: 14px; color: #555555; margin-top: 6px">会計・税務・監査から労務・法務まで</span>
+<span style="font-size: 40px; font-weight: 700; color: #3E6DB0; letter-spacing: 0.08em; line-height: 1.3">ワンストップ</span>
+<span style="font-size: 14px; color: #333333">すべての案件を、公認会計士が一貫対応いたします。</span>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 8px">
+<div style="border: 1px solid #D8E2EE">
+<div style="background: #D6E4F5; color: #1F3F6E; padding: 14px 18px; font-size: 19px; font-weight: 700">在韓日系法人の皆さまへ — 見落としがちなポイント</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 32px; padding: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<b style="color: #9A3412; font-size: 17px; border-bottom: 1px solid #F0C3A6; padding-bottom: 6px">■ トータルサポート</b>
+<b>・本社向け報告（月次・日本語）</b>
+<span>・法人税申告・税務調整</span>
+<span>・給与計算・社会保険（4大保険）</span>
+<span>・外部監査・内部統制対応</span>
+<span>・移転価格・本社取引の整理</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<b style="color: #3E6DB0; font-size: 17px; border-bottom: 1px solid #B7CAE6; padding-bottom: 6px">■ リスク＆節税チェック</b>
+<b>・税額控除・減免の適用漏れ</b>
+<span>・配当・ロイヤリティの源泉税率</span>
+<span>・駐在員給与の処理・負担区分</span>
+<span>・外国人単一税率（租特法§18の2、19%）</span>
+<span>・韓国VATの還付・0%税率</span>
+</div>
+</div>
+<div style="border-top: 1px solid #D8E2EE; padding: 12px 18px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center">
+<b style="color: #3E6DB0">会計・税務・監査から労務・法務まで、公認会計士が一貫対応いたします</b>
+<button type="button" onClick="{{go.check}}" style="min-height: 44px; padding: 0 16px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer">自社の状況をチェックする ▶</button>
 </div>
 </div>
 </section>
 
 <section style="border-bottom: 1px solid #D8E2EE; background: #FFFFFF">
 <div style="max-width: 1200px; margin: 0 auto; padding: 20px 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
-<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">5年</span><span style="font-size: 14px"><b>日本で5年、実務に従事</b><br><span style="color: #555555">韓国本社から日本法人へ駐在員派遣、丸の内の外資系</span></span></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">5年</span><span style="font-size: 14px"><b>日本で5年、実務に従事</b><br><span style="color: #555555">韓国本社から日本法人へ駐在員派遣、日本企業でも勤務</span></span></div>
 <div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">CPA</span><span style="font-size: 14px"><b>韓国と米国の公認会計士</b><br><span style="color: #555555">英語の本社対応もできます</span></span></div>
 <div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">簿記</span><span style="font-size: 14px"><b>日商簿記2級も取得</b><br><span style="color: #555555">日本の勘定科目で話せます</span></span></div>
-<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">D</span><span style="font-size: 14px"><b>デロイト出身</b><br><span style="color: #555555">監査を受ける側の準備も整えます</span></span></div>
+<div style="display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 10px; background: #F2F7FD"><span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D6E4F5; color: #2F5590; display: flex; align-items: center; justify-content: center; font-weight: 700">D</span><span style="font-size: 14px"><b>デロイト出身</b><br><span style="color: #555555">監査対応もお任せください</span></span></div>
 </div>
 </section>
 
@@ -128,59 +177,37 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 
 <section style="max-width: 1200px; margin: 0 auto; padding: 28px 16px 8px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; border: 1px solid #D8E2EE">
-<button type="button" onClick="{{go.books}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">記帳・月次決算</b><span style="font-size: 12px; color: #555555">AI活用と最終確認</span></button>
-<button type="button" onClick="{{go.report}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">本社向け日本語報告</b><span style="font-size: 12px; color: #555555">月次・連結</span></button>
+<button type="button" onClick="{{go.books}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">経理の丁寧な確認</b><span style="font-size: 12px; color: #555555">毎月、一件ずつ</span></button>
+<button type="button" onClick="{{go.report}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">本社とのやりとり</b><span style="font-size: 12px; color: #555555">日本語で直接</span></button>
 <button type="button" onClick="{{go.check}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">1分セルフチェック</b><span style="font-size: 12px; color: #555555">見落としの点検</span></button>
 <button type="button" onClick="{{go.members}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">メンバー紹介</b><span style="font-size: 12px; color: #555555">日韓の専門家</span></button>
 <button type="button" onClick="{{go.jpqa}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">日本の税務・労務</b><span style="font-size: 12px; color: #555555">Q&amp;A・カレンダー</span></button>
-<button type="button" onClick="{{go.contact}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">ご相談・QR</b><span style="font-size: 12px; color: #555555">LINE・カカオ</span></button>
+<button type="button" onClick="{{go.contact}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">連絡先・地図</b><span style="font-size: 12px; color: #555555">LINE・来所案内</span></button>
 </div>
 </section>
 
-<section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 8px">
-<div style="border: 1px solid #D8E2EE">
-<div style="background: #D6E4F5; color: #1F3F6E; padding: 14px 18px; font-size: 19px; font-weight: 700">在韓日系法人の皆さまへ — 見落としがちなポイント</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 32px; padding: 18px">
-<div style="display: flex; flex-direction: column; gap: 6px">
-<b style="color: #9A3412; font-size: 17px; border-bottom: 1px solid #F0C3A6; padding-bottom: 6px">■ トータルサポート</b>
-<b>・本社向け報告（月次・日本語）</b>
-<span>・法人税申告・税務調整</span>
-<span>・給与計算・社会保険（4大保険）</span>
-<span>・外部監査・内部統制対応</span>
-<span>・移転価格・本社取引の整理</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 6px">
-<b style="color: #3E6DB0; font-size: 17px; border-bottom: 1px solid #B7CAE6; padding-bottom: 6px">■ リスク＆節税チェック</b>
-<b>・税額控除・減免の適用漏れ</b>
-<span>・配当・ロイヤリティの源泉税率</span>
-<span>・駐在員給与の処理・負担区分</span>
-<span>・外国人単一税率（租特法§18の2、19%）</span>
-<span>・韓国VATの還付・0%税率</span>
-</div>
-</div>
-<div style="border-top: 1px solid #D8E2EE; padding: 12px 18px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center">
-<b style="color: #3E6DB0">すべて公認会計士が窓口となり、実務の検収まで直接行います</b>
-<button type="button" onClick="{{go.check}}" style="min-height: 44px; padding: 0 16px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer">自社の状況をチェックする ▶</button>
-</div>
-</div>
-</section>
 
 <section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
 <div style="flex: 1 1 560px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; border: 1px solid #D8E2EE; padding: 18px">
 <img src="img/profile.jpg" alt="イ・ギュボムの写真" style="width: 150px; height: 190px; object-fit: cover; object-position: top; border: 1px solid #D8E2EE">
 <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 8px">
-<b style="font-size: 20px">担当会計士 イ・ギュボム</b>
-<span style="color: #333333">日本で5年間働きました。韓国本社から日本法人へ駐在員として派遣され財務・税務・人事を担当し、その後は丸の内の外資系で本社レポーティングを担当。日本の永住権を持ち、今も日韓を行き来しています。本社が何を気にされるのか、肌感覚でわかる会計士でありたいと考えています。</span>
+<b style="font-size: 20px">韓国公認会計士 イ・ギュボム <span style="font-size: 15px; color: #555555; font-weight: 400">（ピーター）</span></b>
+<span style="color: #333333">日本で5年間働きました。韓国本社から日本法人へ駐在員として派遣され財務・税務・人事を担当し、その後は日本企業でも勤務しました。日本の永住権を持ち、今も日韓を行き来しています。本社が何を気にされるのか、肌感覚でわかる会計士でありたいと考えています。</span>
 <button type="button" onClick="{{go.about}}" style="align-self: flex-start; min-height: 40px; padding: 0 14px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 14px; cursor: pointer">経歴を見る ▶</button>
 </div>
 </div>
 <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-size: 18px; padding-bottom: 8px; border-bottom: 2px solid #3E6DB0">■ お知らせ・制度改正</h2>
+<h2 style="margin: 0; font-size: 18px; padding-bottom: 8px; border-bottom: 2px solid #3E6DB0; display: flex; justify-content: space-between; align-items: baseline">■ お知らせ<button type="button" onClick="{{go.news}}" style="background: none; border: 0; font: inherit; font-size: 13px; color: #3E6DB0; cursor: pointer">一覧 ▶</button></h2>
 <div style="display: flex; flex-direction: column; font-size: 14px">
-<button type="button" onClick="{{go.staff}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>外国人単一税率 19%→21%（改正案）</span><span style="color: #777777">2026.08</span></button>
-<button type="button" onClick="{{go.policy}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>2026年 法人税率 全区間1%引上げ</span><span style="color: #777777">2026.01</span></button>
-<button type="button" onClick="{{go.intl}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>国際取引資料の提出、過料対象を明確化（案）</span><span style="color: #777777">2026.08</span></button>
-<button type="button" onClick="{{go.game}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>ゲーム産業法改正、国会通過</span><span style="color: #777777">2026.10</span></button>
+<sc-for list="{{newsTop}}" as="n" hint-placeholder-count="4"><button type="button" onClick="{{go.news}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>{{n.title}}</span><span style="color: #777777; flex: 0 0 auto">{{n.date}}</span></button></sc-for>
+</div>
+<div style="background: #F6F8FB; border: 1px dashed #C3D0DF; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #4A5565; display: flex; flex-direction: column; gap: 4px">
+<b style="color: #1F3F6E">提携パートナー</b>
+<span>・日系企業の採用に強い人材紹介会社（ソウル）</span>
+<span>・日本語対応の弁護士が在籍する法律事務所</span>
+<span>・駐在員向け住宅に詳しい不動産会社</span>
+<span>・東京の税理士事務所・社会保険労務士事務所</span>
+<span style="font-size: 11px; color: #6B7684">※ 社名は契約上非公開です。ご相談内容に応じてご紹介します。</span>
 </div>
 </div>
 </section>
@@ -206,6 +233,9 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <span>携帯 +82-10-3945-6101（直通）</span>
 <span>代表 02-6356-1105</span>
 <span>gblee@seyeon-tax.com</span>
+<img src="img/line-qr.png" alt="LINEのQRコード" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
+<a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="text-align: center; font-weight: 700; color: #06813C">LINEで相談</a>
+<a href="https://open.kakao.com/o/sF4UcUPi" style="text-align: center; font-weight: 700; color: #3E6DB0">カカオトークで相談</a>
 </div>
 </aside>
 
@@ -213,15 +243,15 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <h2 style="margin: 0; font-size: 24px; padding-bottom: 10px; border-bottom: 2px solid #222222">{{pageTitle}}</h2>
 
 <sc-if value="{{on.books}}" hint-placeholder-val="{{false}}">
-<p style="margin: 0; font-size: 16px"><b>結論：</b>AIで速く、判断は会計士が。そして、貴社自身が数字を確かめられる体制に。</p>
+<p style="margin: 0; font-size: 16px"><b>結論：</b>一件ずつ丁寧に確認。そして、貴社自身が数字を確かめられる体制に。</p>
 <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-weight: 700">
 <span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">証憑の受領</span><span>→</span>
-<span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">AIで仕訳候補</span><span>→</span>
-<span style="border: 1px solid #B5532A; padding: 10px 14px; background: #FFF4EC; color: #9A3412">会計士が全件確認</span><span>→</span>
+<span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">仕訳</span><span>→</span>
+<span style="border: 1px solid #B5532A; padding: 10px 14px; background: #FFF4EC; color: #9A3412">会計士が一件ずつ確認</span><span>→</span>
 <span style="border: 1px solid #3E6DB0; padding: 10px 14px; background: #EFF5FC">日本語月次レポート</span>
 </div>
 <div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
-<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ AIは慎重に</b>→ 自動仕訳をそのまま使わず、勘定科目・税区分は会計士が最終判断</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 丁寧に確認</b>→ 勘定科目・税区分は、会計士が一件ずつ確認します</div>
 <div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 自分で判別できる</b>→ 毎月「確認すべき5項目」チェック表をお渡しし、社内でも異常に気づける</div>
 <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center"><b>▶ 月次でお渡しするもの</b><button type="button" onClick="{{tg.b1}}" style="min-height: 36px; padding: 0 12px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">{{lbl.b1}}</button></div>
@@ -235,7 +265,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
 <div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 連結パッケージ</b>→ 日本基準・IFRSへの組替えと差異説明</div>
 <div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 本社スケジュール</b>→ 月次・四半期の締めに合わせて提出</div>
-<div style="padding: 12px 16px"><b>▶ 本社とのやりとり</b>→ 日本語で直接。グローバル本社とは英語でも対応（東京・丸の内の外資系で本社レポーティングを担当）</div>
+<div style="padding: 12px 16px"><b>▶ 本社とのやりとり</b>→ 日本語で直接。グローバル本社とは英語でも対応（日本での本社レポーティング経験あり）</div>
 </div>
 </sc-if>
 
@@ -322,7 +352,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 
 <sc-if value="{{on.members}}" hint-placeholder-val="{{false}}">
 <div style="background: #EFF5FC; border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 4px">
-<b style="font-size: 18px">窓口はひとつ。その後ろに、日韓の専門家。</b>
+<b style="font-size: 18px">ワンストップ。その後ろに、日韓の専門家。</b>
 <span style="color: #333333">どの分野のご相談も、公認会計士が窓口となり、各専門家の実務を最後まで検収してからお届けします。ご担当者が専門家ごとに説明し直す必要はありません。</span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
@@ -373,7 +403,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <span style="font-size: 13px; color: #3E6DB0; font-weight: 700">日本語で完結・渡韓不要</span>
 <b style="font-size: 24px">イ・ギュボム（李圭範）</b>
 <span style="color: #555555">LEE GYUBUM｜副代表｜公認会計士（韓国・米国ワシントン州）</span>
-<p style="margin: 4px 0 0; color: #333333">日本で5年間働きました（韓国本社から日本法人への駐在員派遣、丸の内の外資系）。日本の永住権を持ち、今も日韓を行き来しています。本社の皆さまが気にされる点、報告の作法、進め方のペースを大切にしています。</p>
+<p style="margin: 4px 0 0; color: #333333">日本で5年間働きました（韓国本社から日本法人への駐在員派遣、日本企業での勤務）。日本の永住権を持ち、今も日韓を行き来しています。本社の皆さまが気にされる点、報告の作法、進め方のペースを大切にしています。</p>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; border-top: 2px solid #222222; font-size: 14px">
@@ -431,15 +461,50 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </sc-if>
 
 <sc-if value="{{on.contact}}" hint-placeholder-val="{{false}}">
-<p style="margin: 0; font-size: 16px">日本語・韓国語・英語で承ります。まずはLINEでお気軽に（見落とし診断は無料）。</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
-<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 8px"><img src="img/line-qr.png" alt="LINEのQRコード" style="width: 150px; height: 150px"><a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="display: flex; align-items: center; justify-content: center; min-height: 44px; width: 100%; background: #06813C; color: #FFFFFF; text-decoration: none; font-weight: 700; border-radius: 3px">LINEで相談</a></div>
-<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 8px"><img src="img/kakao-qr.png" alt="カカオトークのQRコード" style="width: 150px; height: 150px"><a href="https://open.kakao.com/o/sF4UcUPi" style="display: flex; align-items: center; justify-content: center; min-height: 44px; width: 100%; background: #FEE500; color: #191919; text-decoration: none; font-weight: 700; border-radius: 3px">カカオトークで相談</a></div>
+<p style="margin: 0; font-size: 16px">日本語・韓国語・英語で承ります。お電話・LINE・メール、ご来所のいずれも歓迎です。</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px">
 <div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 8px">
-<b>公式メール</b><a href="mailto:gblee@seyeon-tax.com" style="font-weight: 700">gblee@seyeon-tax.com</a>
-<b style="margin-top: 6px">携帯・直通（おすすめ）</b><a href="tel:+821039456101" style="font-weight: 700">+82-10-3945-6101</a>
+<b>携帯・直通（おすすめ）</b><a href="tel:+821039456101" style="font-weight: 700; font-size: 18px">+82-10-3945-6101</a>
 <span style="font-size: 13px; color: #555555">担当会計士に直接つながります。海外からもこの番号へ。</span>
 <b style="margin-top: 6px">代表</b><span>+82-2-6356-1105｜Fax +82-2-6499-1106</span>
+<b style="margin-top: 6px">公式メール</b><a href="mailto:gblee@seyeon-tax.com" style="font-weight: 700">gblee@seyeon-tax.com</a>
+</div>
+<div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; gap: 14px; align-items: center">
+<img src="img/line-qr.png" alt="LINEのQRコード" style="width: 120px; height: 120px">
+<div style="display: flex; flex-direction: column; gap: 8px"><b>LINEで相談</b><a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="font-weight: 700; color: #06813C">LINEを開く</a><a href="https://open.kakao.com/o/sF4UcUPi" style="font-weight: 700; color: #3E6DB0">カカオトークで相談</a></div>
+</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ アクセス</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span>〒06024 ソウル特別市 江南区 彦州路（オンジュロ）159ギル 27 3階<br><span style="color: #555555; font-size: 14px">（서울 강남구 언주로159길 27 3층・1階はカフェ「맥코이 신사」）</span></span>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #222222; font-size: 15px">
+<div style="padding: 10px 0; border-bottom: 1px solid #D8E2EE"><b style="color: #3E6DB0">最寄り駅</b>　地下鉄3号線 狎鴎亭（アックジョン）駅から<b>徒歩約8分</b>（約500m）</div>
+<div style="padding: 10px 0; border-bottom: 1px solid #D8E2EE"><b style="color: #3E6DB0">江南駅から</b>　地下鉄で<b>約22分</b>（2号線→教大駅で3号線に乗換え／新盆唐線→新沙駅で3号線）</div>
+<div style="padding: 10px 0; border-bottom: 1px solid #D8E2EE"><b style="color: #3E6DB0">バス</b>　江南駅から145番で約30分（狎鴎亭駅付近で下車）</div>
+<div style="padding: 10px 0; border-bottom: 1px solid #D8E2EE"><b style="color: #3E6DB0">お車</b>　ご来所の際は事前にご連絡ください</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="https://map.kakao.com/?q=%EC%84%B8%EC%97%B0%ED%9A%8C%EA%B3%84%EB%B2%95%EC%9D%B8" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #3E6DB0; border-radius: 4px; text-decoration: none; font-weight: 700">カカオマップで開く</a>
+<a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C159%EA%B8%B8%2027" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #3E6DB0; border-radius: 4px; text-decoration: none; font-weight: 700">NAVERマップ（建物写真あり）</a>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C159%EA%B8%B8%2027" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid #3E6DB0; border-radius: 4px; text-decoration: none; font-weight: 700">Googleマップ</a>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; border: 1px solid #D8E2EE; border-radius: 8px; background: #F6F9FD; height: 230px; overflow: hidden">
+<div style="position: absolute; left: 30%; top: 0; bottom: 0; width: 10px; background: #F5A623"></div>
+<span style="position: absolute; left: calc(30% + 16px); top: 18px; font-size: 13px; font-weight: 700; color: #B5651D">3号線 狎鴎亭駅</span>
+<div style="position: absolute; left: 0; right: 0; top: 46px; height: 12px; background: #E3E8EF"></div>
+<span style="position: absolute; left: 8px; top: 62px; font-size: 12px; color: #555555">狎鴎亭路</span>
+<div style="position: absolute; left: calc(30% + 10px); top: 52px; width: 34%; height: 110px; border-left: 3px dashed #3E6DB0; border-bottom: 3px dashed #3E6DB0"></div>
+<div style="position: absolute; left: 64%; top: 140px; background: #3E6DB0; color: #FFFFFF; padding: 6px 10px; border-radius: 6px; font-size: 13px; font-weight: 700">セヨン会計法人 3F</div>
+<span style="position: absolute; left: calc(30% + 20px); top: 170px; font-size: 12px; color: #3E6DB0; font-weight: 700">徒歩 約8分</span>
+<span style="position: absolute; right: 10px; bottom: 8px; font-size: 11px; color: #6B7684">略図（正確な位置は地図アプリで）</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<div style="aspect-ratio: 4 / 3; background: #E3E8EF; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #555555">［建物外観の写真］</div>
+<div style="aspect-ratio: 4 / 3; background: #E3E8EF; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 13px; color: #555555">［会議室の写真］<b style="color: #3E6DB0; margin-top: 4px">会議室で無料相談</b></div>
+</div>
 </div>
 </div>
 <div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
@@ -584,15 +649,38 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </sc-if>
 
+<sc-if value="{{on.krqa}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px">韓国で法人を運営するうえで、よくいただくご質問です。質問を押すと答えが開きます。</p>
+<div style="display: flex; flex-direction: column; border-top: 2px solid #3E6DB0">
+<sc-for list="{{kq}}" as="q" hint-placeholder-count="10">
+<div style="{{q.rowStyle}}">
+<button type="button" onClick="{{q.toggle}}" style="width: 100%; min-height: 48px; padding: 10px 12px; background: none; border: 0; text-align: left; font: inherit; font-weight: 700; color: #222222; cursor: pointer; display: flex; justify-content: space-between; gap: 10px"><span>Q{{q.no}}．{{q.q}}</span><span style="color: #3E6DB0">{{q.sign}}</span></button>
+<sc-if value="{{q.open}}" hint-placeholder-val="{{false}}"><div style="padding: 0 12px 14px 40px; color: #333333">{{q.a}}</div></sc-if>
+</div>
+</sc-for>
+</div>
+<span style="font-size: 13px; color: #555555">※ 2026年10月時点の一般的な取扱いです。順次追加します。</span>
+</sc-if>
+
+<sc-if value="{{on.news}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; border-top: 2px solid #3E6DB0">
+<sc-for list="{{news}}" as="n" hint-placeholder-count="4">
+<div style="padding: 14px 8px; border-bottom: 1px solid #E1E8F0; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; gap: 10px; align-items: baseline"><span style="font-size: 13px; color: #777777; min-width: 80px">{{n.date}}</span><b>{{n.title}}</b></div>
+<span style="color: #333333; padding-left: 90px; font-size: 14px">{{n.body}}</span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+
 </main>
 
 <div style="flex: 0 1 120px; min-width: 110px; display: flex; flex-direction: column; border: 1px solid #D8E2EE; text-align: center; font-size: 13px">
 <div style="background: #D6E4F5; color: #1F3F6E; padding: 8px; font-weight: 700">QUICK</div>
-<button type="button" onClick="{{go.service}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; font-weight: 700; color: #9A3412; cursor: pointer">見落とし診断<br><span style="font-size: 11px; font-weight: 400">無料</span></button>
-<button type="button" onClick="{{go.check}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer">1分チェック</button>
+<button type="button" onClick="{{go.service}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; font-weight: 700; color: #9A3412; line-height: 1.3">無料診断<br><span style="font-size: 11px; font-weight: 400">会計士が書面で</span></button>
+<button type="button" onClick="{{go.check}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; line-height: 1.3">1分チェック<br><span style="font-size: 11px">ご自身で</span></button>
 <button type="button" onClick="{{go.members}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer">メンバー</button>
-<a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="display: flex; align-items: center; justify-content: center; min-height: 56px; border-bottom: 1px solid #D8E2EE; text-decoration: none; color: #06813C; font-weight: 700">LINE</a>
-<a href="https://open.kakao.com/o/sF4UcUPi" style="display: flex; align-items: center; justify-content: center; min-height: 56px; border-bottom: 1px solid #D8E2EE; text-decoration: none; color: #191919; font-weight: 700; background: #FEE500">カカオ</a>
+<button type="button" onClick="{{go.contact}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer">連絡先・地図</button>
 <a href="mailto:gblee@seyeon-tax.com" style="display: flex; align-items: center; justify-content: center; min-height: 56px; text-decoration: none; color: #3E6DB0; font-weight: 700">メール</a>
 </div>
 
@@ -620,13 +708,15 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2400}}'>
 var MENU = [
-  { t: '在韓日系法人サポート', subs: [['books', '記帳・月次決算（AI活用）', '記帳・月次（AI活用）'], ['report', '本社向け日本語報告・連結', '本社向け日本語報告'], ['intl', '国際税務・移転価格・VAT', '移転価格・源泉税・VAT'], ['staff', '駐在員・給与・4大保険', '駐在員・4大保険'], ['audit', '外部監査・内部統制', '外部監査・内部統制']] },
-  { t: '見落とし診断', subs: [['service', '無料・見落とし診断のご案内', '無料・見落とし診断'], ['check', '1分セルフチェック', '1分セルフチェック']] },
-  { t: 'メンバー紹介', subs: [['members', 'メンバー紹介', '日韓の専門家チーム'], ['about', '担当会計士プロフィール', 'イ・ギュボムの経歴']] },
-  { t: '事例・コラム', subs: [['cases', '報道に見る成功事例', '成功事例'], ['policy', '今後1・2・3年の制度変更', '1・2・3年の制度変更'], ['roadmap', '10年・20年のお付き合い', '10年・20年']] },
-  { t: 'ご相談', subs: [['contact', 'お問い合わせ・QR・名刺', 'LINE・カカオ・名刺']] },
+  { t: '日系法人サポート', subs: [['books', '毎月の経理を丁寧に確認', '経理の丁寧な確認'], ['report', '本社とのやりとり・連結', '本社とのやりとり'], ['intl', '国際税務・移転価格・VAT', '移転価格・源泉税・VAT'], ['staff', '駐在員・給与・4大保険', '駐在員・4大保険'], ['audit', '外部監査・内部統制', '外部監査・内部統制']] },
+  { t: '新規韓国進出', subs: [['forms', '進出形態の比較', '新設か買収か'], ['diag', 'ステップ診断', '進出形態の診断'], ['taxcmp', '日本との税制比較', '実効税率の差'], ['ma', '買収・吸収合併', 'M&A・合併'], ['game', 'ゲーム・IP企業の論点', 'ゲーム・IP'], ['incent', '補助金・優遇制度', '補助金・優遇']] },
+  { t: '見落とし診断', subs: [['service', '無料・見落とし診断（会計士が書面で）', '無料診断（会計士が書面で）'], ['check', '1分セルフチェック（ご自身で）', '1分セルフチェック']] },
   { t: '日本の税務・労務', subs: [['jpqa', '日本の税務・労務 Q&A', 'Q&A（23問）'], ['jpcal', '日本の税務カレンダー', '税務カレンダー・祝日']] },
-  { t: '韓国進出', subs: [['forms', '進出形態の比較', '新設か買収か'], ['diag', 'ステップ診断', '進出形態の診断'], ['taxcmp', '日本との税制比較', '実効税率の差'], ['ma', '買収・吸収合併', 'M&A・合併'], ['game', 'ゲーム・IP企業の論点', 'ゲーム・IP'], ['incent', '補助金・優遇制度', '補助金・優遇']] }
+  { t: '韓国の税務・労務', subs: [['krqa', '韓国の税務・労務 Q&A', 'Q&A（20問）']] },
+  { t: '事例・コラム', subs: [['cases', '報道に見る成功事例', '成功事例'], ['policy', '今後1・2・3年の制度変更', '1・2・3年の制度変更'], ['roadmap', '10年・20年のお付き合い', '10年・20年']] },
+  { t: 'メンバー', subs: [['members', 'メンバー紹介', '日韓の専門家チーム'], ['about', '担当会計士プロフィール', 'イ・ギュボムの経歴']] },
+  { t: 'お知らせ', subs: [['news', 'お知らせ・更新情報', 'お知らせ一覧']] },
+  { t: '連絡先', subs: [['contact', '連絡先・アクセス', '電話・LINE・地図']] }
 ];
 var DETAILS = ['b1', 'c1', 'c2', 'c3'];
 var NODES = {
@@ -650,7 +740,7 @@ var CHECKS = [
   ['駐在員について、外国人単一税率（租特法§18の2、19%）を検討済みですか？', '有利な課税方式を選ばないまま納税している可能性', '通常税率との比較試算を作成'],
   ['韓国VATの還付・0%税率の対象取引を確認していますか？', '戻るはずのVATを受け取っていない可能性', '対象取引の洗い出しと還付申請'],
   ['本社との取引（ロイヤリティ・役務料）に、移転価格の根拠資料がありますか？', '調査で料率を否認されるリスク', '料率の根拠と契約書を整備'],
-  ['記帳にAIや自動仕訳を使う場合、会計士が最終確認していますか？', '誤った自動仕訳が申告まで残る', 'AIは候補作り、判断は会計士が全件確認']
+  ['記帳の内容を、会計士が一件ずつ確認していますか？', '誤った仕訳が申告まで残る', '会計士が全件を丁寧に確認']
 ];
 var KR_HOL = { '2026-1-1': '신정', '2026-2-16': '설날', '2026-2-17': '설날', '2026-2-18': '설날', '2026-3-2': '삼일절 대체', '2026-5-5': '어린이날', '2026-5-25': '부처님오신날 대체', '2026-6-3': '지방선거', '2026-8-17': '광복절 대체', '2026-9-24': '추석', '2026-9-25': '추석', '2026-9-26': '추석', '2026-10-5': '개천절 대체', '2026-10-9': '한글날', '2026-12-25': '성탄절',
   '2027-1-1': '신정', '2027-2-8': '설날', '2027-2-9': '설날 대체', '2027-3-1': '삼일절', '2027-5-5': '어린이날', '2027-5-13': '부처님오신날', '2027-8-16': '광복절 대체', '2027-9-14': '추석', '2027-9-15': '추석', '2027-9-16': '추석', '2027-10-4': '개천절 대체', '2027-10-11': '한글날 대체', '2027-12-27': '성탄절 대체' };
@@ -800,9 +890,15 @@ var QA_JA = [
   ['2026年10月からインボイス制度で変わる点は？', '免税事業者からの仕入れに係る経過措置の控除割合が80%から50%に縮小しました（2029年9月まで）。']
 ];
 var QA = LANG_JA ? QA_JA : QA_KO;
-var TAB = 'min-height: 52px; padding: 0 18px; border: 0; font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; ';
+var KRQA = [["韓国の法人税率は？", "2026年1月1日以後開始事業年度から、課税標準2億ウォン以下10%、200億ウォン以下20%、3,000億ウォン以下22%、超過分25%。地方所得税（法人税額の10%）を加えると11〜27.5%です。"], ["法人税の申告期限は？", "事業年度終了日の属する月の末日から3か月以内（12月決算なら3月31日）。法人地方所得税はその1か月後（4月30日）。中間予納は事業年度開始から6か月経過後2か月以内（12月決算なら8月31日）です。"], ["付加価値税（VAT）の税率と申告は？", "税率は10%。法人は年4回（1月・4月・7月・10月の各25日）申告します。輸出など一定の取引は0%税率、仕入税額が多い場合は還付を受けられます。"], ["源泉税の納付期限は？", "原則、支払月の翌月10日。常時従業員20人以下などの要件を満たせば、半期ごとの納付特例も申請できます。"], ["退職金の支給は義務ですか？", "義務です（日本と大きく違う点）。1年以上継続勤務し週15時間以上働いた従業員には、勤続1年につき30日分以上の平均賃金を支給します。退職年金（DB・DC）での積立ても可能です。"], ["韓国の最低賃金は？", "全国一律です。2026年は時給10,320ウォン、2027年は10,700ウォン（3.7%引上げ）に決定しています。週休手当を含めた月額換算にも注意が必要です。"], ["年次有給休暇と年次手当は？", "1年間80%以上出勤で15日（3年目以降2年ごとに1日加算、上限25日）。1年未満は月1日。未使用分は原則として年次手当（買取り）の支払義務があり、日本と逆です。使用促進制度を適切に運用すれば支払いを免れます。"], ["週休手当とは？", "週15時間以上働き、所定労働日を皆勤した従業員に、週1日分の有給休日手当を支払う制度です。時給制のアルバイトにも適用されます。"], ["4大保険の料率は？（2026年）", "国民年金9.5%（労使各4.75%）、健康保険7.19%（各3.595%）、長期療養保険は健康保険料の一定率、雇用保険は従業員0.9%＋会社負担、労災保険は会社全額負担です。"], ["日本人駐在員も国民年金に加入しますか？", "日韓社会保障協定により、派遣期間が原則5年以内なら日本の年金のみに加入できます（適用証明書の提出が必要）。健康保険・雇用保険は別途確認が必要です。"], ["外国人の単一税率とは？", "外国人勤労者は、総合課税の代わりに給与総額に19%（地方税込み20.9%）の単一税率を選べます（租特法§18の2）。勤務開始から20年間適用可能。2027年から21%とする改正案が出ています。"], ["日本本社へ配当・ロイヤリティを送るときの源泉税は？", "日韓租税条約により、配当5%（持分25%以上）・15%、利子10%、使用料10%が上限です。軽減税率を受けるには、支払前に制限税率適用申請書の提出が必要です。"], ["年末調整はいつ？", "翌年2月分の給与で精算し、3月10日までに勤労所得の支払明細書を提出します。従業員から控除書類を集める1月がいちばん忙しい時期です。"], ["接待費（交際費）は全額損金になりますか？", "なりません。年間の基本限度は1,200万ウォン（中小企業は3,600万ウォン）に、売上に応じた金額を加えた範囲までです。3万ウォン超は法人カード等の適格証憑が必要です。"], ["外部監査の対象になるのは？", "前事業年度末の資産または売上が500億ウォン以上、もしくは資産120億・負債70億・売上100億ウォン・従業員100人のうち2つ以上に該当する場合などです（有限会社は社員数の要件もあり）。"], ["移転価格の文書化義務は？", "売上1,000億ウォン超かつ国外特殊関係者との取引500億ウォン超の場合、国際取引情報統合報告書（マスター・ローカルファイル）の提出義務があります。それ以下でも料率の根拠は整えておくべきです。"], ["電子税金計算書は必要ですか？", "法人は発行義務があり、発行の翌日までに国税庁へ送信します。遅延・未発行には加算税がかかります。"], ["税務調査は何年さかのぼりますか？", "国税の賦課期間は原則5年、無申告は7年、不正行為は10年です。過去の処理もこの期間は指摘を受け得ます。"], ["労働時間の上限は？", "法定40時間＋延長12時間の週52時間が上限です（常時5人以上の事業場）。延長・夜間・休日労働には50%以上の割増賃金が必要です。"], ["従業員を解雇するときは？", "常時5人以上の事業場では正当な理由が必要です。30日前の予告、または30日分以上の通常賃金の支払いが必要で、書面での通知が要件です。"]];
+var NEWS_DEFAULT = [{"date": "2026-10-02", "title": "日本語サイトを公開しました", "body": "在韓日系法人・日本人個人の皆さま向けに、会計・税務の情報を日本語でお届けします。"}, {"date": "2026-10-01", "title": "ゲーム産業法改正、国会通過", "body": "海外ゲーム会社の国内代理人制度が強化されます（公布6か月後施行）。"}, {"date": "2026-08-01", "title": "2026年 税制改正案（外国人単一税率21%など）", "body": "外国人勤労者の単一税率を19%から21%へ引き上げる案などが発表されました。"}, {"date": "2026-01-01", "title": "法人税率 全区間1%引上げ", "body": "2026年1月1日以後開始事業年度から、10/20/22/25%が適用されます。"}];
+var TAB = 'min-height: 50px; padding: 0 11px; border: 0; font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; ';
 var SIDE = 'display: block; width: 100%; min-height: 46px; padding: 0 16px; text-align: left; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; font-size: 14px; cursor: pointer; ';
 class Component extends DCLogic {
+  componentDidMount() {
+    var self = this;
+    try { fetch('notices.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) { var x = d && d['ja']; if (x && x.length) self.setState({ newsData: x }); }).catch(function () {}); } catch (e) {}
+  }
   renderVals() {
     var s = this.state || {};
     var self = this;
@@ -858,6 +954,9 @@ class Component extends DCLogic {
     var jp = calJP(today, jpOff);
     var qaOpen = s.qa || {};
     var qaItems = QA.map(function (q, i) { var o = !!qaOpen[i]; return { no: i + 1, q: q[0], a: q[1], open: o, sign: o ? '−' : '＋', rowStyle: 'border-bottom: 1px solid #E1E8F0; background: ' + (i % 2 ? '#F6F9FD' : '#FFFFFF') + ';', toggle: function () { var x = Object.assign({}, (self.state || {}).qa || {}); x[i] = !x[i]; self.setState({ qa: x }); } }; });
+    var kqOpen = s.kq || {};
+    var kqItems = KRQA.map(function (q, i) { var o = !!kqOpen[i]; return { no: i + 1, q: q[0], a: q[1], open: o, sign: o ? '−' : '＋', rowStyle: 'border-bottom: 1px solid #E1E8F0; background: ' + (i % 2 ? '#F6F9FD' : '#FFFFFF') + ';', toggle: function () { var x = Object.assign({}, (self.state || {}).kq || {}); x[i] = !x[i]; self.setState({ kq: x }); } }; });
+    var newsList = (s.newsData || NEWS_DEFAULT).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
     var ans = s.ans || {};
     var noCount = 0, answered = 0;
     var BTN = 'min-height: 40px; min-width: 72px; border-radius: 20px; font: inherit; font-weight: 700; cursor: pointer; ';
@@ -893,7 +992,10 @@ class Component extends DCLogic {
       ansYes: function () { answer(true); }, ansNo: function () { answer(false); },
       back: function () { var p = ((self.state || {}).path || []).slice(); p.pop(); self.setState({ path: p }); },
       reset: function () { self.setState({ path: [] }); },
-      kr: kr, jp: jp, qa: qaItems,
+      kr: kr, jp: jp, qa: qaItems, kq: kqItems, news: newsList, newsTop: newsList.slice(0, 4),
+      showPopup: s.popup !== false,
+      popClose: function () { self.setState({ popup: false }); },
+      popToCheck: function () { self.setState({ popup: false, page: 'check' }); try { window.scrollTo(0, 0); } catch (e) {} },
       jpPrev: function () { self.setState({ jpOff: ((self.state || {}).jpOff || 0) - 1 }); },
       jpNext: function () { self.setState({ jpOff: ((self.state || {}).jpOff || 0) + 1 }); },
       checks: checks, noCount: noCount, answered: answered, chkTitle: chkTitle, chkBody: chkBody,
