@@ -85,6 +85,10 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <button type="button" onClick="{{popToCheck}}" style="min-height: 46px; padding: 0 18px; background: #3E6DB0; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">1분 체크하기</button>
 <button type="button" onClick="{{popClose}}" style="min-height: 46px; padding: 0 18px; background: #FFFFFF; color: #333333; border: 1px solid #C3D0DF; border-radius: 4px; font: inherit; cursor: pointer">닫기</button>
 </div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid #E6ECF3; padding-top: 10px">
+<button type="button" onClick="{{popToday}}" style="min-height: 46px; padding: 0 14px; background: #FFFFFF; color: #555555; border: 1px solid #C3D0DF; border-radius: 4px; font: inherit; font-size: 13px; cursor: pointer">오늘 하루 보지 않기</button>
+<button type="button" onClick="{{pop14}}" style="min-height: 46px; padding: 0 14px; background: #FFFFFF; color: #555555; border: 1px solid #C3D0DF; border-radius: 4px; font: inherit; font-size: 13px; cursor: pointer">14일간 보지 않기</button>
+</div>
 </div>
 </div>
 </sc-if>
@@ -115,7 +119,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 
 <section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 8px">
 <div style="border: 1px solid #D8E2EE">
-<div style="background: #D6E4F5; color: #1F3F6E; padding: 14px 18px; font-size: 19px; font-weight: 700">일본계 한국법인 — 놓치기 쉬운 포인트</div>
+<div style="background: #D6E4F5; color: #1F3F6E; padding: 14px 18px; font-size: 19px; font-weight: 700">일본계 한국법인 — 지원 내용 일람</div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 32px; padding: 18px">
 <div style="display: flex; flex-direction: column; gap: 6px">
 <b style="color: #9A3412; font-size: 17px; border-bottom: 1px solid #F0C3A6; padding-bottom: 6px">■ 종합 지원</b>
@@ -461,8 +465,21 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </sc-if>
 
+<sc-if value="{{on.inquiry}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">질문·상담 내용을 양식에 적어 주세요. 작성한 글은 <b>공개되지 않습니다</b>. 담당 회계사에게만 전달되며 <b>3일 이내</b> 메일로 회신드립니다.</p>
+<div style="border: 2px solid #3E6DB0; background: #F1F6FD; padding: 20px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start">
+<b style="font-size: 18px">■ 적어 주실 내용</b>
+<span>・회사명/성함(익명·개인도 가능)</span>
+<span>・회신받을 메일 주소</span>
+<span>・질문 내용(짧은 메모로도 충분합니다)</span>
+<button type="button" onClick="{{openForm}}" style="min-height: 54px; padding: 0 24px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-size: 17px; font-weight: 700; cursor: pointer; margin-top: 4px">✎ 문의 글쓰기</button>
+<span style="font-size: 13px; color: #555555">급하신 경우 카카오톡·휴대폰 010-3945-6101로 연락 주세요.</span>
+</div>
+</sc-if>
+
 <sc-if value="{{on.contact}}" hint-placeholder-val="{{false}}">
 <p style="margin: 0; font-size: 16px">한국어·일본어·영어로 상담합니다. 전화·카카오톡·메일, 방문 모두 환영합니다.</p>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 양식으로 문의하기(3일 이내 회신)</button>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px">
 <div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 8px">
 <b>휴대폰·직통(추천)</b><a href="tel:+821039456101" style="font-weight: 700; font-size: 18px">010-3945-6101</a>
@@ -705,6 +722,10 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2400}}'>
 var PAGE_LANG = 'ko';
+var FORM_URL = ''; // Google フォームのURLを入れる（空ならメールで代替）
+var POP_KEY = 'sy_pop_until';
+function popHidden() { try { var v = +localStorage.getItem(POP_KEY); return v && Date.now() < v; } catch (e) { return false; } }
+function popHide(days) { try { var d = new Date(); if (days === 1) { d.setHours(24, 0, 0, 0); } else { d = new Date(Date.now() + days * 86400000); } localStorage.setItem(POP_KEY, String(d.getTime())); } catch (e) {} }
 var MENU = [
   { t: '일본계 법인 지원', subs: [['books', '매월 경리를 꼼꼼히 확인', '꼼꼼한 경리 확인'], ['report', '본사와의 소통·연결', '본사와의 소통'], ['intl', '국제조세·이전가격·부가세', '이전가격·원천세·부가세'], ['staff', '주재원·급여·4대보험', '주재원·4대보험'], ['audit', '외부감사·내부통제', '외부감사·내부통제']] },
   { t: '신규 한국 진출', subs: [['forms', '진출 형태 비교', '신설 vs 인수'], ['diag', '단계 진단', '진출 형태 진단'], ['taxcmp', '일본과 세제 비교', '실효세율 차이'], ['ma', '인수·흡수합병', 'M&A·합병'], ['game', '게임·IP 기업 논점', '게임·IP'], ['incent', '보조금·우대제도', '보조금·우대']] },
@@ -714,7 +735,7 @@ var MENU = [
   { t: '사례·칼럼', subs: [['cases', '보도로 보는 성공사례', '성공사례'], ['policy', '향후 1·2·3년 제도 변경', '1·2·3년 제도 변경'], ['roadmap', '10년·20년 동행', '10년·20년']] },
   { t: '구성원', subs: [['members', '구성원 소개', '한일 전문가 팀'], ['about', '담당 회계사 프로필', '이규범 경력']] },
   { t: '공지사항', subs: [['news', '공지·업데이트', '공지 목록']] },
-  { t: '연락처', subs: [['contact', '연락처·오시는 길', '전화·카카오·지도']] }
+  { t: '연락처', subs: [['contact', '연락처·오시는 길', '전화·카카오·지도'], ['inquiry', '문의하기(글쓰기)', '글로 질문하기']] }
 ];
 var DETAILS = ['b1', 'c1', 'c2', 'c3'];
 var NODES = {
@@ -991,7 +1012,10 @@ class Component extends DCLogic {
       back: function () { var p = ((self.state || {}).path || []).slice(); p.pop(); self.setState({ path: p }); },
       reset: function () { self.setState({ path: [] }); },
       kr: kr, jp: jp, qa: qaItems, kq: kqItems, news: newsList, newsTop: newsList.slice(0, 4),
-      showPopup: s.popup !== false,
+      showPopup: s.popup !== false && !popHidden(),
+      popToday: function () { popHide(1); self.setState({ popup: false }); },
+      pop14: function () { popHide(14); self.setState({ popup: false }); },
+      openForm: function () { var u = FORM_URL || ('mailto:gblee@seyeon-tax.com?subject=' + encodeURIComponent('홈페이지 문의')); try { if (FORM_URL) window.open(u, '_blank'); else window.location.href = u; } catch (e) {} },
       popClose: function () { self.setState({ popup: false }); },
       popToCheck: function () { self.setState({ popup: false, page: 'check' }); try { window.scrollTo(0, 0); } catch (e) {} },
       jpPrev: function () { self.setState({ jpOff: ((self.state || {}).jpOff || 0) - 1 }); },
