@@ -12,6 +12,14 @@
 <link rel="alternate" hreflang="en" href="https://jp.seyeon-tax.com/en.html">
 <title>世淵（セヨン）会計法人｜在韓日系法人の会計・税務</title>
 <script src="./support.js"></script>
+<style>
+.home-wrap{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;gap:8px;align-items:flex-start}
+.home-side{flex:0 0 210px;margin-top:24px;border:1px solid #D8E2EE;position:sticky;top:12px;background:#FFFFFF}
+.home-main{flex:1 1 0;min-width:0}
+.home-main>section{max-width:none!important}
+@media(min-width:861px){.home-main div[style*="minmax(160px"]{grid-template-columns:repeat(6,1fr)!important}}
+@media(max-width:860px){.home-wrap{flex-direction:column-reverse;padding:0;align-items:stretch}.home-side{position:static;width:auto;align-self:stretch;margin:16px}}
+</style>
 </head>
 <body>
 <x-dc>
@@ -122,6 +130,23 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </section>
 
+<div class="home-wrap">
+<aside class="home-side">
+<div style="padding: 14px; background: #F6F8FB; font-size: 13px; display: flex; flex-direction: column; gap: 4px">
+<b>ご相談窓口</b>
+<span>携帯 +82-10-3945-6101（直通）</span>
+<span>代表 02-6356-1105</span>
+<span>gblee@seyeon-tax.com</span>
+<span style="margin-top: 6px; color: #9A3412; font-weight: 700; text-align: center">軽いご相談でもお気軽に</span>
+<img src="img/line-qr.png" alt="LINEのQRコード" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
+<a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="text-align: center; font-weight: 700; color: #06813C">LINEで相談</a>
+<img src="img/kakao-qr.png" alt="カカオトークのQRコード" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
+<a href="https://open.kakao.com/o/sF4UcUPi" style="text-align: center; font-weight: 700; color: #3E6DB0">カカオトークで相談</a>
+<span style="font-size: 12px; color: #555555; text-align: center">海外からもLINE・カカオ通話なら無料です</span>
+<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><b style="font-size: 15px">✎ お問い合わせフォーム</b><span style="font-size: 11.5px; opacity: 0.9">1分で書けます・3日以内に返信</span></button>
+</div>
+</aside>
+<div class="home-main">
 <section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 8px">
 <div style="border: 1px solid #D8E2EE; border-radius: 10px; overflow: hidden; display: flex; flex-wrap: wrap">
 <div style="flex: 1 1 380px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
@@ -149,6 +174,17 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </section>
 
+<section style="max-width: 1200px; margin: 0 auto; padding: 28px 16px 8px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; border: 1px solid #D8E2EE">
+<button type="button" onClick="{{go.books}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">経理の丁寧な確認</b><span style="font-size: 12px; color: #555555">毎月、一件ずつ</span></button>
+<button type="button" onClick="{{go.report}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">本社とのやりとり</b><span style="font-size: 12px; color: #555555">日本語で直接</span></button>
+<button type="button" onClick="{{go.check}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">1分セルフチェック</b><span style="font-size: 12px; color: #555555">見落としの点検</span></button>
+<button type="button" onClick="{{go.members}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">メンバー紹介</b><span style="font-size: 12px; color: #555555">日韓の専門家</span></button>
+<button type="button" onClick="{{go.jpqa}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">日本の税務・労務</b><span style="font-size: 12px; color: #555555">Q&amp;A・カレンダー</span></button>
+<button type="button" onClick="{{go.contact}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">連絡先・地図</b><span style="font-size: 12px; color: #555555">LINE・来所案内</span></button>
+</div>
+</section>
+
 <section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
 <div style="flex: 1 1 560px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; border: 1px solid #D8E2EE; padding: 18px">
 <img src="img/profile.jpg" alt="イ・ギュボムの写真" style="width: 150px; height: 190px; object-fit: cover; object-position: top; border: 1px solid #D8E2EE">
@@ -163,34 +199,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <div style="display: flex; flex-direction: column; font-size: 14px">
 <sc-for list="{{newsTop}}" as="n" hint-placeholder-count="4"><button type="button" onClick="{{go.news}}" style="background: none; border: 0; border-bottom: 1px dotted #AAB6C5; padding: 10px 0; text-align: left; font: inherit; cursor: pointer; display: flex; justify-content: space-between; gap: 8px"><span>{{n.title}}</span><span style="color: #777777; flex: 0 0 auto">{{n.date}}</span></button></sc-for>
 </div>
-<div style="background: #F6F8FB; border: 1px dashed #C3D0DF; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #4A5565; display: flex; flex-direction: column; gap: 4px">
-<b style="color: #1F3F6E">提携パートナー</b>
-<span>・日系企業の採用に強い人材紹介会社（ソウル）</span>
-<span>・日本語対応の弁護士が在籍する法律事務所</span>
-<span>・駐在員向け住宅に詳しい不動産会社</span>
-<span>・東京の税理士事務所・社会保険労務士事務所</span>
-<span style="font-size: 11px; color: #6B7684">※ その他の協力会社は、ご相談時にご紹介します。</span>
-</div>
-<div style="background: #FFFFFF; border: 1px solid #D8E2EE; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #4A5565; display: flex; flex-direction: column; gap: 2px">
-<b style="color: #1F3F6E; margin-bottom: 4px">協力会社・関連機関</b>
-<a href="https://www.k-withus.kr/" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>K-Withus ↗</span><span style="color:#6B7684;font-size:12px">ビザ・出入国</span></a>
-<div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>新韓銀行</span><span style="color:#6B7684;font-size:12px">メインバンク</span></div>
-<a href="https://www.investkorea.org" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>Invest KOREA ↗</span><span style="color:#6B7684;font-size:12px">外国人投資支援（KOTRA）</span></a>
-<a href="https://www.nts.go.kr/english/main.do" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>韓国国税庁 ↗</span><span style="color:#6B7684;font-size:12px">国税庁（英語）</span></a>
-<a href="https://www.hometax.go.kr" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>Hometax ↗</span><span style="color:#6B7684;font-size:12px">電子申告ポータル</span></a>
-<span style="font-size: 11px; color: #6B7684; margin-top: 4px">※ 関連機関のリンクは参考用です。</span>
-</div>
-</div>
-</section>
 
-<section style="max-width: 1200px; margin: 0 auto; padding: 28px 16px 8px">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; border: 1px solid #D8E2EE">
-<button type="button" onClick="{{go.books}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">経理の丁寧な確認</b><span style="font-size: 12px; color: #555555">毎月、一件ずつ</span></button>
-<button type="button" onClick="{{go.report}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">本社とのやりとり</b><span style="font-size: 12px; color: #555555">日本語で直接</span></button>
-<button type="button" onClick="{{go.check}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">1分セルフチェック</b><span style="font-size: 12px; color: #555555">見落としの点検</span></button>
-<button type="button" onClick="{{go.members}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">メンバー紹介</b><span style="font-size: 12px; color: #555555">日韓の専門家</span></button>
-<button type="button" onClick="{{go.jpqa}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">日本の税務・労務</b><span style="font-size: 12px; color: #555555">Q&amp;A・カレンダー</span></button>
-<button type="button" onClick="{{go.contact}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">連絡先・地図</b><span style="font-size: 12px; color: #555555">LINE・来所案内</span></button>
 </div>
 </section>
 
@@ -230,6 +239,30 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </div>
 </section>
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 32px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start">
+<div style="background: #F6F8FB; border: 1px dashed #C3D0DF; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #4A5565; display: flex; flex-direction: column; gap: 4px">
+<b style="color: #1F3F6E">提携パートナー</b>
+<span>・日系企業の採用に強い人材紹介会社（ソウル）</span>
+<span>・日本語対応の弁護士が在籍する法律事務所</span>
+<span>・駐在員向け住宅に詳しい不動産会社</span>
+<span>・東京の税理士事務所・社会保険労務士事務所</span>
+<span style="font-size: 11px; color: #6B7684">※ その他の協力会社は、ご相談時にご紹介します。</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #D8E2EE; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #4A5565; display: flex; flex-direction: column; gap: 2px">
+<b style="color: #1F3F6E; margin-bottom: 4px">協力会社・関連機関</b>
+<a href="https://www.k-withus.kr/" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>K-Withus ↗</span><span style="color:#6B7684;font-size:12px">ビザ・出入国</span></a>
+<div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>新韓銀行</span><span style="color:#6B7684;font-size:12px">メインバンク</span></div>
+<a href="https://www.investkorea.org" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>Invest KOREA ↗</span><span style="color:#6B7684;font-size:12px">外国人投資支援（KOTRA）</span></a>
+<a href="https://www.nts.go.kr/english/main.do" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>韓国国税庁 ↗</span><span style="color:#6B7684;font-size:12px">国税庁（英語）</span></a>
+<a href="https://www.hometax.go.kr" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>Hometax ↗</span><span style="color:#6B7684;font-size:12px">電子申告ポータル</span></a>
+<span style="font-size: 11px; color: #6B7684; margin-top: 4px">※ 関連機関のリンクは参考用です。</span>
+</div>
+</div>
+</section>
+</div>
+</div>
 </sc-if>
 
 <sc-if value="{{isSub}}" hint-placeholder-val="{{false}}">
