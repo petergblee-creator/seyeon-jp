@@ -252,6 +252,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <img src="img/line-qr.png" alt="LINE QR코드" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
 <a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="text-align: center; font-weight: 700; color: #06813C">LINE 상담</a>
 <span style="font-size: 12px; color: #555555; text-align: center">가벼운 상담도 편하게. 해외에서도 통화 무료</span>
+<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><b style="font-size: 15px">✎ 문의하기 양식</b><span style="font-size: 11.5px; opacity: 0.9">1분이면 작성·3일 이내 회신</span></button>
 </div>
 </aside>
 
@@ -485,18 +486,6 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </sc-if>
 
-<sc-if value="{{on.inquiry}}" hint-placeholder-val="{{false}}">
-<p style="margin: 0; font-size: 16px; line-height: 1.8">질문·상담 내용을 양식에 적어 주세요. 작성한 글은 <b>공개되지 않습니다</b>. 담당 회계사에게만 전달되며 <b>3일 이내</b> 메일로 회신드립니다.</p>
-<div style="border: 2px solid #3E6DB0; background: #F1F6FD; padding: 20px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start">
-<b style="font-size: 18px">■ 적어 주실 내용</b>
-<span>・회사명/성함(익명·개인도 가능)</span>
-<span>・회신받을 메일 주소</span>
-<span>・질문 내용(짧은 메모로도 충분합니다)</span>
-<button type="button" onClick="{{openForm}}" style="min-height: 54px; padding: 0 24px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-size: 17px; font-weight: 700; cursor: pointer; margin-top: 4px">✎ 문의 글쓰기</button>
-<span style="font-size: 13px; color: #555555">급하신 경우 카카오톡·휴대폰 010-3945-6101로 연락 주세요.</span>
-</div>
-</sc-if>
-
 <sc-if value="{{on.contact}}" hint-placeholder-val="{{false}}">
 <p style="margin: 0; font-size: 16px">한국어·일본어·영어로 상담합니다. 전화·카카오톡·메일, 방문 모두 환영합니다.</p>
 <button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 양식으로 문의하기(3일 이내 회신)</button>
@@ -505,7 +494,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <b>휴대폰·직통(추천)</b><a href="tel:+821039456101" style="font-weight: 700; font-size: 18px">010-3945-6101</a>
 <span style="font-size: 13px; color: #555555">담당 회계사에게 바로 연결됩니다.</span>
 <b style="margin-top: 6px">대표</b><span>02-6356-1105｜팩스 02-6499-1106</span>
-<b style="margin-top: 6px">공식 메일</b><a href="mailto:gblee@seyeon-tax.com" style="font-weight: 700">gblee@seyeon-tax.com</a>
+<b style="margin-top: 6px">공식 메일</b><span style="font-weight: 700">gblee@seyeon-tax.com</span>
 </div>
 <div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; gap: 14px; align-items: center">
 <img src="img/kakao-qr.png" alt="카카오톡 QR코드" style="width: 120px; height: 120px">
@@ -715,7 +704,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <button type="button" onClick="{{go.check}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; line-height: 1.3">1분 체크<br><span style="font-size: 11px">직접 해보기</span></button>
 <button type="button" onClick="{{go.members}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer">구성원</button>
 <button type="button" onClick="{{go.contact}}" style="min-height: 56px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer">연락처·지도</button>
-<a href="mailto:gblee@seyeon-tax.com" style="display: flex; align-items: center; justify-content: center; min-height: 56px; text-decoration: none; color: #3E6DB0; font-weight: 700">메일</a>
+<button type="button" onClick="{{openForm}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; min-height: 56px; background: #FFFFFF; border: 0; font: inherit; color: #B5532A; font-weight: 700; cursor: pointer; line-height: 1.3">문의하기<br><span style="font-size: 11px; font-weight: 400; color: #555555">양식</span></button>
 </div>
 
 </div>
@@ -755,7 +744,7 @@ var MENU = [
   { t: '사례·칼럼', subs: [['cases', '보도로 보는 성공사례', '성공사례'], ['policy', '향후 1·2·3년 제도 변경', '1·2·3년 제도 변경'], ['roadmap', '10년·20년 동행', '10년·20년']] },
   { t: '구성원', subs: [['members', '구성원 소개', '한일 전문가 팀'], ['about', '담당 회계사 프로필', '이규범 경력']] },
   { t: '공지사항', subs: [['news', '공지·업데이트', '공지 목록']] },
-  { t: '연락처', subs: [['contact', '연락처·오시는 길', '전화·카카오·지도'], ['inquiry', '문의하기(글쓰기)', '글로 질문하기']] }
+  { t: '연락처', subs: [['contact', '연락처·오시는 길', '전화·카카오·지도']] }
 ];
 var DETAILS = ['b1', 'c1', 'c2', 'c3'];
 var NODES = {
@@ -1035,7 +1024,7 @@ class Component extends DCLogic {
       showPopup: s.popup !== false && !popHidden(),
       popToday: function () { popHide(1); self.setState({ popup: false }); },
       pop14: function () { popHide(14); self.setState({ popup: false }); },
-      openForm: function () { var u = FORM_URL || ('mailto:gblee@seyeon-tax.com?subject=' + encodeURIComponent('홈페이지 문의')); try { if (FORM_URL) window.open(u, '_blank'); else window.location.href = u; } catch (e) {} },
+      openForm: function () { try { window.open(FORM_URL, '_blank'); } catch (e) {} },
       popClose: function () { self.setState({ popup: false }); },
       popToCheck: function () { self.setState({ popup: false, page: 'check' }); try { window.scrollTo(0, 0); } catch (e) {} },
       jpPrev: function () { self.setState({ jpOff: ((self.state || {}).jpOff || 0) - 1 }); },
