@@ -46,7 +46,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <a href="tel:+821039456101" style="font-size: 19px; font-weight: 700; color: #222222; text-decoration: none">+82-10-3945-6101</a>
 <span style="font-size: 12px; color: #555555">대표 02-6356-1105｜해외에서는 카카오·LINE 통화 무료</span>
 </div>
-<button type="button" onClick="{{go.service}}" style="min-height: 48px; padding: 0 18px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer; line-height: 1.3">무료 세무 점검<br><span style="font-size: 11px; font-weight: 400">놓친 부분을 무료로 점검</span></button>
+<button type="button" onClick="{{go.service}}" style="min-height: 48px; padding: 0 18px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer; line-height: 1.3">회계사 무료 점검<br><span style="font-size: 11px; font-weight: 400">놓친 부분을 무료로 점검</span></button>
 </div>
 </div>
 
@@ -101,8 +101,8 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <h1 style="margin: 0; font-size: clamp(22px, 2.8vw, 31px); line-height: 1.5; font-weight: 700">관행대로 해온 처리로<br>몇 년째 손해 보고 있지 않습니까?</h1>
 <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.8">「전임자 방식 그대로」「사무소에 맡긴 그대로」. 확인하려 하지 않으면 놓친 부분은 몇 년이고 이어집니다. AI에 물어도 일반론은 나오지만, 중요한 것은 회사 상황을 말로 정리해 「이렇게 되어 있지 않습니까」 하고 하나씩 확인하는 것입니다.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px">
-<button type="button" onClick="{{go.check}}" style="min-height: 52px; padding: 0 20px; background: #3E6DB0; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">1분 셀프체크 ▶</button>
-<button type="button" onClick="{{go.service}}" style="min-height: 52px; padding: 0 20px; background: #FFFFFF; color: #B5532A; border: 2px solid #B5532A; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">무료 세무 점검이란</button>
+<button type="button" onClick="{{go.check}}" style="min-height: 60px; padding: 6px 20px; line-height: 1.35; background: #3E6DB0; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">1분 셀프체크 ▶<br><span style="font-size: 12px; font-weight: 400">직접, 그 자리에서</span></button>
+<button type="button" onClick="{{go.service}}" style="min-height: 60px; padding: 6px 20px; line-height: 1.35; background: #FFFFFF; color: #B5532A; border: 2px solid #B5532A; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">회계사 무료 점검 ▶<br><span style="font-size: 12px; font-weight: 400">자료를 주고받아 서면으로</span></button>
 </div>
 </div>
 <div style="flex: 1 1 320px; background: #FFFFFF; border: 2px solid #3E6DB0; padding: 22px; display: flex; flex-direction: column; gap: 8px; text-align: center">
@@ -731,7 +731,7 @@ function popHide(days) { try { var d = new Date(); if (days === 1) { d.setHours(
 var MENU = [
   { t: '일본계 법인 지원', subs: [['books', '매월 경리를 꼼꼼히 확인', '꼼꼼한 경리 확인'], ['report', '본사와의 소통·연결', '본사와의 소통'], ['intl', '국제조세·이전가격·부가세', '이전가격·원천세·부가세'], ['staff', '주재원·급여·4대보험', '주재원·4대보험'], ['audit', '외부감사·내부통제', '외부감사·내부통제']] },
   { t: '신규 한국 진출', subs: [['forms', '진출 형태 비교', '신설 vs 인수'], ['diag', '단계 진단', '진출 형태 진단'], ['taxcmp', '일본과 세제 비교', '실효세율 차이'], ['ma', '인수·흡수합병', 'M&A·합병'], ['game', '게임·IP 기업 논점', '게임·IP'], ['incent', '보조금·우대제도', '보조금·우대']] },
-  { t: '세무 점검', subs: [['service', '무료 세무 점검(회계사가 서면으로)', '무료 점검(회계사가 서면으로)'], ['check', '1분 셀프체크(직접 해보기)', '1분 셀프체크']] },
+  { t: '세무 점검', subs: [['service', '회계사 무료 점검(자료를 받아 서면으로)', '회계사 무료 점검'], ['check', '1분 셀프체크(직접 해보기)', '1분 셀프체크']] },
   { t: '일본 세무·노무', subs: [['jpqa', '일본 세무·노무 Q&A', 'Q&A(23문항)'], ['jpcal', '일본 세무 캘린더', '세무 캘린더·공휴일']] },
   { t: '한국 세무·노무', subs: [['krqa', '한국 세무·노무 Q&A', 'Q&A(20문항)']] },
   { t: '사례·칼럼', subs: [['cases', '보도로 보는 성공사례', '성공사례'], ['policy', '향후 1·2·3년 제도 변경', '1·2·3년 제도 변경'], ['roadmap', '10년·20년 동행', '10년·20년']] },
