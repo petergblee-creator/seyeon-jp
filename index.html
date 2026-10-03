@@ -694,7 +694,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <sc-for list="{{news}}" as="n" hint-placeholder-count="4">
 <div style="padding: 14px 8px; border-bottom: 1px solid #E1E8F0; display: flex; flex-direction: column; gap: 4px">
 <div style="display: flex; gap: 10px; align-items: baseline"><span style="font-size: 13px; color: #777777; min-width: 80px">{{n.date}}</span><b>{{n.title}}</b></div>
-<span style="color: #333333; padding-left: 90px; font-size: 14px">{{n.body}}</span>
+<span style="color: #333333; padding-left: 90px; font-size: 14px; white-space: pre-line; line-height: 1.8">{{n.body}}</span>
 </div>
 </sc-for>
 </div>
@@ -734,7 +734,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2400}}'>
-var FORM_URL = ''; // Google フォームのURLを入れる（空ならメールで代替）
+var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSevQzlhgkgap0op6dqyYvPQt76ykDsQnmt7DGhrQvfp15jkeg/viewform'; // Google フォームのURLを入れる（空ならメールで代替）
 var POP_KEY = 'sy_pop_until';
 function popHidden() { try { var v = +localStorage.getItem(POP_KEY); return v && Date.now() < v; } catch (e) { return false; } }
 function popHide(days) { try { var d = new Date(); if (days === 1) { d.setHours(24, 0, 0, 0); } else { d = new Date(Date.now() + days * 86400000); } localStorage.setItem(POP_KEY, String(d.getTime())); } catch (e) {} }
@@ -987,7 +987,7 @@ class Component extends DCLogic {
     var qaItems = QA.map(function (q, i) { var o = !!qaOpen[i]; return { no: i + 1, q: q[0], a: q[1], open: o, sign: o ? '−' : '＋', rowStyle: 'border-bottom: 1px solid #E1E8F0; background: ' + (i % 2 ? '#F6F9FD' : '#FFFFFF') + ';', toggle: function () { var x = Object.assign({}, (self.state || {}).qa || {}); x[i] = !x[i]; self.setState({ qa: x }); } }; });
     var kqOpen = s.kq || {};
     var kqItems = KRQA.map(function (q, i) { var o = !!kqOpen[i]; return { no: i + 1, q: q[0], a: q[1], open: o, sign: o ? '−' : '＋', rowStyle: 'border-bottom: 1px solid #E1E8F0; background: ' + (i % 2 ? '#F6F9FD' : '#FFFFFF') + ';', toggle: function () { var x = Object.assign({}, (self.state || {}).kq || {}); x[i] = !x[i]; self.setState({ kq: x }); } }; });
-    var newsList = (s.newsData || NEWS_DEFAULT).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    var newsList = (s.newsData || NEWS_DEFAULT).slice().sort(function (a, b) { if (!!a.pin !== !!b.pin) return a.pin ? -1 : 1; return a.date < b.date ? 1 : -1; }).map(function (n) { return Object.assign({}, n, { title: (n.pin ? '📌 ' : '') + n.title }); });
     var ans = s.ans || {};
     var noCount = 0, answered = 0;
     var BTN = 'min-height: 40px; min-width: 72px; border-radius: 20px; font: inherit; font-weight: 700; cursor: pointer; ';
