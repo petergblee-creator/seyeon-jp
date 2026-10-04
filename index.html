@@ -874,6 +874,14 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 
 <div style="max-width: 1200px; margin: 0 auto; padding: 0 16px 16px; font-size: 13px; color: #555555">※ 労務・法務は、提携する社会保険労務士・公認労務士・弁護士と連携して対応します（窓口・最終検収は公認会計士）。</div>
 
+<nav aria-label="sitemap" style="background: #0B2A6B; color: #FFFFFF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 34px 16px 30px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 10px; margin-bottom: 18px"><b style="font-size: 17px; letter-spacing: 0.04em">サイトマップ — すべてのメニュー</b><button type="button" onClick="{{go.home}}" style="background: none; border: 1px solid rgba(255,255,255,0.5); color: #FFFFFF; border-radius: 3px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer">HOME ▲</button></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 22px 20px">
+<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="display: flex; flex-direction: column; gap: 7px"><b style="font-size: 14.5px; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 8px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 11px; text-align: left; color: #C9D8F2; font: inherit; font-size: 13.5px; cursor: pointer">{{s.t}}</button></sc-for></div></sc-for>
+</div>
+</div>
+</nav>
 <footer style="background: #EEF2F7; color: #4A5565; border-top: 1px solid #D8E2EE">
 <div style="max-width: 1200px; margin: 0 auto; padding: 28px 16px; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; font-size: 13px">
 <div style="display: flex; flex-direction: column; gap: 4px">
@@ -1177,6 +1185,7 @@ class Component extends DCLogic {
     else if (noCount <= 5) { chkTitle = '部分的に見落としがあります。'; chkBody = '今の事務所はそのままに、足りない部分だけ並走することもできます。'; }
     else { chkTitle = '慣例のまま、見直されていない箇所が多いようです。'; chkBody = '一度、日本語で現状をお聞かせください。替えるべきかどうかから一緒に判断します。'; }
     return {
+      sitemap: MENU.map(function (m) { return { t: m.t, subs: m.subs.map(function (sb) { return { t: sb[1], go: go[sb[0]] }; }) }; }),
       go: go, on: on, top: top, side: side, isSub: page !== 'home',
       homeTab: TAB + (page === 'home' ? 'background: #FFFFFF; color: #2F5590;' : 'background: transparent; color: #1F3F6E;'),
       catTitle: cat ? cat.t : '', pageTitle: titles[page] || '',

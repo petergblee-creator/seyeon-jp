@@ -863,6 +863,14 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 
 <div style="max-width: 1200px; margin: 0 auto; padding: 0 16px 16px; font-size: 13px; color: #555555">※ 노무·법무는 제휴 노무사·변호사와 연계해 대응합니다(창구·최종 검수는 공인회계사).</div>
 
+<nav aria-label="sitemap" style="background: #0B2A6B; color: #FFFFFF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 34px 16px 30px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 10px; margin-bottom: 18px"><b style="font-size: 17px; letter-spacing: 0.04em">사이트맵 — 전체 메뉴</b><button type="button" onClick="{{go.home}}" style="background: none; border: 1px solid rgba(255,255,255,0.5); color: #FFFFFF; border-radius: 3px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer">HOME ▲</button></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 22px 20px">
+<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="display: flex; flex-direction: column; gap: 7px"><b style="font-size: 14.5px; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 8px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 11px; text-align: left; color: #C9D8F2; font: inherit; font-size: 13.5px; cursor: pointer">{{s.t}}</button></sc-for></div></sc-for>
+</div>
+</div>
+</nav>
 <footer style="background: #EEF2F7; color: #4A5565; border-top: 1px solid #D8E2EE">
 <div style="max-width: 1200px; margin: 0 auto; padding: 28px 16px; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; font-size: 13px">
 <div style="display: flex; flex-direction: column; gap: 4px">
@@ -1167,6 +1175,7 @@ class Component extends DCLogic {
     else if (noCount <= 5) { chkTitle = '일부 누락이 있습니다.'; chkBody = '기존 사무소는 그대로 두고 부족한 부분만 함께할 수도 있습니다.'; }
     else { chkTitle = '관행대로 점검되지 않은 부분이 많아 보입니다.'; chkBody = '현황을 한번 들려주세요. 바꿔야 할지부터 함께 판단합니다.'; }
     return {
+      sitemap: MENU.map(function (m) { return { t: m.t, subs: m.subs.map(function (sb) { return { t: sb[1], go: go[sb[0]] }; }) }; }),
       go: go, on: on, top: top, side: side, isSub: page !== 'home',
       homeTab: TAB + (page === 'home' ? 'background: #FFFFFF; color: #2F5590;' : 'background: transparent; color: #1F3F6E;'),
       catTitle: cat ? cat.t : '', pageTitle: titles[page] || '',
