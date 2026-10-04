@@ -81,8 +81,8 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <sc-if value="{{megaOpen}}" hint-placeholder-val="{{false}}">
 <div class="sy-mega" style="position: absolute; left: 0; right: 0; top: 100%; background: #0B2A6B; color: #FFFFFF; box-shadow: 0 14px 30px rgba(0,0,0,0.25); border-top: 3px solid #B5532A">
 <div style="max-width: 1200px; margin: 0 auto; padding: 22px 16px 24px">
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px 20px">
-<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="{{g.style}}"><b style="font-size: 14.5px; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 8px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 11px; text-align: left; color: #C9D8F2; font: inherit; font-size: 13.5px; cursor: pointer">{{s.t}}</button></sc-for></div></sc-for>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(136px, 1fr)); gap: 18px 10px">
+<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="{{g.style}}"><b style="font-size: 13.5px; white-space: nowrap; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 7px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 calc(4px + 1em); text-indent: -1em; text-align: left; color: #C9D8F2; font: inherit; font-size: 13px; line-height: 1.45; cursor: pointer">・{{s.t}}</button></sc-for></div></sc-for>
 </div>
 </div>
 </div>
@@ -190,8 +190,8 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 
 <section style="max-width: 1200px; margin: 0 auto; padding: 28px 16px 8px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; border: 1px solid #D8E2EE">
-<button type="button" onClick="{{go.books}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">経理の丁寧な確認</b><span style="font-size: 12px; color: #555555">毎月、一件ずつ</span></button>
-<button type="button" onClick="{{go.report}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">本社とのやりとり</b><span style="font-size: 12px; color: #555555">日本語で直接</span></button>
+<button type="button" onClick="{{go.books}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">記帳・決算</b><span style="font-size: 12px; color: #555555">毎月、一件ずつ</span></button>
+<button type="button" onClick="{{go.report}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">本社レポーティング</b><span style="font-size: 12px; color: #555555">日本語で直接</span></button>
 <button type="button" onClick="{{go.check}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">1分セルフチェック</b><span style="font-size: 12px; color: #555555">見落としの点検</span></button>
 <button type="button" onClick="{{go.members}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">メンバー紹介</b><span style="font-size: 12px; color: #555555">日韓の専門家</span></button>
 <button type="button" onClick="{{go.jpqa}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">日本の税務・労務</b><span style="font-size: 12px; color: #555555">Q&amp;A・カレンダー</span></button>
@@ -313,6 +313,17 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 
 <main style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 2px solid #222222"><h2 style="margin: 0; font-size: 24px">{{pageTitle}}</h2><sc-if value="{{on.service}}" hint-placeholder-val="{{false}}"><div style="display: flex; flex-direction: column; align-items: center; gap: 3px"><b style="color: #D32F2F; font-size: 13px">ご連絡を受けるには！</b><button type="button" onClick="{{openForm}}" style="min-height: 44px; padding: 0 18px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer; white-space: nowrap">✎ フォームで申し込む</button></div></sc-if></div>
+
+<sc-if value="{{on.close}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8"><b>結論：</b>毎月の締めから年次決算、法人税の申告まで。韓国基準（K-GAAP）の決算書を作り、本社の数字との違いも日本語で説明します。</p>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 月次決算</b>→ 毎月の締め・試算表・前月との差異コメント</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 年次決算</b>→ 決算整理と決算書（K-GAAP）の作成。監査がある場合は監査人への対応も</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 法人税申告</b>→ 税務調整と申告（12月決算は3月末）、法人地方所得税（4月末）</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 中間予納</b>→ 8月末（12月決算）。前年実績と仮決算を比べ、有利な方を選択</div>
+<div style="padding: 12px 16px;"><b>▶ 本社との差異</b>→ K-GAAPと日本基準・IFRSの違いを一覧で説明</div>
+</div>
+</sc-if>
 
 <sc-if value="{{on.books}}" hint-placeholder-val="{{false}}">
 <p style="margin: 0; font-size: 16px"><b>結論：</b>一件ずつ丁寧に確認。そして、貴社自身が数字を確かめられる体制に。</p>
@@ -894,8 +905,8 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <nav aria-label="sitemap" style="background: #0B2A6B; color: #FFFFFF">
 <div style="max-width: 1200px; margin: 0 auto; padding: 34px 16px 30px">
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 10px; margin-bottom: 18px"><b style="font-size: 17px; letter-spacing: 0.04em">サイトマップ — すべてのメニュー</b><button type="button" onClick="{{go.home}}" style="background: none; border: 1px solid rgba(255,255,255,0.5); color: #FFFFFF; border-radius: 3px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer">HOME ▲</button></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 22px 20px">
-<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="display: flex; flex-direction: column; gap: 7px"><b style="font-size: 14.5px; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 8px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 11px; text-align: left; color: #C9D8F2; font: inherit; font-size: 13.5px; cursor: pointer">{{s.t}}</button></sc-for></div></sc-for>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(136px, 1fr)); gap: 22px 10px">
+<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="display: flex; flex-direction: column; gap: 7px"><b style="font-size: 13.5px; white-space: nowrap; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 7px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 calc(4px + 1em); text-indent: -1em; text-align: left; color: #C9D8F2; font: inherit; font-size: 13px; line-height: 1.45; cursor: pointer">・{{s.t}}</button></sc-for></div></sc-for>
 </div>
 </div>
 </nav>
@@ -918,15 +929,13 @@ var POP_KEY = 'sy_pop_until';
 function popHidden() { try { var v = +localStorage.getItem(POP_KEY); return v && Date.now() < v; } catch (e) { return false; } }
 function popHide(days) { try { var d = new Date(); if (days === 1) { d.setHours(24, 0, 0, 0); } else { d = new Date(Date.now() + days * 86400000); } localStorage.setItem(POP_KEY, String(d.getTime())); } catch (e) {} }
 var MENU = [
-  { t: '日系法人サポート', subs: [['books', '毎月の経理を丁寧に確認', '経理の丁寧な確認'], ['report', '本社とのやりとり・連結', '本社とのやりとり'], ['intl', '国際税務・移転価格・VAT', '移転価格・源泉税・VAT'], ['staff', '駐在員・給与・4大保険', '駐在員・4大保険'], ['audit', '外部監査・内部統制', '外部監査・内部統制']] },
-  { t: 'サービス', subs: [['eaudit', '外部監査（法定監査）', '法定監査'], ['vaudit', '任意監査（本社パッケージ）', '本社パッケージ監査'], ['entry', '韓国進出・運営・撤退', '進出から撤退まで']] },
+  { t: 'サービス', subs: [['books', '記帳（毎月の経理確認）', '記帳'], ['close', '決算・法人税申告', '決算'], ['report', '本社レポーティング・連結', '本社レポーティング'], ['entry', '韓国進出・運営・撤退', '韓国進出・運営'], ['eaudit', '外部監査（法定監査）', '外部監査'], ['vaudit', '任意監査（本社パッケージ）', '任意監査'], ['audit', '内部統制', '内部統制']] },
   { t: '新規韓国進出', subs: [['forms', '進出形態の比較', '新設か買収か'], ['diag', 'ステップ診断', '進出形態の診断'], ['taxcmp', '日本との税制比較', '実効税率の差'], ['ma', '買収・吸収合併', 'M&A・合併'], ['game', 'ゲーム・IP企業の論点', 'ゲーム・IP'], ['incent', '補助金・優遇制度', '補助金・優遇']] },
   { t: '見落とし診断', subs: [['service', '会計士の無料診断（資料をもとに書面で）', '会計士の無料診断'], ['check', '1分セルフチェック（ご自身で）', '1分セルフチェック']] },
   { t: '日本の税務・労務', subs: [['jpqa', '日本の税務・労務 Q&A', 'Q&A（23問）'], ['jpcal', '日本の税務カレンダー', '税務カレンダー・祝日']] },
-  { t: '韓国の税務・労務', subs: [['krqa', '韓国の税務・労務 Q&A', 'Q&A（20問）'], ['wht', '源泉税とは', '毎月10日の申告・納付'], ['prop', '財産税とは', '7月・9月の地方税']] },
-  { t: '事例・コラム', subs: [['cases', '報道に見る成功事例', '成功事例'], ['dd', '出資金・貸付金の使途確認（実査）', '本社資金の使途確認'], ['policy', '今後1・2・3年の制度変更', '1・2・3年の制度変更'], ['roadmap', '10年・20年のお付き合い', '10年・20年']] },
+  { t: '韓国の税務・労務', subs: [['krqa', '韓国の税務・労務 Q&A', 'Q&A（20問）'], ['wht', '源泉税とは', '毎月10日の申告・納付'], ['prop', '財産税とは', '7月・9月の地方税'], ['intl', '国際税務・移転価格・VAT（消費税）', '国際税務'], ['staff', '駐在員の給与・4大保険', '駐在員・4大保険']] },
+  { t: 'お知らせ・コラム', subs: [['news', 'お知らせ・更新情報', 'お知らせ'], ['cases', '報道に見る成功事例', '成功事例'], ['dd', '出資金・貸付金の使途確認（実査）', '本社資金の使途確認'], ['policy', '今後1・2・3年の制度変更', '制度変更'], ['roadmap', '10年・20年のお付き合い', '10年・20年']] },
   { t: 'メンバー', subs: [['members', 'メンバー紹介', '日韓の専門家チーム'], ['about', '担当会計士プロフィール', 'イ・ギュボムの経歴']] },
-  { t: 'お知らせ', subs: [['news', 'お知らせ・更新情報', 'お知らせ一覧']] },
   { t: '連絡先', subs: [['contact', '連絡先・アクセス', '電話・LINE・地図']] }
 ];
 var DETAILS = ['b1', 'c1', 'c2', 'c3'];
