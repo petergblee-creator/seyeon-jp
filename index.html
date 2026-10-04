@@ -37,7 +37,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <div style="max-width: 1200px; margin: 0 auto; padding: 6px 16px; display: flex; justify-content: flex-end; gap: 14px; font-size: 13px; color: #555555">
 <span style="font-weight: 700; color: #3E6DB0">日本語</span>
 <span>｜</span>
-<a href="ko.html" style="text-decoration: none">한국어（韓国人スタッフ向け）</a>
+<a href="ko.html" style="text-decoration: none">韓国語（한국어）・韓国人スタッフ向け</a>
 <span>｜</span>
 <a href="en.html" style="text-decoration: none">English</a>
 </div>
@@ -50,9 +50,9 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </button>
 <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
 <div style="display: flex; flex-direction: column; line-height: 1.35">
-<span style="font-size: 12px; color: #9A3412; font-weight: 700">携帯・直通（おすすめ）担当会計士に直接つながります</span>
+<span style="font-size: 12px; color: #D32F2F; font-weight: 700">携帯・直通（おすすめ）担当会計士に直接つながります</span>
 <a href="tel:+821039456101" style="font-size: 19px; font-weight: 700; color: #222222; text-decoration: none">+82-10-3945-6101</a>
-<span style="font-size: 12px; color: #555555">代表 02-6356-1105｜海外からはLINE・カカオ通話なら無料</span>
+<span style="font-size: 12px; color: #555555">代表 02-6356-1105｜<b style="color: #D32F2F">海外からはLINE・カカオ通話なら無料</b></span>
 </div>
 <button type="button" onClick="{{go.service}}" style="min-height: 48px; padding: 0 18px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer; line-height: 1.3">会計士の無料診断<br><span style="font-size: 11px; font-weight: 400">資料をもとに書面でご回答</span></button>
 </div>
@@ -75,7 +75,6 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </sc-for>
 </div>
 </nav>
-<div style="background: #FFFFFF; border-bottom: 1px solid #E6ECF3"><div style="max-width: 1200px; margin: 0 auto; padding: 8px 16px; font-size: 13px; color: #4A5565">在韓日系法人・日本人個人の会計・税務｜日本語で完結・渡韓不要</div></div>
 <sc-if value="{{showPopup}}" hint-placeholder-val="{{false}}">
 <div style="position: fixed; inset: 0; z-index: 60; background: transparent; pointer-events: none; display: flex; align-items: flex-end; justify-content: flex-end; padding: 16px">
 <div role="dialog" aria-label="2026年 韓国税制改正" style="pointer-events: auto; background: #FFFFFF; border: 1px solid #C3D0DF; border-radius: 12px; max-width: 400px; width: 100%; max-height: calc(100vh - 32px); overflow-y: auto; padding: 18px 20px; font-size: 13px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.25)">
@@ -105,11 +104,11 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <section style="background: #F1F6FD; border-bottom: 1px solid #D8E2EE">
 <div style="max-width: 1200px; margin: 0 auto; padding: 44px 16px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center">
 <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 14px">
-<span style="font-size: 14px; font-weight: 700; color: #3E6DB0">■ 在韓の日系法人・日本人の皆さまへ</span>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px"><span style="display: inline-block; background: #3E6DB0; color: #FFFFFF; font-weight: 700; font-size: clamp(16px, 2vw, 20px); padding: 6px 16px; border-radius: 4px; letter-spacing: 0.04em">日本語で完結・渡韓不要</span><span style="font-size: 14px; font-weight: 700; color: #3E6DB0">在韓日系法人・日本人個人の会計・税務</span></div>
 <h1 style="margin: 0; font-size: clamp(22px, 2.8vw, 31px); line-height: 1.5; font-weight: 700">慣例どおりに続けてきた処理で、<br>何年も損をしていませんか。</h1>
 <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.8">「前任者のやり方のまま」「事務所に任せたまま」。確認しようと思わなければ、見落としは何年も続きます。AIに聞いても一般論は返ってきますが、大切なのは貴社の状態を言葉にして「こうなっていませんか」と一つずつ確かめることです。</p>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px">
-<button type="button" onClick="{{go.check}}" style="min-height: 60px; padding: 6px 20px; line-height: 1.35; background: #3E6DB0; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">1分セルフチェック ▶<br><span style="font-size: 12px; font-weight: 400">ご自身でその場で</span></button>
+<button type="button" onClick="{{go.check}}" style="min-height: 60px; padding: 6px 20px; line-height: 1.35; background: #3E6DB0; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">1分セルフチェック ▶<br><span style="font-size: 12px; font-weight: 400">10の質問でセルフチェック</span></button>
 <button type="button" onClick="{{go.service}}" style="min-height: 60px; padding: 6px 20px; line-height: 1.35; background: #FFFFFF; color: #B5532A; border: 2px solid #B5532A; border-radius: 3px; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">会計士の無料診断 ▶<br><span style="font-size: 12px; font-weight: 400">資料をやりとりして書面で</span></button>
 </div>
 </div>
@@ -142,20 +141,20 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="text-align: center; font-weight: 700; color: #06813C">LINEで相談</a>
 <img src="img/kakao-qr.png" alt="カカオトークのQRコード" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
 <a href="https://open.kakao.com/o/sF4UcUPi" style="text-align: center; font-weight: 700; color: #3E6DB0">カカオトークで相談</a>
-<span style="font-size: 12px; color: #555555; text-align: center">海外からもLINE・カカオ通話なら無料です</span>
-<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><b style="font-size: 15px">✎ お問い合わせフォーム</b><span style="font-size: 11.5px; opacity: 0.9">1分で書けます・3日以内に返信</span></button>
+<span style="font-size: 12px; color: #D32F2F; font-weight: 700; text-align: center">海外からもLINE・カカオ通話なら無料です</span>
+<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><b style="font-size: 14px; white-space: nowrap">✎ お問い合わせフォーム</b><span style="font-size: 11px; opacity: 0.9; white-space: nowrap">連絡日時も指定OK・1日以内に返信</span></button>
 </div>
 </aside>
 <div class="home-main">
 <section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 8px">
 <div style="border: 1px solid #D8E2EE; border-radius: 10px; overflow: hidden; display: flex; flex-wrap: wrap">
 <div style="flex: 1 1 380px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px"><b style="font-size: 18px">■ 韓国の税務カレンダー　{{kr.title}}</b><span style="font-size: 13px; color: #5B2A86; font-weight: 700">{{kr.today}}</span></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px"><b style="font-size: 18px">■ 韓国の税務カレンダー　{{kr.mon}}</b></div>
 <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; text-align: center; font-size: 13px">
 <sc-for list="{{kr.head}}" as="h" hint-placeholder-count="7"><span style="{{h.style}}">{{h.t}}</span></sc-for>
-<sc-for list="{{kr.cells}}" as="c" hint-placeholder-count="35"><div style="{{c.style}}" title="{{c.tip}}"><span>{{c.d}}</span><sc-if value="{{c.ev}}" hint-placeholder-val="{{false}}"><span style="{{c.dot}}"></span></sc-if></div></sc-for>
+<sc-for list="{{kr.cells}}" as="c" hint-placeholder-count="35"><div style="{{c.style}}" title="{{c.tip}}"><span>{{c.d}}</span><sc-if value="{{c.ev}}" hint-placeholder-val="{{false}}"><span style="{{c.dot}}">{{c.lbl}}</span></sc-if></div></sc-for>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #555555"><span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #5B2A86"></span> 今日</span><span><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #3E6DB0"></span> 申告・納付期限</span><span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #FDECEF; border: 1px solid #E8A9BA"></span> 祝日</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #555555"><span><span style="display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: #DCEBFB; box-shadow: inset 0 0 0 2px #9CC1EE; vertical-align: -1px"></span> 今日</span><span><span style="font-size: 10.5px; font-weight: 800; padding: 2px 4px; border-radius: 3px; background: #E8590C; color: #FFFFFF">申告</span> <span style="font-size: 10.5px; font-weight: 800; padding: 2px 4px; border-radius: 3px; background: #E8590C; color: #FFFFFF">納付</span> 期限日</span><span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #FDECEF; border: 1px solid #E8A9BA"></span> 祝日</span></div>
 <div style="display: flex; flex-direction: column; gap: 4px; border-top: 1px dashed #D8E2EE; padding-top: 10px">
 <b style="font-size: 14px">今日の前後1週間</b>
 <sc-for list="{{kr.near}}" as="n" hint-placeholder-count="2"><div style="{{n.style}}; font-size: 14px; display: flex; gap: 10px"><span style="flex: 0 0 auto; min-width: 72px">{{n.d}}</span><span>{{n.t}}</span></div></sc-for>
@@ -253,10 +252,10 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <div style="background: #FFFFFF; border: 1px solid #D8E2EE; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #4A5565; display: flex; flex-direction: column; gap: 2px">
 <b style="color: #1F3F6E; margin-bottom: 4px">協力会社・関連機関</b>
 <a href="https://www.k-withus.kr/" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>K-Withus ↗</span><span style="color:#6B7684;font-size:12px">ビザ・出入国</span></a>
-<div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>新韓銀行</span><span style="color:#6B7684;font-size:12px">メインバンク</span></div>
 <a href="https://www.investkorea.org" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>Invest KOREA ↗</span><span style="color:#6B7684;font-size:12px">外国人投資支援（KOTRA）</span></a>
-<a href="https://www.nts.go.kr/english/main.do" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>韓国国税庁 ↗</span><span style="color:#6B7684;font-size:12px">国税庁（英語）</span></a>
-<a href="https://www.hometax.go.kr" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>Hometax ↗</span><span style="color:#6B7684;font-size:12px">電子申告ポータル</span></a>
+<a href="https://www.nts.go.kr/english/main.do" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>韓国国税庁 ↗</span><span style="color:#6B7684;font-size:12px">国税庁・英語（法令確認）</span></a>
+<a href="https://www.hometax.go.kr" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>Hometax ↗</span><span style="color:#6B7684;font-size:12px">電子申告（納税・税金確認）</span></a>
+<div style="display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid #E6ECF3;color:#1F3F6E;text-decoration:none"><span>新韓銀行</span><span style="color:#6B7684;font-size:12px">メインバンク</span></div>
 <span style="font-size: 11px; color: #6B7684; margin-top: 4px">※ 関連機関のリンクは参考用です。</span>
 </div>
 </div>
@@ -290,13 +289,13 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="text-align: center; font-weight: 700; color: #06813C">LINEで相談</a>
 <img src="img/kakao-qr.png" alt="カカオトークのQRコード" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
 <a href="https://open.kakao.com/o/sF4UcUPi" style="text-align: center; font-weight: 700; color: #3E6DB0">カカオトークで相談</a>
-<span style="font-size: 12px; color: #555555; text-align: center">海外からもLINE・カカオ通話なら無料です</span>
-<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><b style="font-size: 15px">✎ お問い合わせフォーム</b><span style="font-size: 11.5px; opacity: 0.9">1分で書けます・3日以内に返信</span></button>
+<span style="font-size: 12px; color: #D32F2F; font-weight: 700; text-align: center">海外からもLINE・カカオ通話なら無料です</span>
+<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><b style="font-size: 14px; white-space: nowrap">✎ お問い合わせフォーム</b><span style="font-size: 11px; opacity: 0.9; white-space: nowrap">連絡日時も指定OK・1日以内に返信</span></button>
 </div>
 </aside>
 
 <main style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<h2 style="margin: 0; font-size: 24px; padding-bottom: 10px; border-bottom: 2px solid #222222">{{pageTitle}}</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 2px solid #222222"><h2 style="margin: 0; font-size: 24px">{{pageTitle}}</h2><sc-if value="{{on.service}}" hint-placeholder-val="{{false}}"><div style="display: flex; flex-direction: column; align-items: center; gap: 3px"><b style="color: #D32F2F; font-size: 13px">ご連絡を受けるには！</b><button type="button" onClick="{{openForm}}" style="min-height: 44px; padding: 0 18px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer; white-space: nowrap">✎ フォームで申し込む</button></div></sc-if></div>
 
 <sc-if value="{{on.books}}" hint-placeholder-val="{{false}}">
 <p style="margin: 0; font-size: 16px"><b>結論：</b>一件ずつ丁寧に確認。そして、貴社自身が数字を確かめられる体制に。</p>
@@ -515,8 +514,17 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <span style="color: #333333">鍾路3街に韓国1号店。進行中の事例。</span>
 <sc-if value="{{op.c3}}" hint-placeholder-val="{{false}}"><span style="color: #333333; background: #F8FAFD; padding: 10px 12px">狙い → 日本現地のメニューと体験価値をそのまま。<br>学べる点 → ライセンスか直営かで、源泉・移転価格の処理が変わります。</span></sc-if>
 </div>
+<div style="padding: 16px; border-top: 1px solid #D8E2EE; display: flex; flex-direction: column; gap: 6px">
+<b>▶ 音楽：あいみょん — 2025年4月 韓国初の単独公演</b>
+<span style="color: #333333">KINTEX（京畿道）で2日間、約1万6千人を動員。「愛を伝えたいだとか」は韓国でのJ-POP人気再燃のきっかけの一つとされ、MCの多くを韓国語で行ったことも話題に。</span>
 </div>
-<span style="font-size: 13px; color: #555555">出典：글로벌이코노믹（2023.7）、서울경제、아시아경제（2026.8.7）</span>
+<div style="padding: 16px; border-top: 1px solid #D8E2EE; display: flex; flex-direction: column; gap: 6px">
+<b>▶ ドラマ・食：『孤独のグルメ』松重豊 — 韓国の人気バラエティへ</b>
+<span style="color: #333333">韓国でも長く愛される作品。2025年2月からNetflix韓国バラエティ『미친맛집』で歌手ソン・シギョンと韓国の店を巡り、韓国文化体育観光部が日本向け観光PRで連携しました。2026年のシーズン5には女優・三吉彩花さんも出演し話題に。</span>
+<span style="color: #333333; background: #F8FAFD; padding: 10px 12px">学べる点 → 日本で築いた作品・人物の信頼は、韓国でもそのまま通用する。現地の人気者と組むと浸透が早い。</span>
+</div>
+</div>
+<span style="font-size: 13px; color: #555555">出典：글로벌이코노믹（2023.7）、서울경제、아시아경제（2026.8.7）、Weverse Magazine（2025）、다음뉴스（2025.5）、일간스포츠（2026.5.23）</span>
 </sc-if>
 
 <sc-if value="{{on.policy}}" hint-placeholder-val="{{false}}">
@@ -540,7 +548,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 
 <sc-if value="{{on.contact}}" hint-placeholder-val="{{false}}">
 <p style="margin: 0; font-size: 16px">日本語・韓国語・英語で承ります。お電話・LINE・メール、ご来所のいずれも歓迎です。</p>
-<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ フォームで問い合わせる（3日以内に返信）</button>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ フォームで問い合わせる（1日以内に返信・連絡日時も指定OK）</button>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px">
 <div style="border: 1px solid #D8E2EE; padding: 16px; display: flex; flex-direction: column; gap: 8px">
 <b>携帯・直通（おすすめ）</b><a href="tel:+821039456101" style="font-weight: 700; font-size: 18px">+82-10-3945-6101</a>
@@ -718,7 +726,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; text-align: center; font-size: 13px">
 <sc-for list="{{jp.head}}" as="h" hint-placeholder-count="7"><span style="{{h.style}}">{{h.t}}</span></sc-for>
-<sc-for list="{{jp.cells}}" as="c" hint-placeholder-count="35"><div style="{{c.style}}" title="{{c.tip}}"><span>{{c.d}}</span><sc-if value="{{c.ev}}" hint-placeholder-val="{{false}}"><span style="{{c.dot}}"></span></sc-if></div></sc-for>
+<sc-for list="{{jp.cells}}" as="c" hint-placeholder-count="35"><div style="{{c.style}}" title="{{c.tip}}"><span>{{c.d}}</span><sc-if value="{{c.ev}}" hint-placeholder-val="{{false}}"><span style="{{c.dot}}">{{c.lbl}}</span></sc-if></div></sc-for>
 </div>
 </div>
 <div style="flex: 1 1 320px; display: flex; flex-direction: column">
@@ -889,11 +897,13 @@ function buildGrid(y, m, today, evs, hol, holColor) {
   for (var i = 0; i < weeks * 7; i++) {
     var d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
     var k = dkey(d), inM = d.getMonth() === m, isT = k === dkey(today), h = hol[k];
-    var color = !inM ? '#B8C2CE' : (isT ? '#FFFFFF' : (h || d.getDay() === 0 ? holColor : (d.getDay() === 6 ? '#3E6DB0' : '#333333')));
+    var color = !inM ? '#B8C2CE' : (h || d.getDay() === 0 ? holColor : (d.getDay() === 6 ? '#3E6DB0' : (isT ? '#1F3F6E' : '#333333')));
+    var evT = inM ? (evKeys[k] || '') : '', isEv = !!evT;
+    var lbl = !isEv ? '' : (LANG_JA ? (/申告|提出/.test(evT) ? '申告' : '納付') : (/신고|제출/.test(evT) ? '신고' : '납부'));
     cells.push({
-      d: d.getDate(), ev: inM && !!evKeys[k], tip: (h ? h + ' ' : '') + (evKeys[k] || ''),
-      style: 'min-height: 40px; padding: 4px 0; border-radius: 6px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-weight: ' + (isT ? '700' : '400') + '; color: ' + color + '; background: ' + (isT ? '#5B2A86' : (inM && h ? '#FDECEF' : (inM ? '#FFFFFF' : 'transparent'))) + ';',
-      dot: 'width: 6px; height: 6px; border-radius: 50%; background: ' + (isT ? '#FFFFFF' : '#3E6DB0') + ';'
+      d: d.getDate(), ev: isEv, lbl: lbl, tip: (h ? h + ' ' : '') + (evKeys[k] || ''),
+      style: 'min-height: 40px; padding: 4px 0; border-radius: 6px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-weight: ' + (isT ? '700' : '400') + '; color: ' + color + '; background: ' + (isT ? '#DCEBFB' : (isEv ? '#FFF3E8' : (inM && h ? '#FDECEF' : (inM ? '#FFFFFF' : 'transparent')))) + ';' + (isT ? ' box-shadow: inset 0 0 0 2px #9CC1EE;' : (isEv ? ' box-shadow: inset 0 0 0 1px #F3C59D;' : '')),
+      dot: 'font-size: 10.5px; font-weight: 800; line-height: 1; padding: 2px 4px; border-radius: 3px; background: #E8590C; color: #FFFFFF; letter-spacing: 0.02em;'
     });
   }
   var head = (LANG_JA ? WK_JA : WK_KO).map(function (w, i) { return { t: w, style: 'font-weight: 700; padding: 4px 0; color: ' + (i === 0 ? holColor : (i === 6 ? '#3E6DB0' : '#555555')) + ';' }; });
@@ -912,7 +922,7 @@ function calKR(today) {
     if (!items.length) items = [{ d: '', t: LANG_JA ? '主要な申告期限なし（毎月10日の源泉税のみ）' : '주요 신고기한 없음(매월 10일 원천세만)' }];
     return { t: LANG_JA ? (b.getFullYear() + '年' + (b.getMonth() + 1) + '月' + (o === 0 ? '（今月）' : (o === 1 ? '（来月）' : '（再来月）'))) : (b.getFullYear() + '년 ' + (b.getMonth() + 1) + '월' + (o === 0 ? '(이번 달)' : (o === 1 ? '(다음 달)' : '(다다음 달)'))), items: items };
   });
-  return { title: LANG_JA ? (y + '年' + (m + 1) + '月') : (y + '년 ' + (m + 1) + '월'), today: (LANG_JA ? '今日 ' : '오늘 ') + fmt(today), head: g.head, cells: g.cells, near: near.length ? near : [{ d: '', t: LANG_JA ? '前後1週間に期限はありません' : '전후 1주일 내 기한 없음', style: 'color: #8A94A3' }], months: months };
+  return { mon: LANG_JA ? ((m + 1) + '月') : ((m + 1) + '월'), title: LANG_JA ? (y + '年' + (m + 1) + '月') : (y + '년 ' + (m + 1) + '월'), today: (LANG_JA ? '今日 ' : '오늘 ') + fmt(today), head: g.head, cells: g.cells, near: near.length ? near : [{ d: '', t: LANG_JA ? '前後1週間に期限はありません' : '전후 1주일 내 기한 없음', style: 'color: #8A94A3' }], months: months };
 }
 function calJP(today, off) {
   var b = new Date(today.getFullYear(), today.getMonth() + off, 1), y = b.getFullYear(), m = b.getMonth();
@@ -974,7 +984,7 @@ var QA_JA = [
   ['2026年10月からインボイス制度で変わる点は？', '免税事業者からの仕入れに係る経過措置の控除割合が80%から50%に縮小しました（2029年9月まで）。']
 ];
 var QA = LANG_JA ? QA_JA : QA_KO;
-var KRQA = [["韓国の法人税率は？", "2026年1月1日以後開始事業年度から、課税標準2億ウォン以下10%、200億ウォン以下20%、3,000億ウォン以下22%、超過分25%。地方所得税（法人税額の10%）を加えると11〜27.5%です。"], ["法人税の申告期限は？", "事業年度終了日の属する月の末日から3か月以内（12月決算なら3月31日）。法人地方所得税はその1か月後（4月30日）。中間予納は事業年度開始から6か月経過後2か月以内（12月決算なら8月31日）です。"], ["付加価値税（VAT）の税率と申告は？", "税率は10%。法人は年4回（1月・4月・7月・10月の各25日）申告します。輸出など一定の取引は0%税率、仕入税額が多い場合は還付を受けられます。"], ["源泉税の納付期限は？", "原則、支払月の翌月10日。常時従業員20人以下などの要件を満たせば、半期ごとの納付特例も申請できます。"], ["退職金の支給は義務ですか？", "義務です（日本と大きく違う点）。1年以上継続勤務し週15時間以上働いた従業員には、勤続1年につき30日分以上の平均賃金を支給します。退職年金（DB・DC）での積立ても可能です。"], ["韓国の最低賃金は？", "全国一律です。2026年は時給10,320ウォン、2027年は10,700ウォン（3.7%引上げ）に決定しています。週休手当を含めた月額換算にも注意が必要です。"], ["年次有給休暇と年次手当は？", "1年間80%以上出勤で15日（3年目以降2年ごとに1日加算、上限25日）。1年未満は月1日。未使用分は原則として年次手当（買取り）の支払義務があり、日本と逆です。使用促進制度を適切に運用すれば支払いを免れます。"], ["週休手当とは？", "週15時間以上働き、所定労働日を皆勤した従業員に、週1日分の有給休日手当を支払う制度です。時給制のアルバイトにも適用されます。"], ["4大保険の料率は？（2026年）", "国民年金9.5%（労使各4.75%）、健康保険7.19%（各3.595%）、長期療養保険は健康保険料の一定率、雇用保険は従業員0.9%＋会社負担、労災保険は会社全額負担です。"], ["日本人駐在員も国民年金に加入しますか？", "日韓社会保障協定により、派遣期間が原則5年以内なら日本の年金のみに加入できます（適用証明書の提出が必要）。健康保険・雇用保険は別途確認が必要です。"], ["外国人の単一税率とは？", "外国人勤労者は、総合課税の代わりに給与総額に19%（地方税込み20.9%）の単一税率を選べます（租特法§18の2）。勤務開始から20年間適用可能。2027年から21%とする改正案が出ています。"], ["日本本社へ配当・ロイヤリティを送るときの源泉税は？", "日韓租税条約により、配当5%（持分25%以上）・15%、利子10%、使用料10%が上限です。軽減税率を受けるには、支払前に制限税率適用申請書の提出が必要です。"], ["年末調整はいつ？", "翌年2月分の給与で精算し、3月10日までに勤労所得の支払明細書を提出します。従業員から控除書類を集める1月がいちばん忙しい時期です。"], ["接待費（交際費）は全額損金になりますか？", "なりません。年間の基本限度は1,200万ウォン（中小企業は3,600万ウォン）に、売上に応じた金額を加えた範囲までです。3万ウォン超は法人カード等の適格証憑が必要です。"], ["外部監査の対象になるのは？", "前事業年度末の資産または売上が500億ウォン以上、もしくは資産120億・負債70億・売上100億ウォン・従業員100人のうち2つ以上に該当する場合などです（有限会社は社員数の要件もあり）。"], ["移転価格の文書化義務は？", "売上1,000億ウォン超かつ国外特殊関係者との取引500億ウォン超の場合、国際取引情報統合報告書（マスター・ローカルファイル）の提出義務があります。それ以下でも料率の根拠は整えておくべきです。"], ["電子税金計算書は必要ですか？", "法人は発行義務があり、発行の翌日までに国税庁へ送信します。遅延・未発行には加算税がかかります。"], ["税務調査は何年さかのぼりますか？", "国税の賦課期間は原則5年、無申告は7年、不正行為は10年です。過去の処理もこの期間は指摘を受け得ます。"], ["労働時間の上限は？", "法定40時間＋延長12時間の週52時間が上限です（常時5人以上の事業場）。延長・夜間・休日労働には50%以上の割増賃金が必要です。"], ["従業員を解雇するときは？", "常時5人以上の事業場では正当な理由が必要です。30日前の予告、または30日分以上の通常賃金の支払いが必要で、書面での通知が要件です。"]];
+var KRQA = [["韓国の法人税率は？", "2026年1月1日以後開始事業年度から、課税標準2億ウォン以下10%、200億ウォン以下20%、3,000億ウォン以下22%、超過分25%。地方所得税（法人税額の10%）を加えると11〜27.5%です。"], ["法人税の申告期限は？", "事業年度終了日の属する月の末日から3か月以内（12月決算なら3月31日）。法人地方所得税はその1か月後（4月30日）。中間予納は事業年度開始から6か月経過後2か月以内（12月決算なら8月31日）です。"], ["付加価値税（VAT・日本の消費税に相当）の税率と申告は？", "税率は10%。法人は年4回（1月・4月・7月・10月の各25日）申告します。輸出など一定の取引は0%税率、仕入税額が多い場合は還付を受けられます。"], ["源泉税の納付期限は？", "原則、支払月の翌月10日。常時従業員20人以下などの要件を満たせば、半期ごとの納付特例も申請できます。"], ["退職金の支給は義務ですか？", "義務です（日本と大きく違う点）。1年以上継続勤務し週15時間以上働いた従業員には、勤続1年につき30日分以上の平均賃金を支給します。退職年金（DB・DC）での積立ても可能です。"], ["韓国の最低賃金は？", "全国一律です。2026年は時給10,320ウォン、2027年は10,700ウォン（3.7%引上げ）に決定しています。週休手当を含めた月額換算にも注意が必要です。"], ["年次有給休暇と年次手当は？", "1年間80%以上出勤で15日（3年目以降2年ごとに1日加算、上限25日）。1年未満は月1日。未使用分は原則として年次手当（買取り）の支払義務があり、日本と逆です。使用促進制度を適切に運用すれば支払いを免れます。"], ["週休手当とは？", "週15時間以上働き、所定労働日を皆勤した従業員に、週1日分の有給休日手当を支払う制度です。時給制のアルバイトにも適用されます。"], ["4大保険の料率は？（2026年）", "国民年金9.5%（労使各4.75%）、健康保険7.19%（各3.595%）、長期療養保険は健康保険料の一定率、雇用保険は従業員0.9%＋会社負担、労災保険は会社全額負担です。"], ["日本人駐在員も国民年金に加入しますか？", "日韓社会保障協定により、派遣期間が原則5年以内なら日本の年金のみに加入できます（適用証明書の提出が必要）。健康保険・雇用保険は別途確認が必要です。"], ["外国人の単一税率とは？", "外国人勤労者は、総合課税の代わりに給与総額に19%（地方税込み20.9%）の単一税率を選べます（租特法§18の2）。勤務開始から20年間適用可能。2027年から21%とする改正案が出ています。"], ["日本本社へ配当・ロイヤリティを送るときの源泉税は？", "日韓租税条約により、配当5%（持分25%以上）・15%、利子10%、使用料10%が上限です。軽減税率を受けるには、支払前に制限税率適用申請書の提出が必要です。"], ["年末調整はいつ？", "翌年2月分の給与で精算し、3月10日までに勤労所得の支払明細書を提出します。従業員から控除書類を集める1月がいちばん忙しい時期です。"], ["接待費（交際費）は全額損金になりますか？", "なりません。年間の基本限度は1,200万ウォン（中小企業は3,600万ウォン）に、売上に応じた金額を加えた範囲までです。3万ウォン超は法人カード等の適格証憑が必要です。"], ["外部監査の対象になるのは？", "前事業年度末の資産または売上が500億ウォン以上、もしくは資産120億・負債70億・売上100億ウォン・従業員100人のうち2つ以上に該当する場合などです（有限会社は社員数の要件もあり）。"], ["移転価格の文書化義務は？", "売上1,000億ウォン超かつ国外特殊関係者との取引500億ウォン超の場合、国際取引情報統合報告書（マスター・ローカルファイル）の提出義務があります。それ以下でも料率の根拠は整えておくべきです。"], ["電子税金計算書は必要ですか？", "法人は発行義務があり、発行の翌日までに国税庁へ送信します。遅延・未発行には加算税がかかります。"], ["税務調査は何年さかのぼりますか？", "国税の賦課期間は原則5年、無申告は7年、不正行為は10年です。過去の処理もこの期間は指摘を受け得ます。"], ["労働時間の上限は？", "法定40時間＋延長12時間の週52時間が上限です（常時5人以上の事業場）。延長・夜間・休日労働には50%以上の割増賃金が必要です。"], ["従業員を解雇するときは？", "常時5人以上の事業場では正当な理由が必要です。30日前の予告、または30日分以上の通常賃金の支払いが必要で、書面での通知が要件です。"]];
 var NEWS_DEFAULT = [{"date": "2026-10-02", "title": "日本語サイトを公開しました", "body": "在韓日系法人・日本人個人の皆さま向けに、会計・税務の情報を日本語でお届けします。"}, {"date": "2026-10-01", "title": "ゲーム産業法改正、国会通過", "body": "海外ゲーム会社の国内代理人制度が強化されます（公布6か月後施行）。"}, {"date": "2026-08-01", "title": "2026年 税制改正案（外国人単一税率21%など）", "body": "外国人勤労者の単一税率を19%から21%へ引き上げる案などが発表されました。"}, {"date": "2026-01-01", "title": "法人税率 全区間1%引上げ", "body": "2026年1月1日以後開始事業年度から、10/20/22/25%が適用されます。"}];
 var TAB = 'min-height: 50px; padding: 0 11px; border: 0; font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; ';
 var SIDE = 'display: block; width: 100%; min-height: 46px; padding: 0 16px; text-align: left; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; font-size: 14px; cursor: pointer; ';
