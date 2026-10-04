@@ -164,6 +164,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </sc-for>
 <span style="font-size: 12px; color: #6B7684">※ 기한이 주말·공휴일이면 다음 영업일. 매월 10일 원천세는 생략.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" onClick="{{go.wht}}" style="background: #FFFFFF; border: 1px solid #9CC1EE; color: #2F5590; border-radius: 14px; padding: 4px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer">원천세(매월 10일)란 ▶</button><button type="button" onClick="{{go.prop}}" style="background: #FFFFFF; border: 1px solid #9CC1EE; color: #2F5590; border-radius: 14px; padding: 4px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer">재산세(7월·9월)란 ▶</button></div>
 </div>
 </div>
 </section>
@@ -489,6 +490,103 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 먼저 무료로 상담하기</button>
 </sc-if>
 
+<sc-if value="{{on.wht}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">「원천세」는 회사가 급여·보수를 지급할 때 세금을 미리 떼어(원천징수) <b>다음 달 10일까지</b> 회사가 대신 국가에 내는 세금입니다. 실무에서는 매월 10일 신고·납부를 통틀어 「원천세」라고 부르고, 같은 날 <b>4대보험료</b> 납부 기한도 있어 함께 관리합니다.</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 「원천세」라고 부르는 이유</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 원천 = 소득의 출처</b>→ 지급하는 쪽(회사)이 지급 시점에 떼기 때문에 「원천」에서 징수하는 세금이라고 부릅니다. 일본의 源泉徴収와 같은 개념입니다.</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 포함되는 세금</b>→ 소득세(국세) + 지방소득세(소득세의 10%). 급여·퇴직금·프리랜서 보수(3.3%)·기타소득·이자·배당·해외 송금(로열티 등) 등</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 4대보험료</b>→ 세금은 아니지만 근로자 부담분을 급여에서 떼고 회사 부담분과 함께 같은 10일에 냅니다. 실무에서는 원천세와 함께 관리합니다.</div>
+<div style="padding: 12px 16px;"><b>▶ 부가가치세(소비세)와의 차이</b>→ 부가가치세는 원천세가 아닙니다. 1·4·7·10월 25일에 따로 신고합니다.</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 기한</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 원칙</b>→ 지급한 달의 다음 달 10일 신고·납부</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 반기 납부 특례</b>→ 상시근로자 20인 이하 등 승인을 받으면 1월·7월 10일에 반년분 일괄 납부</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 연말정산</b>→ 다음 해 2월분 급여로 정산, 3월 10일까지 지급명세서 제출</div>
+<div style="padding: 12px 16px;"><b>▶ 간이지급명세서</b>→ 프리랜서 등 보수는 매월 말, 근로소득은 반기별 제출</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 일본계 법인에서 많은 쟁점</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 주재원 급여</b>→ 일본에서 지급하는 분도 한국 과세 대상. 원천 범위와 본사·한국법인 부담 구분 정리</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 본사 송금</b>→ 배당·로열티는 조세조약 제한세율(5~15%·10%). 지급 전 신청 필요</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 외국인 단일세율</b>→ 조특법§18의2 선택 시 원천징수 계산 방식이 달라집니다</div>
+<div style="padding: 12px 16px;"><b>▶ 늦었을 때</b>→ 미납세액의 3% + 1일 0.022% 가산세(한도 10%)</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 원천세 상담하기</button>
+</sc-if>
+
+<sc-if value="{{on.prop}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">재산세는 토지·건물·주택 등을 <b>소유</b>한 사람에게 시·구가 매년 부과하는 지방세입니다. <b>일본의 고정자산세에 해당</b>합니다.</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 개요</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 과세 대상</b>→ 토지·건축물·주택·선박·항공기</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 과세기준일</b>→ 매년 6월 1일 현재 소유자(일본은 1월 1일)</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 신고</b>→ 없음. 시·구가 세액을 계산해 고지서를 보냅니다(부과고지)</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 납부 시기</b>→ 연 1회를 2기로 나눠 납부. 7월 16~31일: 건축물·주택 1/2 / 9월 16~30일: 토지·주택 1/2(주택 세액 20만 원 이하는 7월 일괄)</div>
+<div style="padding: 12px 16px;"><b>▶ 함께 부과되는 세금</b>→ 지방교육세(재산세의 20%) 등. 고가 주택·토지는 12월 종합부동산세(국세)</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 일본·외국 법인의 경우</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 과세</b>→ 국적·본점 소재지와 관계없이 한국 내 부동산을 소유하면 같은 기준으로 과세</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 임차 사무실</b>→ 재산세는 소유자에게 부과되므로 임차한 회사에는 부과되지 않습니다</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 고지서 수령</b>→ 한국에 주소가 없으면 납세관리인을 신고해 고지서를 확실히 받기</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 주민세 사업소분</b>→ 소유하지 않아도 사업소가 있으면 매년 8월 신고·납부(기본세액 + 연면적 330㎡ 초과 시 ㎡당 250원)</div>
+<div style="padding: 12px 16px;"><b>▶ 일본과의 차이</b>→ 일본 고정자산세는 1월 1일 기준·연 4회 납부. 한국은 6월 1일 기준·7월과 9월 연 2회</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 재산세 상담하기</button>
+</sc-if>
+
+<sc-if value="{{on.eaudit}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">일정 규모를 넘은 한국법인은 매년 <b>회계법인의 외부감사</b>가 의무입니다(외감법§4). 대상 판정부터 감사인 선임, 일본 본사 감사법인과의 소통까지 딜로이트 출신 회계사가 정리합니다.</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 대상 회사</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 원칙</b>→ 직전 사업연도 말 자산 또는 매출 500억 원 이상</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 그 밖</b>→ 자산 120억·부채 70억·매출 100억 원·종업원 100명 중 2개 이상 해당 등(유한회사는 사원 수 요건도 있음)</div>
+<div style="padding: 12px 16px;"><b>▶ 판정</b>→ 결산서를 주시면 대상 여부와 시작 시점을 알려 드립니다</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 진행 흐름</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 감사인 선임</b>→ 사업연도 개시 후 45일 이내(처음 대상이 된 해는 4개월 이내)</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 기중</b>→ 내부통제 확인·중간 검토</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 기말</b>→ 잔액 확인·실사·감사보고서 발행</div>
+<div style="padding: 12px 16px;"><b>▶ 본사 대응</b>→ 일본 감사법인의 그룹감사 질의에 일본어로 회신</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 외부감사 상담하기</button>
+</sc-if>
+
+<sc-if value="{{on.vaudit}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">법정 감사 대상이 아니어도 <b>본사 연결결산용 패키지</b>를 한국 회계사가 확인해 주길 원하는 경우의 임의감사입니다. 범위는 본사와 합의해 정합니다.</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 이런 경우</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 연결결산</b>→ 본사 연결용 리포팅 패키지(일본기준·IFRS) 감사·검토</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 그룹감사</b>→ 본사 감사법인 지시서에 따라 구성단위로서 절차 수행</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 합의된 절차(AUP)</b>→ 매출·재고·특수관계자 거래 등 지정 항목만 확인</div>
+<div style="padding: 12px 16px;"><b>▶ 금융기관·투자자</b>→ 차입·출자 조건으로 감사받은 재무제표가 필요할 때</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 진행 순서</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 범위 합의</b>→ 본사·본사 감사법인과 대상·기준·기한 결정</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 절차</b>→ 증빙·잔액·거래를 확인하고 조정(K-GAAP→일본기준·IFRS) 차이도 설명</div>
+<div style="padding: 12px 16px;"><b>▶ 보고</b>→ 일본어 보고서. 본사 감사법인 제출 양식에도 대응</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 임의감사 상담하기</button>
+</sc-if>
+
+<sc-if value="{{on.entry}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">한국 진출부터 거점 운영, 인수, 철수까지. 어느 단계든 같은 공인회계사가 함께합니다.</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 4가지 단계</h3>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px"><div style="border: 1px solid #D8E2EE; border-top: 3px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 6px"><b style="font-size: 16px; color: #1F3F6E">신규 진출 지원</b><span style="color: #333333; font-size: 14px">현지법인·지점·연락사무소 비교, 외국인투자 신고, 은행 계좌, 사업자등록까지.</span><button type="button" onClick="{{go.forms}}" style="align-self: flex-start; margin-top: 4px; background: none; border: 0; padding: 0; color: #3E6DB0; font: inherit; font-weight: 700; cursor: pointer">진출 형태 비교 ▶</button></div><div style="border: 1px solid #D8E2EE; border-top: 3px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 6px"><b style="font-size: 16px; color: #1F3F6E">한국 기업 인수(M&A)</b><span style="color: #333333; font-size: 14px">재무실사, 가치평가, 인수 후 흡수합병 설계.</span><button type="button" onClick="{{go.ma}}" style="align-self: flex-start; margin-top: 4px; background: none; border: 0; padding: 0; color: #3E6DB0; font: inherit; font-weight: 700; cursor: pointer">인수·흡수합병 ▶</button></div><div style="border: 1px solid #D8E2EE; border-top: 3px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 6px"><b style="font-size: 16px; color: #1F3F6E">한국 거점 운영</b><span style="color: #333333; font-size: 14px">장부 확인, 세무 신고, 급여·4대보험, 본사와의 소통, 감사 대응.</span><button type="button" onClick="{{go.books}}" style="align-self: flex-start; margin-top: 4px; background: none; border: 0; padding: 0; color: #3E6DB0; font: inherit; font-weight: 700; cursor: pointer">일본계 법인 지원 ▶</button></div><div style="border: 1px solid #D8E2EE; border-top: 3px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 6px"><b style="font-size: 16px; color: #1F3F6E">한국에서 철수</b><span style="color: #333333; font-size: 14px">해산·청산 절차, 잔여재산 분배와 원천세, 외국인투자 말소, 본사 송금.</span></div></div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 철수 시 주의할 점</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 청산소득</b>→ 해산 시 자산 처분이익에 법인세</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 잔여재산 분배</b>→ 본사 분배는 배당으로 보아 원천세(조세조약으로 경감)</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 외국인투자 말소</b>→ 신고를 말소하고 송금 절차 정리</div>
+<div style="padding: 12px 16px;"><b>▶ 직원</b>→ 퇴직금 정산은 법정 의무(근속 1년 이상)</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 진출·철수 상담하기</button>
+</sc-if>
+
 <sc-if value="{{on.cases}}" hint-placeholder-val="{{false}}">
 <div style="background: #F6F8FB; border: 1px solid #DDE3EA; padding: 12px 16px; font-size: 13px; color: #555555">※공개 보도에 근거한 사례로, 당 법인 사례가 아닙니다. 수치는 각 보도 시점 기준입니다.</div>
 <div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
@@ -789,10 +887,11 @@ function popHidden() { try { var v = +localStorage.getItem(POP_KEY); return v &&
 function popHide(days) { try { var d = new Date(); if (days === 1) { d.setHours(24, 0, 0, 0); } else { d = new Date(Date.now() + days * 86400000); } localStorage.setItem(POP_KEY, String(d.getTime())); } catch (e) {} }
 var MENU = [
   { t: '일본계 법인 지원', subs: [['books', '매월 경리를 꼼꼼히 확인', '꼼꼼한 경리 확인'], ['report', '본사와의 소통·연결', '본사와의 소통'], ['intl', '국제조세·이전가격·부가세', '이전가격·원천세·부가세'], ['staff', '주재원·급여·4대보험', '주재원·4대보험'], ['audit', '외부감사·내부통제', '외부감사·내부통제']] },
+  { t: '서비스', subs: [['eaudit', '외부감사(법정감사)', '법정감사'], ['vaudit', '임의감사(본사 패키지)', '본사 패키지 감사'], ['entry', '한국 진출·운영·철수', '진출부터 철수까지']] },
   { t: '신규 한국 진출', subs: [['forms', '진출 형태 비교', '신설 vs 인수'], ['diag', '단계 진단', '진출 형태 진단'], ['taxcmp', '일본과 세제 비교', '실효세율 차이'], ['ma', '인수·흡수합병', 'M&A·합병'], ['game', '게임·IP 기업 논점', '게임·IP'], ['incent', '보조금·우대제도', '보조금·우대']] },
   { t: '세무 점검', subs: [['service', '회계사 무료 점검(자료를 받아 서면으로)', '회계사 무료 점검'], ['check', '1분 셀프체크(직접 해보기)', '1분 셀프체크']] },
   { t: '일본 세무·노무', subs: [['jpqa', '일본 세무·노무 Q&A', 'Q&A(23문항)'], ['jpcal', '일본 세무 캘린더', '세무 캘린더·공휴일']] },
-  { t: '한국 세무·노무', subs: [['krqa', '한국 세무·노무 Q&A', 'Q&A(20문항)']] },
+  { t: '한국 세무·노무', subs: [['krqa', '한국 세무·노무 Q&A', 'Q&A(20문항)'], ['wht', '원천세란', '매월 10일 신고·납부'], ['prop', '재산세란', '7월·9월 지방세']] },
   { t: '사례·칼럼', subs: [['cases', '보도로 보는 성공사례', '성공사례'], ['dd', '출자금·대여금 사용 확인(실사)', '본사 자금 사용 확인'], ['policy', '향후 1·2·3년 제도 변경', '1·2·3년 제도 변경'], ['roadmap', '10년·20년 동행', '10년·20년']] },
   { t: '구성원', subs: [['members', '구성원 소개', '한일 전문가 팀'], ['about', '담당 회계사 프로필', '이규범 경력']] },
   { t: '공지사항', subs: [['news', '공지·업데이트', '공지 목록']] },

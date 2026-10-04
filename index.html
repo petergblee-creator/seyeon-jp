@@ -169,6 +169,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </sc-for>
 <span style="font-size: 12px; color: #6B7684">※ 期限が土日・祝日の場合は翌営業日。毎月10日の源泉税は省略しています。</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" onClick="{{go.wht}}" style="background: #FFFFFF; border: 1px solid #9CC1EE; color: #2F5590; border-radius: 14px; padding: 4px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer">源泉税（毎月10日）とは ▶</button><button type="button" onClick="{{go.prop}}" style="background: #FFFFFF; border: 1px solid #9CC1EE; color: #2F5590; border-radius: 14px; padding: 4px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer">財産税（7月・9月）とは ▶</button></div>
 </div>
 </div>
 </section>
@@ -310,7 +311,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 自分で判別できる</b>→ 毎月「確認すべき5項目」チェック表をお渡しし、社内でも異常に気づけるようにします</div>
 <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center"><b>▶ 月次でお渡しするもの</b><button type="button" onClick="{{tg.b1}}" style="min-height: 36px; padding: 0 12px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">{{lbl.b1}}</button></div>
-<sc-if value="{{op.b1}}" hint-placeholder-val="{{false}}"><span style="color: #333333">試算表（日本語勘定科目併記）／前月・予算との差異コメント／源泉税・付加価値税の申告予定／翌月の論点メモ。本社の締め日に合わせて提出します。</span></sc-if>
+<sc-if value="{{op.b1}}" hint-placeholder-val="{{false}}"><span style="color: #333333">試算表（日本語勘定科目併記）／前月・予算との差異コメント／源泉税・付加価値税（消費税）の申告予定／翌月の論点メモ。本社の締め日に合わせて提出します。</span></sc-if>
 </div>
 </div>
 </sc-if>
@@ -495,6 +496,103 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ まずは無料で相談する</button>
 </sc-if>
 
+<sc-if value="{{on.wht}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">「源泉税（원천세）」は、会社が給与や報酬を支払うときに税金を差し引き（天引き）、<b>翌月10日まで</b>に会社が代わりに国へ納める税金です。韓国の実務では毎月10日の申告・納付をまとめて「源泉税」と呼び、同じ日に<b>4大保険料</b>の納付期限も来るため、一緒に管理します。</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 「源泉税」と呼ぶ理由</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 源泉（원천）＝所得の出どころ</b>→ 支払う側（会社）が支払いの時点で差し引くため「源泉」で徴収する税と呼びます。日本の源泉徴収と同じ考え方です。</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 含まれる税金</b>→ 所得税（国税）＋地方所得税（所得税額の10%）。給与・退職金・フリーランスへの報酬（3.3%）・その他所得・利子・配当・海外送金（ロイヤリティ等）など。</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 4大保険料</b>→ 税金ではありませんが、従業員負担分を給与から天引きし、会社負担分と合わせて同じ10日に納めます。実務では源泉税とセットで管理します。</div>
+<div style="padding: 12px 16px;"><b>▶ 付加価値税（消費税）との違い</b>→ 付加価値税（消費税）は源泉税ではありません。1・4・7・10月の25日に別に申告します。</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 期限</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 原則</b>→ 支払月の翌月10日に申告・納付</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 半期納付の特例</b>→ 常時従業員20人以下などで承認を受ければ、1月・7月の10日に半年分をまとめて納付</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 年末調整</b>→ 翌年2月分の給与で精算し、3月10日までに支払明細書を提出</div>
+<div style="padding: 12px 16px;"><b>▶ 簡易支払明細書</b>→ フリーランス等への報酬は毎月末、給与分は半期ごとに提出</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 日系法人で多い論点</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 駐在員給与</b>→ 日本で払っている分も韓国で課税対象。源泉の範囲と本社・韓国法人の負担区分を整理</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 本社への送金</b>→ 配当・ロイヤリティは租税条約の制限税率（5〜15%・10%）。支払前の申請が必要</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 外国人単一税率</b>→ 租特法§18の2を選ぶと源泉の計算方法が変わります</div>
+<div style="padding: 12px 16px;"><b>▶ 遅れた場合</b>→ 未納額の3%＋1日0.022%の加算税（上限10%）</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 源泉税について相談する</button>
+</sc-if>
+
+<sc-if value="{{on.prop}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">韓国の財産税（재산세）は、土地・建物・住宅などを<b>所有</b>している人に、市・区が毎年課す地方税です。<b>日本の固定資産税に相当</b>します。</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 概要</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 課税対象</b>→ 土地・建築物・住宅・船舶・航空機</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 基準日</b>→ 毎年6月1日時点の所有者に課税（日本は1月1日）</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 申告</b>→ 不要。市・区が税額を計算して告知書を送付します（賦課課税）</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 納付時期</b>→ 年1回を2期に分けて納付。7月16〜31日：建築物・住宅の1/2／9月16〜30日：土地・住宅の1/2（住宅の税額20万ウォン以下は7月に一括）</div>
+<div style="padding: 12px 16px;"><b>▶ あわせて課される税</b>→ 地方教育税（財産税額の20%）など。高額の住宅・土地は12月に総合不動産税（国税）</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 日本・外国法人の場合</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 課税</b>→ 国籍や本店所在地に関係なく、韓国内の不動産を所有していれば同じ基準で課税</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 賃借オフィス</b>→ 財産税は所有者に課税されるため、借りている会社には課税されません</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 告知書の受け取り</b>→ 韓国に住所がない場合は納税管理人を届け出て、告知書を確実に受け取る</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 事業所分の住民税</b>→ 所有していなくても、事業所があれば毎年8月に申告・納付（基本税額＋延床330㎡超は1㎡あたり250ウォン）</div>
+<div style="padding: 12px 16px;"><b>▶ 日本との違い</b>→ 日本の固定資産税は1月1日基準・年4回納付。韓国は6月1日基準・7月と9月の年2回</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 財産税について相談する</button>
+</sc-if>
+
+<sc-if value="{{on.eaudit}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">一定規模を超えた韓国法人は、毎年<b>会計法人による外部監査</b>が義務になります（外監法§4）。対象判定から監査人の選任、日本の本社監査法人とのやりとりまで、デロイト出身の会計士が日本語でまとめます。</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 対象になる会社</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 原則</b>→ 前事業年度末の資産または売上が500億ウォン以上</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ その他</b>→ 資産120億・負債70億・売上100億ウォン・従業員100人のうち2つ以上に該当など（有限会社は社員数の要件もあり）</div>
+<div style="padding: 12px 16px;"><b>▶ 判定</b>→ 決算書をいただければ、対象かどうかと開始時期をお伝えします</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 流れ</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 監査人の選任</b>→ 事業年度開始後45日以内（初めて対象になる年は4か月以内）</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 期中</b>→ 内部統制の確認・中間レビュー</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 期末</b>→ 残高確認・実査・監査報告書の発行</div>
+<div style="padding: 12px 16px;"><b>▶ 本社対応</b>→ 日本の監査法人からのグループ監査の質問に日本語で回答</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 外部監査について相談する</button>
+</sc-if>
+
+<sc-if value="{{on.vaudit}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">法定の監査対象でなくても、<b>本社の連結決算用パッケージ</b>を韓国の会計士が確認してほしい――そんなご依頼に応える任意監査です。範囲は本社と合意して決めます。</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ こんなときに</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 連結決算</b>→ 本社の連結用レポーティングパッケージ（日本基準・IFRS）を監査・レビュー</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ グループ監査</b>→ 本社監査法人のインストラクションに沿って、構成単位として手続きを実施</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 合意された手続（AUP）</b>→ 売上・在庫・関係会社取引など、指定した項目だけを確認</div>
+<div style="padding: 12px 16px;"><b>▶ 金融機関・投資家</b>→ 借入や出資の条件として監査済み財務諸表が必要なとき</div>
+</div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 進め方</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 範囲の合意</b>→ 本社・本社監査法人と対象・基準・期限を決定</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 手続</b>→ 証憑・残高・取引を確認し、組替え（K-GAAP→日本基準・IFRS）の差異も説明</div>
+<div style="padding: 12px 16px;"><b>▶ 報告</b>→ 日本語の報告書。本社監査法人への提出形式にも対応</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 任意監査について相談する</button>
+</sc-if>
+
+<sc-if value="{{on.entry}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 16px; line-height: 1.8">韓国への進出から、拠点の運営、買収、そして撤退まで。どの段階でも、同じ公認会計士が日本語で伴走します。</p>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 4つの段階</h3>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px"><div style="border: 1px solid #D8E2EE; border-top: 3px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 6px"><b style="font-size: 16px; color: #1F3F6E">新規進出支援</b><span style="color: #333333; font-size: 14px">現地法人・支店・連絡事務所の比較、外国人投資申告、銀行口座、事業者登録まで。</span><button type="button" onClick="{{go.forms}}" style="align-self: flex-start; margin-top: 4px; background: none; border: 0; padding: 0; color: #3E6DB0; font: inherit; font-weight: 700; cursor: pointer">進出形態の比較 ▶</button></div><div style="border: 1px solid #D8E2EE; border-top: 3px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 6px"><b style="font-size: 16px; color: #1F3F6E">韓国企業の買収（M&A）</b><span style="color: #333333; font-size: 14px">財務デューデリジェンス、バリュエーション、買収後の吸収合併の設計。</span><button type="button" onClick="{{go.ma}}" style="align-self: flex-start; margin-top: 4px; background: none; border: 0; padding: 0; color: #3E6DB0; font: inherit; font-weight: 700; cursor: pointer">買収・吸収合併 ▶</button></div><div style="border: 1px solid #D8E2EE; border-top: 3px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 6px"><b style="font-size: 16px; color: #1F3F6E">韓国拠点の運営</b><span style="color: #333333; font-size: 14px">記帳の確認、税務申告、給与・4大保険、本社とのやりとり、監査対応。</span><button type="button" onClick="{{go.books}}" style="align-self: flex-start; margin-top: 4px; background: none; border: 0; padding: 0; color: #3E6DB0; font: inherit; font-weight: 700; cursor: pointer">日系法人サポート ▶</button></div><div style="border: 1px solid #D8E2EE; border-top: 3px solid #3E6DB0; padding: 16px; display: flex; flex-direction: column; gap: 6px"><b style="font-size: 16px; color: #1F3F6E">韓国からの撤退</b><span style="color: #333333; font-size: 14px">解散・清算の手続、残余財産の分配と源泉税、外国人投資の抹消、本社への送金。</span></div></div>
+<h3 style="margin: 8px 0 0; font-size: 19px; border-bottom: 1px solid #D8E2EE; padding-bottom: 6px">■ 撤退で注意する点</h3>
+<div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 清算所得</b>→ 解散時の資産売却益に法人税</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 残余財産の分配</b>→ 本社への分配は配当とみなされ源泉税（租税条約で軽減）</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE;"><b>▶ 外国人投資の抹消</b>→ 申告を抹消し、送金手続を整える</div>
+<div style="padding: 12px 16px;"><b>▶ 従業員</b>→ 退職金の精算は法定義務（勤続1年以上）</div>
+</div>
+<button type="button" onClick="{{openForm}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">✎ 進出・撤退について相談する</button>
+</sc-if>
+
 <sc-if value="{{on.cases}}" hint-placeholder-val="{{false}}">
 <div style="background: #F6F8FB; border: 1px solid #DDE3EA; padding: 12px 16px; font-size: 13px; color: #555555">※公開報道に基づく事例で、当法人の案件ではありません。数値は各報道時点のものです。</div>
 <div style="display: flex; flex-direction: column; border: 1px solid #D8E2EE">
@@ -506,7 +604,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <div style="padding: 16px; border-bottom: 1px solid #D8E2EE; display: flex; flex-direction: column; gap: 6px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center"><b>▶ IP：『THE FIRST SLAM DUNK』— 30〜40代の原作世代</b><button type="button" onClick="{{tg.c2}}" style="min-height: 36px; padding: 0 12px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">{{lbl.c2}}</button></div>
 <span style="color: #333333">韓国で約482万人を動員（370日上映、2024年報道）。経済力があり、これからの消費を担う世代。</span>
-<sc-if value="{{op.c2}}" hint-placeholder-val="{{false}}"><span style="color: #333333; background: #F8FAFD; padding: 10px 12px">効いた点 → 原作世代の懐かしさ、ポップアップ・コラボ商品で物販へ拡大。<br>学べる点 → 収益主体ごとに源泉税・付加価値税の整理が要ります。</span></sc-if>
+<sc-if value="{{op.c2}}" hint-placeholder-val="{{false}}"><span style="color: #333333; background: #F8FAFD; padding: 10px 12px">効いた点 → 原作世代の懐かしさ、ポップアップ・コラボ商品で物販へ拡大。<br>学べる点 → 収益主体ごとに源泉税・付加価値税（消費税）の整理が要ります。</span></sc-if>
 </div>
 <div style="padding: 16px; display: flex; flex-direction: column; gap: 6px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center"><b>▶ 飲食：月島もんじゃ もへじ — 2026年8月 ソウル1号店</b><button type="button" onClick="{{tg.c3}}" style="min-height: 36px; padding: 0 12px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 3px; font: inherit; font-size: 13px; cursor: pointer">{{lbl.c3}}</button></div>
@@ -604,7 +702,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <p style="margin: 0; font-size: 16px"><b>結論：</b>目的で決まります。迷ったら<button type="button" onClick="{{go.diag}}" style="background: none; border: 0; padding: 0; color: #3E6DB0; text-decoration: underline; font: inherit; cursor: pointer">ステップ診断</button>へ。</p>
 <div style="display: flex; flex-direction: column; border-top: 2px solid #3E6DB0">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; background: #EFF5FC; font-weight: 700; font-size: 14px"><span>形態</span><span>メリット</span><span>注意点</span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>拠点なし（越境販売）</b><span>最速・低コスト。法人税は原則なし</span><span>付加価値税の簡易登録。ゲームは国内代理人義務の可能性</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>拠点なし（越境販売）</b><span>最速・低コスト。法人税は原則なし</span><span>付加価値税（消費税）の簡易登録。ゲームは国内代理人義務の可能性</span></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>連絡事務所</b><span>市場調査の拠点。法人税なし</span><span>営業・売上計上は不可</span></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>支店</b><span>本社の一部として営業可</span><span>責任が本社に直接及ぶ</span></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 6px 16px; padding: 12px 8px; border-bottom: 1px solid #D8E2EE"><b>現地法人の新設</b><span>契約・採用・補助金の主体</span><span>外国人投資申告（1億ウォン以上・持分10%以上）</span></div>
@@ -799,10 +897,11 @@ function popHidden() { try { var v = +localStorage.getItem(POP_KEY); return v &&
 function popHide(days) { try { var d = new Date(); if (days === 1) { d.setHours(24, 0, 0, 0); } else { d = new Date(Date.now() + days * 86400000); } localStorage.setItem(POP_KEY, String(d.getTime())); } catch (e) {} }
 var MENU = [
   { t: '日系法人サポート', subs: [['books', '毎月の経理を丁寧に確認', '経理の丁寧な確認'], ['report', '本社とのやりとり・連結', '本社とのやりとり'], ['intl', '国際税務・移転価格・VAT', '移転価格・源泉税・VAT'], ['staff', '駐在員・給与・4大保険', '駐在員・4大保険'], ['audit', '外部監査・内部統制', '外部監査・内部統制']] },
+  { t: 'サービス', subs: [['eaudit', '外部監査（法定監査）', '法定監査'], ['vaudit', '任意監査（本社パッケージ）', '本社パッケージ監査'], ['entry', '韓国進出・運営・撤退', '進出から撤退まで']] },
   { t: '新規韓国進出', subs: [['forms', '進出形態の比較', '新設か買収か'], ['diag', 'ステップ診断', '進出形態の診断'], ['taxcmp', '日本との税制比較', '実効税率の差'], ['ma', '買収・吸収合併', 'M&A・合併'], ['game', 'ゲーム・IP企業の論点', 'ゲーム・IP'], ['incent', '補助金・優遇制度', '補助金・優遇']] },
   { t: '見落とし診断', subs: [['service', '会計士の無料診断（資料をもとに書面で）', '会計士の無料診断'], ['check', '1分セルフチェック（ご自身で）', '1分セルフチェック']] },
   { t: '日本の税務・労務', subs: [['jpqa', '日本の税務・労務 Q&A', 'Q&A（23問）'], ['jpcal', '日本の税務カレンダー', '税務カレンダー・祝日']] },
-  { t: '韓国の税務・労務', subs: [['krqa', '韓国の税務・労務 Q&A', 'Q&A（20問）']] },
+  { t: '韓国の税務・労務', subs: [['krqa', '韓国の税務・労務 Q&A', 'Q&A（20問）'], ['wht', '源泉税とは', '毎月10日の申告・納付'], ['prop', '財産税とは', '7月・9月の地方税']] },
   { t: '事例・コラム', subs: [['cases', '報道に見る成功事例', '成功事例'], ['dd', '出資金・貸付金の使途確認（実査）', '本社資金の使途確認'], ['policy', '今後1・2・3年の制度変更', '1・2・3年の制度変更'], ['roadmap', '10年・20年のお付き合い', '10年・20年']] },
   { t: 'メンバー', subs: [['members', 'メンバー紹介', '日韓の専門家チーム'], ['about', '担当会計士プロフィール', 'イ・ギュボムの経歴']] },
   { t: 'お知らせ', subs: [['news', 'お知らせ・更新情報', 'お知らせ一覧']] },
@@ -840,19 +939,19 @@ var JP_HOL = { '2026-1-1': '元日', '2026-1-12': '成人の日', '2026-2-11': '
 var KR_RULES = [
   [0, 10, '源泉税・地方所得税 申告納付', '원천세·지방소득세 신고납부', false],
   [0, 0, '簡易支払明細書（事業所得等）提出', '간이지급명세서(사업소득 등) 제출', false],
-  [1, 25, '付加価値税 第2期 確定申告', '부가세 2기 확정신고', true],
+  [1, 25, '付加価値税（消費税） 第2期 確定申告', '부가세 2기 확정신고', true],
   [2, 0, '支払明細書（利子・配当・その他）提出', '지급명세서(이자·배당·기타) 제출', true],
   [3, 10, '年末調整分 源泉税・勤労所得 支払明細書', '연말정산분 원천세·근로소득 지급명세서', true],
   [3, 31, '法人税申告（12月決算）・国際取引明細書', '법인세 신고(12월 결산)·국제거래명세서', true],
-  [4, 25, '付加価値税 第1期 予定申告', '부가세 1기 예정신고', true],
+  [4, 25, '付加価値税（消費税） 第1期 予定申告', '부가세 1기 예정신고', true],
   [4, 30, '法人地方所得税 申告（12月決算）', '법인지방소득세 신고(12월 결산)', true],
   [5, 31, '総合所得税 確定申告（個人・駐在員）', '종합소득세 신고(개인·주재원)', true],
   [6, 30, '海外金融口座 申告', '해외금융계좌 신고', true],
-  [7, 25, '付加価値税 第1期 確定申告', '부가세 1기 확정신고', true],
+  [7, 25, '付加価値税（消費税） 第1期 確定申告', '부가세 1기 확정신고', true],
   [7, 31, '財産税（建物）納付', '재산세(건축물) 납부', false],
   [8, 31, '法人税 中間予納（12月決算）', '법인세 중간예납(12월 결산)', true],
   [9, 30, '財産税（土地）納付', '재산세(토지) 납부', false],
-  [10, 25, '付加価値税 第2期 予定申告', '부가세 2기 예정신고', true],
+  [10, 25, '付加価値税（消費税） 第2期 予定申告', '부가세 2기 예정신고', true],
   [12, 15, '総合不動産税 納付', '종합부동산세 납부', true]
 ];
 var JP_RULES = [
