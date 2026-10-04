@@ -82,7 +82,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <div class="sy-mega" style="position: absolute; left: 0; right: 0; top: 100%; background: #0B2A6B; color: #FFFFFF; box-shadow: 0 14px 30px rgba(0,0,0,0.25); border-top: 3px solid #B5532A">
 <div style="max-width: 1200px; margin: 0 auto; padding: 22px 16px 24px">
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(136px, 1fr)); gap: 18px 10px">
-<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="{{g.style}}"><b style="font-size: 13.5px; white-space: nowrap; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 7px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 calc(4px + 1em); text-indent: -1em; text-align: left; color: #C9D8F2; font: inherit; font-size: 13px; line-height: 1.45; cursor: pointer">・{{s.t}}</button></sc-for></div></sc-for>
+<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="{{g.style}}"><b style="font-size: 13.5px; white-space: nowrap; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 7px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 calc(4px + 1em); text-indent: -1em; text-align: left; color: #C9D8F2; font: inherit; font-size: 13px; line-height: 1.45; cursor: pointer">・{{s.t}}<span style="display: block; text-indent: 0; font-size: 12px; opacity: 0.8">{{s.t2}}</span></button></sc-for></div></sc-for>
 </div>
 </div>
 </div>
@@ -163,7 +163,6 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <sc-for list="{{kr.head}}" as="h" hint-placeholder-count="7"><span style="{{h.style}}">{{h.t}}</span></sc-for>
 <sc-for list="{{kr.cells}}" as="c" hint-placeholder-count="35"><div style="{{c.style}}" title="{{c.tip}}"><span>{{c.d}}</span><sc-if value="{{c.ev}}" hint-placeholder-val="{{false}}"><span style="{{c.dot}}">{{c.lbl}}</span></sc-if></div></sc-for>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #555555"><span><span style="display: inline-block; width: 12px; height: 12px; border-radius: 3px; background: #DCEBFB; box-shadow: inset 0 0 0 2px #9CC1EE; vertical-align: -1px"></span> 오늘</span><span><span style="font-size: 10.5px; font-weight: 800; padding: 2px 4px; border-radius: 3px; background: #E8590C; color: #FFFFFF">신고</span> <span style="font-size: 10.5px; font-weight: 800; padding: 2px 4px; border-radius: 3px; background: #E8590C; color: #FFFFFF">납부</span> 기한일</span><span><span style="display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: #FDECEF; border: 1px solid #E8A9BA"></span> 공휴일</span></div>
 <div style="display: flex; flex-direction: column; gap: 4px; border-top: 1px dashed #D8E2EE; padding-top: 10px">
 <b style="font-size: 14px">오늘 전후 1주일</b>
 <sc-for list="{{kr.near}}" as="n" hint-placeholder-count="2"><div style="{{n.style}}; font-size: 14px; display: flex; gap: 10px"><span style="flex: 0 0 auto; min-width: 72px">{{n.d}}</span><span>{{n.t}}</span></div></sc-for>
@@ -289,7 +288,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <aside style="flex: 0 1 220px; min-width: 200px; border: 1px solid #D8E2EE">
 <div style="background: #D6E4F5; color: #1F3F6E; padding: 16px; font-size: 17px; font-weight: 700">{{catTitle}}</div>
 <sc-for list="{{side}}" as="it" hint-placeholder-count="4">
-<button type="button" onClick="{{it.go}}" style="{{it.style}}">{{it.t}}</button>
+<button type="button" onClick="{{it.go}}" style="{{it.style}}">{{it.t}}<span style="display: block; font-size: 12px; font-weight: 400; opacity: 0.8">{{it.t2}}</span></button>
 </sc-for>
 <div style="padding: 14px; background: #F6F8FB; font-size: 13px; display: flex; flex-direction: column; gap: 4px">
 <b>상담 창구</b>
@@ -895,7 +894,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <div style="max-width: 1200px; margin: 0 auto; padding: 34px 16px 30px">
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.25); padding-bottom: 10px; margin-bottom: 18px"><b style="font-size: 17px; letter-spacing: 0.04em">사이트맵 — 전체 메뉴</b><button type="button" onClick="{{go.home}}" style="background: none; border: 1px solid rgba(255,255,255,0.5); color: #FFFFFF; border-radius: 3px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer">HOME ▲</button></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(136px, 1fr)); gap: 22px 10px">
-<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="display: flex; flex-direction: column; gap: 7px"><b style="font-size: 13.5px; white-space: nowrap; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 7px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 calc(4px + 1em); text-indent: -1em; text-align: left; color: #C9D8F2; font: inherit; font-size: 13px; line-height: 1.45; cursor: pointer">・{{s.t}}</button></sc-for></div></sc-for>
+<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="display: flex; flex-direction: column; gap: 7px"><b style="font-size: 13.5px; white-space: nowrap; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 7px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 calc(4px + 1em); text-indent: -1em; text-align: left; color: #C9D8F2; font: inherit; font-size: 13px; line-height: 1.45; cursor: pointer">・{{s.t}}<span style="display: block; text-indent: 0; font-size: 12px; opacity: 0.8">{{s.t2}}</span></button></sc-for></div></sc-for>
 </div>
 </div>
 </nav>
@@ -918,9 +917,10 @@ var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSddmsmvNsusmnc-T1l_dGm1
 var POP_KEY = 'sy_pop_until';
 function popHidden() { try { var v = +localStorage.getItem(POP_KEY); return v && Date.now() < v; } catch (e) { return false; } }
 function popHide(days) { try { var d = new Date(); if (days === 1) { d.setHours(24, 0, 0, 0); } else { d = new Date(Date.now() + days * 86400000); } localStorage.setItem(POP_KEY, String(d.getTime())); } catch (e) {} }
+function splitLbl(s) { var i = s.search(/[（(]/); return i > 0 ? [s.slice(0, i), s.slice(i)] : [s, '']; }
 var MENU = [
-  { t: '서비스', subs: [['intl', '국제조세·이전가격·부가세(소비세)', '국제조세'], ['staff', '주재원 급여·4대보험', '주재원·4대보험'], ['books', '기장(매월 경리 확인)', '기장'], ['close', '결산·법인세 신고', '결산'], ['report', '본사 리포팅·연결', '본사 리포팅'], ['entry', '한국 진출·운영·철수', '한국 진출·운영'], ['eaudit', '외부감사(법정감사)', '외부감사'], ['vaudit', '임의감사(본사 패키지)', '임의감사'], ['audit', '내부통제', '내부통제']] },
-  { t: '신규 한국 진출', subs: [['forms', '진출 형태 비교', '신설 vs 인수'], ['diag', '단계 진단', '진출 형태 진단'], ['taxcmp', '일본과 세제 비교', '실효세율 차이'], ['ma', '인수·흡수합병', 'M&A·합병'], ['game', '게임·IP 기업 논점', '게임·IP'], ['incent', '보조금·우대제도', '보조금·우대']] },
+  { t: '서비스', subs: [['report', '본사 리포팅', '본사 리포팅'], ['books', '기장(경리 확인)', '기장'], ['close', '결산·법인세 신고', '결산'], ['staff', '주재원 급여·4대보험', '주재원·4대보험'], ['eaudit', '외부감사(법정감사)', '외부감사'], ['vaudit', '임의감사(본사 패키지)', '임의감사'], ['audit', '내부통제', '내부통제'], ['intl', '국제조세(이전가격)', '국제조세']] },
+  { t: '신규 한국 진출', subs: [['entry', '한국 진출·운영·철수', '한국 진출·운영'], ['forms', '진출 형태 비교', '신설 vs 인수'], ['diag', '단계 진단', '진출 형태 진단'], ['taxcmp', '일본과 세제 비교', '실효세율 차이'], ['ma', '인수·흡수합병', 'M&A·합병'], ['game', '게임·IP 기업 논점', '게임·IP'], ['incent', '보조금·우대제도', '보조금·우대']] },
   { t: '세무 점검', subs: [['service', '회계사 무료 점검(자료를 받아 서면으로)', '회계사 무료 점검'], ['check', '1분 셀프체크(직접 해보기)', '1분 셀프체크']] },
   { t: '일본 세무·노무', subs: [['jpqa', '일본 세무·노무 Q&A', 'Q&A(23문항)'], ['jpcal', '일본 세무 캘린더', '세무 캘린더·공휴일']] },
   { t: '한국 세무·노무', subs: [['krqa', '한국 세무·노무 Q&A', 'Q&A(20문항)'], ['wht', '원천세란', '매월 10일 신고·납부'], ['prop', '재산세란', '7월·9월 지방세']] },
@@ -1016,13 +1016,14 @@ function buildGrid(y, m, today, evs, hol, holColor) {
   for (var i = 0; i < weeks * 7; i++) {
     var d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
     var k = dkey(d), inM = d.getMonth() === m, isT = k === dkey(today), h = hol[k];
-    var color = !inM ? '#B8C2CE' : (h || d.getDay() === 0 ? holColor : (d.getDay() === 6 ? '#3E6DB0' : (isT ? '#1F3F6E' : '#333333')));
+    isT = false;
+    var color = !inM ? '#B8C2CE' : (h || d.getDay() === 0 ? holColor : (d.getDay() === 6 ? '#3E6DB0' : '#333333'));
     var evT = inM ? (evKeys[k] || '') : '', isEv = !!evT;
     var lbl = !isEv ? '' : (LANG_JA ? (/申告|提出/.test(evT) ? '申告' : '納付') : (/신고|제출/.test(evT) ? '신고' : '납부'));
     cells.push({
-      d: d.getDate(), ev: isEv, lbl: lbl, tip: (h ? h + ' ' : '') + (evKeys[k] || ''),
+      d: d.getDate(), ev: isEv || (inM && !!h), lbl: isEv ? lbl : (LANG_JA ? '祝日' : '휴일'), tip: (h ? h + ' ' : '') + (evKeys[k] || ''),
       style: 'min-height: 40px; padding: 4px 0; border-radius: 6px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-weight: ' + (isT ? '700' : '400') + '; color: ' + color + '; background: ' + (isT ? '#DCEBFB' : (isEv ? '#FFF3E8' : (inM && h ? '#FDECEF' : (inM ? '#FFFFFF' : 'transparent')))) + ';' + (isT ? ' box-shadow: inset 0 0 0 2px #9CC1EE;' : (isEv ? ' box-shadow: inset 0 0 0 1px #F3C59D;' : '')),
-      dot: 'font-size: 10.5px; font-weight: 800; line-height: 1; padding: 2px 4px; border-radius: 3px; background: #E8590C; color: #FFFFFF; letter-spacing: 0.02em;'
+      dot: 'font-size: 10.5px; font-weight: 800; line-height: 1; padding: 2px 4px; border-radius: 3px; letter-spacing: 0.02em; color: #FFFFFF; background: ' + (isEv ? '#E8590C' : '#D6487A') + ';'
     });
   }
   var head = (LANG_JA ? WK_JA : WK_KO).map(function (w, i) { return { t: w, style: 'font-weight: 700; padding: 4px 0; color: ' + (i === 0 ? holColor : (i === 6 ? '#3E6DB0' : '#555555')) + ';' }; });
@@ -1143,7 +1144,8 @@ class Component extends DCLogic {
     });
     var side = cat ? cat.subs.map(function (sb) {
       var act = sb[0] === page;
-      return { t: sb[1], go: go[sb[0]], style: SIDE + (act ? 'background: #EFF5FC; color: #3E6DB0; font-weight: 700;' : 'background: #FFFFFF; color: #222222;') };
+      var p = splitLbl(sb[1]);
+      return { t: p[0], t2: p[1], go: go[sb[0]], style: SIDE + (act ? 'background: #EFF5FC; color: #3E6DB0; font-weight: 700;' : 'background: #FFFFFF; color: #222222;') };
     }) : [];
     var openS = s.open || {};
     var op = {}, tg = {}, lbl = {};
@@ -1199,7 +1201,7 @@ class Component extends DCLogic {
     else { chkTitle = '관행대로 점검되지 않은 부분이 많아 보입니다.'; chkBody = '현황을 한번 들려주세요. 바꿔야 할지부터 함께 판단합니다.'; }
     return {
       megaOpen: s.hover != null,
-      sitemap: MENU.map(function (m, mi) { return { t: m.t, style: 'display: flex; flex-direction: column; gap: 7px; padding: 8px; border-radius: 6px; ' + (s.hover === mi ? 'background: rgba(255,255,255,0.10);' : ''), subs: m.subs.map(function (sb) { return { t: sb[1], go: go[sb[0]] }; }) }; }),
+      sitemap: MENU.map(function (m, mi) { return { t: m.t, style: 'display: flex; flex-direction: column; gap: 7px; padding: 8px; border-radius: 6px; ' + (s.hover === mi ? 'background: rgba(255,255,255,0.10);' : ''), subs: m.subs.map(function (sb) { var p = splitLbl(sb[1]); return { t: p[0], t2: p[1], go: go[sb[0]] }; }) }; }),
       go: go, on: on, top: top, side: side, isSub: page !== 'home',
       homeTab: TAB + (page === 'home' ? 'background: #FFFFFF; color: #2F5590;' : 'background: transparent; color: #1F3F6E;'),
       catTitle: cat ? cat.t : '', pageTitle: titles[page] || '',
