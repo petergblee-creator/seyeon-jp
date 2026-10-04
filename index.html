@@ -29,6 +29,17 @@
 <style>
 body{margin:0;background:#FFFFFF}
 a{color:#3E6DB0}a:hover{color:#163A75}
+
+@keyframes sySlow{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes syDrop{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.sy-anim>section,.sy-anim main>*,.sy-anim aside,.sy-sub-head{animation:sySlow 1s cubic-bezier(.2,.7,.2,1) .5s both}
+.sy-anim>section:nth-of-type(2),.sy-anim main>*:nth-child(2){animation-delay:.62s}
+.sy-anim>section:nth-of-type(3),.sy-anim main>*:nth-child(3){animation-delay:.74s}
+.sy-anim>section:nth-of-type(4),.sy-anim main>*:nth-child(4){animation-delay:.86s}
+.sy-anim>section:nth-of-type(n+5),.sy-anim main>*:nth-child(n+5){animation-delay:.98s}
+.sy-mega{animation:syDrop .7s cubic-bezier(.2,.7,.2,1) .35s both}
+.sy-mega button:hover{color:#FFFFFF !important;text-decoration:underline}
+@media(prefers-reduced-motion:reduce){.sy-anim>section,.sy-anim main>*,.sy-anim aside,.sy-sub-head,.sy-mega{animation:none}}
 </style>
 </helmet>
 <div style="font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif; color: #222222; background: #FFFFFF; font-size: 15px; line-height: 1.7">
@@ -58,22 +69,24 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </div>
 
-<nav style="background: #D6E4F5; border-top: 1px solid #C3D6EE; border-bottom: 1px solid #C3D6EE">
+<nav onMouseLeave="{{leave}}" style="position: relative; z-index: 40; background: #D6E4F5; border-top: 1px solid #C3D6EE; border-bottom: 1px solid #C3D6EE">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap">
 <button type="button" onClick="{{go.home}}" style="{{homeTab}}">HOME</button>
 <sc-for list="{{top}}" as="m" hint-placeholder-count="6">
-<div onMouseEnter="{{m.enter}}" onMouseLeave="{{leave}}" style="position: relative">
+<div onMouseEnter="{{m.enter}}" style="position: relative">
 <button type="button" onClick="{{m.go}}" onFocus="{{m.enter}}" style="{{m.style}}">{{m.t}} ▾</button>
-<sc-if value="{{m.open}}" hint-placeholder-val="{{false}}">
-<div style="position: absolute; top: 100%; left: 0; z-index: 20; min-width: 230px; background: #FFFFFF; border: 1px solid #D8E2EE; border-top: 3px solid #B5532A; box-shadow: 0 4px 10px rgba(0,0,0,0.12); display: flex; flex-direction: column">
-<sc-for list="{{m.subs}}" as="sb" hint-placeholder-count="4">
-<button type="button" onClick="{{sb.go}}" style="min-height: 42px; padding: 0 16px; text-align: left; background: #FFFFFF; border: 0; border-bottom: 1px solid #EEF1F5; font: inherit; font-size: 14px; color: #222222; cursor: pointer">・{{sb.kw}}</button>
+</div>
 </sc-for>
+</div>
+<sc-if value="{{megaOpen}}" hint-placeholder-val="{{false}}">
+<div class="sy-mega" style="position: absolute; left: 0; right: 0; top: 100%; background: #0B2A6B; color: #FFFFFF; box-shadow: 0 14px 30px rgba(0,0,0,0.25); border-top: 3px solid #B5532A">
+<div style="max-width: 1200px; margin: 0 auto; padding: 22px 16px 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px 20px">
+<sc-for list="{{sitemap}}" as="g" hint-placeholder-count="10"><div style="{{g.style}}"><b style="font-size: 14.5px; color: #FFFFFF; border-left: 3px solid #7FB0F0; padding-left: 8px">{{g.t}}</b><sc-for list="{{g.subs}}" as="s" hint-placeholder-count="3"><button type="button" onClick="{{s.go}}" style="background: none; border: 0; padding: 0 0 0 11px; text-align: left; color: #C9D8F2; font: inherit; font-size: 13.5px; cursor: pointer">{{s.t}}</button></sc-for></div></sc-for>
+</div>
+</div>
 </div>
 </sc-if>
-</div>
-</sc-for>
-</div>
 </nav>
 <sc-if value="{{showPopup}}" hint-placeholder-val="{{false}}">
 <div style="position: fixed; inset: 0; z-index: 60; background: transparent; pointer-events: none; display: flex; align-items: flex-end; justify-content: flex-end; padding: 16px">
@@ -101,6 +114,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </sc-if>
 
 <sc-if value="{{on.home}}" hint-placeholder-val="{{true}}">
+<div class="sy-anim">
 <section style="background: #F1F6FD; border-bottom: 1px solid #D8E2EE">
 <div style="max-width: 1200px; margin: 0 auto; padding: 44px 16px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center">
 <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 14px">
@@ -263,9 +277,11 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </section>
 </div>
 </div>
+</div>
 </sc-if>
 
 <sc-if value="{{isSub}}" hint-placeholder-val="{{false}}">
+<div class="sy-anim">
 <div style="background: #E3EDF9; color: #1F3F6E; border-bottom: 1px solid #C3D6EE">
 <div style="max-width: 1200px; margin: 0 auto; padding: 26px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: flex-end">
 <span style="font-size: 26px; font-weight: 700">{{catTitle}}</span>
@@ -870,6 +886,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 
 </div>
+</div>
 </sc-if>
 
 <div style="max-width: 1200px; margin: 0 auto; padding: 0 16px 16px; font-size: 13px; color: #555555">※ 労務・法務は、提携する社会保険労務士・公認労務士・弁護士と連携して対応します（窓口・最終検収は公認会計士）。</div>
@@ -1182,7 +1199,8 @@ class Component extends DCLogic {
     else if (noCount <= 5) { chkTitle = '部分的に見落としがあります。'; chkBody = '今の事務所はそのままに、足りない部分だけ並走することもできます。'; }
     else { chkTitle = '慣例のまま、見直されていない箇所が多いようです。'; chkBody = '一度、日本語で現状をお聞かせください。替えるべきかどうかから一緒に判断します。'; }
     return {
-      sitemap: MENU.map(function (m) { return { t: m.t, subs: m.subs.map(function (sb) { return { t: sb[1], go: go[sb[0]] }; }) }; }),
+      megaOpen: s.hover != null,
+      sitemap: MENU.map(function (m, mi) { return { t: m.t, style: 'display: flex; flex-direction: column; gap: 7px; padding: 8px; border-radius: 6px; ' + (s.hover === mi ? 'background: rgba(255,255,255,0.10);' : ''), subs: m.subs.map(function (sb) { return { t: sb[1], go: go[sb[0]] }; }) }; }),
       go: go, on: on, top: top, side: side, isSub: page !== 'home',
       homeTab: TAB + (page === 'home' ? 'background: #FFFFFF; color: #2F5590;' : 'background: transparent; color: #1F3F6E;'),
       catTitle: cat ? cat.t : '', pageTitle: titles[page] || '',
