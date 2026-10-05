@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jp.seyeon-tax.com/sitemap.xml
