@@ -98,6 +98,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </sc-if>
 </nav>
+<div style="background: #FFF8EC; border-bottom: 1px solid #F0DDB8"><div style="max-width: 1200px; margin: 0 auto; padding: 7px 16px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 13px"><b style="color: #9A3412">🇰🇷 韓国生活に役立つサイト</b><a href="https://www.konest.com/" target="_blank" rel="noopener">コネスト ↗</a><a href="https://www.seoulnavi.com/" target="_blank" rel="noopener">ソウルナビ ↗</a><a href="https://www.kr.emb-japan.go.jp/" target="_blank" rel="noopener">在韓国日本大使館 ↗</a><a href="https://www.sjchp.co.kr/" target="_blank" rel="noopener">ソウルジャパンクラブ ↗</a><span style="color: #6B7684; font-size: 12px">駐在員・ご家族の生活情報に</span></div></div>
 <sc-if value="{{showPopup}}" hint-placeholder-val="{{false}}">
 <div style="position: fixed; inset: 0; z-index: 60; background: transparent; pointer-events: none; display: flex; align-items: flex-end; justify-content: flex-end; padding: 16px">
 <div role="dialog" aria-label="2026年 韓国税制改正" style="pointer-events: auto; background: #FFFFFF; border: 1px solid #C3D0DF; border-radius: 12px; max-width: 400px; width: 100%; max-height: calc(100vh - 32px); overflow-y: auto; padding: 18px 20px; font-size: 13px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.25)">
@@ -184,10 +185,10 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <sc-for list="{{kr.months}}" as="mo" hint-placeholder-count="3">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <b style="font-size: 15px; color: #2F5590">{{mo.t}}</b>
-<sc-for list="{{mo.items}}" as="it" hint-placeholder-count="2"><div style="font-size: 14px; display: flex; gap: 10px; padding: 3px 0; border-bottom: 1px solid #E6ECF3"><span style="flex: 0 0 auto; min-width: 72px; color: #555555">{{it.d}}</span><span style="flex: 1 1 auto">{{it.t}}</span><sc-if value="{{it.dd}}" hint-placeholder-val="{{false}}"><span style="{{it.ddStyle}}">{{it.dd}}</span></sc-if></div></sc-for>
+<sc-for list="{{mo.items}}" as="it" hint-placeholder-count="2"><div style="font-size: 14px; display: flex; gap: 10px; padding: 3px 0; border-bottom: 1px solid #E6ECF3"><span style="flex: 0 0 auto; min-width: 72px; color: #555555">{{it.d}}</span><span style="flex: 1 1 auto; {{it.tStyle}}">{{it.t}}</span><sc-if value="{{it.dd}}" hint-placeholder-val="{{false}}"><span style="{{it.ddStyle}}">{{it.dd}}</span></sc-if></div></sc-for>
 </div>
 </sc-for>
-<span style="font-size: 12px; color: #6B7684">※ 期限が土日・祝日の場合は翌営業日。毎月10日の源泉税は省略しています。</span>
+<span style="font-size: 12px; color: #6B7684">※ 期限が土日・祝日の場合は翌営業日。太字は特に重要な期限です。</span>
 <div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" onClick="{{go.wht}}" style="background: #FFFFFF; border: 1px solid #9CC1EE; color: #2F5590; border-radius: 14px; padding: 4px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer">源泉税（毎月10日）とは ▶</button><button type="button" onClick="{{go.prop}}" style="background: #FFFFFF; border: 1px solid #9CC1EE; color: #2F5590; border-radius: 14px; padding: 4px 12px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer">財産税（7月・9月）とは ▶</button></div>
 </div>
 </div>
@@ -199,7 +200,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <button type="button" onClick="{{go.report}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">本社レポーティング</b><span style="font-size: 12px; color: #555555">日本語で直接</span></button>
 <button type="button" onClick="{{go.check}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">1分セルフチェック</b><span style="font-size: 12px; color: #555555">見落としの点検</span></button>
 <button type="button" onClick="{{go.members}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">メンバー紹介</b><span style="font-size: 12px; color: #555555">日韓の専門家</span></button>
-<button type="button" onClick="{{go.jpqa}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">日本の税務・労務</b><span style="font-size: 12px; color: #555555">Q&amp;A・カレンダー</span></button>
+<button type="button" onClick="{{go.jpqa}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-right: 1px solid #D8E2EE; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">日本税務インサイト</b><span style="font-size: 12px; color: #555555">Q&amp;A・カレンダー</span></button>
 <button type="button" onClick="{{go.contact}}" style="min-height: 88px; background: #FFFFFF; border: 0; border-bottom: 1px solid #D8E2EE; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px"><b style="color: #3E6DB0; font-size: 15px">連絡先・地図</b><span style="font-size: 12px; color: #555555">LINE・来所案内</span></button>
 </div>
 </section>
@@ -259,6 +260,18 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </section>
 
+<section style="max-width: 1200px; margin: 0 auto; padding: 8px 16px 8px">
+<div style="border: 1px solid #D8E2EE; border-radius: 10px; padding: 22px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center">
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: #B5532A">LOCATION</span>
+<b style="font-size: 24px">アクセス</b>
+<span style="color: #333333">ソウル特別市 江南区 彦州路159ギル 27 3階<br><span style="font-size: 14px; color: #555555">地下鉄3号線 アックジョン駅から徒歩約8分・江南駅から15分</span></span>
+<p style="margin: 0; font-size: 14.5px; line-height: 1.85; color: #333333">アックジョン・新沙（シンサ）は、カロスキル（街路樹通り）にも歩いて行ける落ち着いた街です。周辺には日本料理店や日本の方がよく訪れるお店も多く、初めての方も気軽にお越しいただけます。</p>
+<button type="button" onClick="{{go.contact}}" style="align-self: flex-start; min-height: 44px; padding: 0 18px; background: #FFFFFF; border: 1px solid #1F3F6E; color: #1F3F6E; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">地図で見る　→</button>
+</div>
+<div style="flex: 1 1 320px; max-width: 460px"><img src="img/office.jpg" alt="セヨン会計法人が入るビル（アックジョン）" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px"></div>
+</div>
+</section>
 <section style="max-width: 1200px; margin: 0 auto; padding: 24px 16px 32px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start">
 <div style="background: #F6F8FB; border: 1px dashed #C3D0DF; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #4A5565; display: flex; flex-direction: column; gap: 4px">
@@ -356,7 +369,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <p style="margin: 0; font-size: 15px; line-height: 1.85; color: #333333">駐在員の給与は、本社と韓国法人の負担区分、課税方式の選び方、社会保険の加入で負担が変わります。出向契約と実際の支給を確認して整理します。</p>
 <div style="background: #FFF4EC; border-left: 3px solid #B5532A; padding: 12px 16px; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 13px; color: #9A3412">こんなときにご相談ください</b><span style="font-size: 14.5px; line-height: 1.7">新しく駐在員が赴任するとき、本社支給分の申告や負担区分が整っているか確かめたいとき</span></div>
 <div style="display: flex; flex-wrap: wrap; gap: 14px">
-<div style="flex: 1 1 260px; border: 1px solid #D8E2EE; padding: 14px 16px"><b style="font-size: 13px; color: #1F3F6E">主なご相談範囲</b><ul style="list-style: none; margin: 8px 0 0; padding: 0; font-size: 14.5px; line-height: 1.6"><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>外国人単一税率（租特法§18の2）と通常税率の比較</li><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>本社・韓国法人の負担区分と出向契約の確認</li><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>日韓社会保障協定による年金の二重加入の回避</li><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>給与計算・4大保険・年末調整（韓国人スタッフ分も）</li></ul></div>
+<div style="flex: 1 1 260px; border: 1px solid #D8E2EE; padding: 14px 16px"><b style="font-size: 13px; color: #1F3F6E">主なご相談範囲</b><ul style="list-style: none; margin: 8px 0 0; padding: 0; font-size: 14.5px; line-height: 1.6"><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>外国人単一税率（租特法§18の2）と通常税率の比較</li><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>本社・韓国法人の負担区分と出向契約の確認</li><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>日韓社会保障協定による年金の二重加入の回避</li><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>給与計算・4大保険・年末調整（韓国人スタッフ分も）</li><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>社内勤労福祉基金の運営（基金法人のモニタリング・事業計画書の報告）</li></ul></div>
 <div style="flex: 1 1 260px; border: 1px solid #D8E2EE; padding: 14px 16px; background: #F8FAFD"><b style="font-size: 13px; color: #1F3F6E">ご相談前にご用意いただくと良い資料</b><ul style="list-style: none; margin: 8px 0 0; padding: 0; font-size: 14.5px; line-height: 1.6"><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>出向契約書・辞令</li><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>本社支給分を含む給与明細</li><li style="padding: 4px 0 4px 16px; position: relative"><span style="position: absolute; left: 0; color: #B5532A">·</span>赴任日・在留資格などの基本情報</li></ul></div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center"><button type="button" onClick="{{go.staff}}" style="min-height: 44px; padding: 0 16px; background: #FFFFFF; border: 1px solid #3E6DB0; color: #3E6DB0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">詳しく見る ▶</button><button type="button" onClick="{{openForm}}" style="min-height: 44px; padding: 0 18px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 4px; font: inherit; font-weight: 700; cursor: pointer">この分野を相談する →</button></div>
@@ -496,7 +509,8 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 外国人単一税率</b>（租特法§18の2）→ 現行19%、2027年から21%案（期限2029年末へ延長案）</div>
 <div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 負担区分</b>→ 本社負担分・韓国法人負担分の整理と、出向契約の確認</div>
 <div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 日韓社会保障協定</b>→ 年金の二重加入を回避</div>
-<div style="padding: 12px 16px"><b>▶ 給与計算・4大保険・年末調整</b>→ 韓国人スタッフ分も同じ窓口で</div>
+<div style="padding: 12px 16px; border-bottom: 1px solid #D8E2EE"><b>▶ 給与計算・4大保険・年末調整</b>→ 韓国人スタッフ分も同じ窓口で</div>
+<div style="padding: 12px 16px"><b>▶ 社内勤労福祉基金</b>→ 基金法人の運営モニタリング、事業計画書・決算の報告</div>
 </div>
 </sc-if>
 
@@ -842,7 +856,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <span style="position: absolute; right: 10px; bottom: 8px; font-size: 11px; color: #6B7684">略図（正確な位置は地図アプリで）</span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
-<div style="aspect-ratio: 4 / 3; background: #E3E8EF; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #555555">［建物外観の写真］</div>
+<img src="img/office.jpg" alt="セヨン会計法人が入るビル（アックジョン）" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px">
 <div style="aspect-ratio: 4 / 3; background: #E3E8EF; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 13px; color: #555555">［会議室の写真］<b style="color: #3E6DB0; margin-top: 4px">会議室で無料相談</b></div>
 </div>
 </div>
@@ -1079,8 +1093,8 @@ var MENU = [
   { t: 'サービス', subs: [['svc', 'サービス一覧', '6分野の概要'], ['report', '本社レポーティング', '本社レポーティング'], ['books', '記帳（経理確認）', '記帳'], ['close', '決算・法人税申告', '決算'], ['staff', '駐在員給与・4大保険', '駐在員・4大保険'], ['cfo', '経理代行（社外CFO）', '経理代行'], ['eaudit', '外部監査（法定監査）', '外部監査'], ['vaudit', '任意監査（本社パッケージ）', '任意監査'], ['audit', '内部統制', '内部統制'], ['intl', '国際税務（移転価格）', '国際税務']] },
   { t: '新規韓国進出', subs: [['entry', '韓国進出・運営・撤退', '韓国進出・運営'], ['forms', '進出形態の比較', '新設か買収か'], ['diag', 'ステップ診断', '進出形態の診断'], ['taxcmp', '日本との税制比較', '実効税率の差'], ['ma', '買収・吸収合併', 'M&A・合併'], ['game', 'ゲーム・IP企業の論点', 'ゲーム・IP'], ['incent', '補助金・優遇制度', '補助金・優遇']] },
   { t: '見落とし診断', subs: [['service', '会計士の無料診断（資料をもとに書面で）', '会計士の無料診断'], ['check', '1分セルフチェック（ご自身で）', '1分セルフチェック']] },
-  { t: '日本の税務・労務', subs: [['jpqa', '日本の税務・労務 Q&A', 'Q&A（23問）'], ['jpcal', '日本の税務カレンダー', '税務カレンダー・祝日']] },
-  { t: '韓国の税務・労務', subs: [['krqa', '韓国の税務・労務 Q&A', 'Q&A（20問）'], ['wht', '源泉税とは', '毎月10日の申告・納付'], ['prop', '財産税とは', '7月・9月の地方税']] },
+  { t: '日本の税務インサイト', subs: [['jpqa', '日本の税務・労務 Q&A', 'Q&A（23問）'], ['jpcal', '日本の税務カレンダー', '税務カレンダー・祝日']] },
+  { t: '韓国の税務インサイト', subs: [['krqa', '韓国の税務・労務 Q&A', 'Q&A（20問）'], ['wht', '源泉税とは', '毎月10日の申告・納付'], ['prop', '財産税とは', '7月・9月の地方税']] },
   { t: 'お知らせ・コラム', subs: [['news', 'お知らせ・更新情報', 'お知らせ'], ['cases', '報道に見る成功事例', '成功事例'], ['dd', '出資金・貸付金の使途確認（実査）', '本社資金の使途確認'], ['policy', '今後1・2・3年の制度変更', '制度変更'], ['roadmap', '10年・20年のお付き合い', '10年・20年']] },
   { t: 'メンバー', subs: [['members', 'メンバー紹介', '日韓の専門家チーム'], ['about', '担当会計士プロフィール', 'イ・ギュボムの経歴']] },
   { t: '連絡先', subs: [['contact', '連絡先・アクセス', '電話・LINE・地図']] }
@@ -1115,7 +1129,11 @@ var JP_HOL = { '2026-1-1': '元日', '2026-1-12': '成人の日', '2026-2-11': '
   '2027-1-1': '元日', '2027-1-11': '成人の日', '2027-2-11': '建国記念の日', '2027-2-23': '天皇誕生日', '2027-3-21': '春分の日', '2027-3-22': '振替休日', '2027-4-29': '昭和の日', '2027-5-3': '憲法記念日', '2027-5-4': 'みどりの日', '2027-5-5': 'こどもの日', '2027-7-19': '海の日', '2027-8-11': '山の日', '2027-9-20': '敬老の日', '2027-9-23': '秋分の日', '2027-10-11': 'スポーツの日', '2027-11-3': '文化の日', '2027-11-23': '勤労感謝の日' };
 // [month(1-12 or 0=every), day(0=month end), ja, ko, major]
 var KR_RULES = [
+  [0, 10, '電子税金計算書 発行・送信期限（前月分）', '전자세금계산서 발급·전송 기한(전월분)', false],
   [0, 10, '源泉税・地方所得税 申告納付', '원천세·지방소득세 신고납부', false],
+  [0, 10, '4大保険料 納付', '4대보험료 납부', false],
+  [0, 10, '住民税（従業員分）申告納付（対象事業所）', '주민세(종업원분) 신고납부(대상 사업장)', false],
+  [0, 15, '日雇労働者 勤労内容確認申告（雇用・労災保険）', '일용근로자 근로내용확인신고(고용·산재)', false],
   [0, 0, '簡易支払明細書（事業所得等）提出', '간이지급명세서(사업소득 등) 제출', false],
   [1, 25, '付加価値税（消費税） 第2期 確定申告', '부가세 2기 확정신고', true],
   [2, 0, '支払明細書（利子・配当・その他）提出', '지급명세서(이자·배당·기타) 제출', true],
@@ -1195,8 +1213,9 @@ function calKR(today) {
   var months = [0, 1, 2].map(function (o) {
     var b = new Date(y, m + o, 1);
     var t0 = new Date(y, m, today.getDate());
-    var items = genEvents(KR_RULES, KR_HOL, b.getFullYear(), b.getMonth()).filter(function (e) { return e.major && Math.round((e.date - t0) / 86400000) >= 0; }).map(function (e) { var df = Math.round((e.date - t0) / 86400000); var dd = df < 0 ? (LANG_JA ? '済' : '완료') : (df === 0 ? 'D-Day' : 'D-' + df); var hot = df >= 0 && df <= 7; return { d: fmt(e.date), t: e.t, dd: dd, ddStyle: 'flex: 0 0 auto; min-width: 52px; text-align: center; font-size: 12px; font-weight: 700; border-radius: 4px; padding: 1px 4px; ' + (df < 0 ? 'background: #EEF1F5; color: #9AA6B5;' : (hot ? 'background: #E67E22; color: #FFFFFF;' : 'background: #E3ECF8; color: #2F5590;')) }; });
-    if (!items.length) items = [{ d: '', t: LANG_JA ? '今後の主要な期限なし（毎月10日の源泉税のみ）' : '앞으로 주요 기한 없음(매월 10일 원천세만)' }];
+    var items = genEvents(KR_RULES, KR_HOL, b.getFullYear(), b.getMonth()).filter(function (e) { return Math.round((e.date - t0) / 86400000) >= 0; }).map(function (e) { var df = Math.round((e.date - t0) / 86400000); var dd = df < 0 ? (LANG_JA ? '済' : '완료') : (df === 0 ? 'D-Day' : 'D-' + df); var hot = df >= 0 && df <= 7; return { dk: dkey(e.date), d: fmt(e.date), t: e.t, tStyle: e.major ? 'font-weight: 700;' : '', dd: dd, ddStyle: 'flex: 0 0 auto; align-self: flex-start; min-width: 52px; text-align: center; font-size: 12px; font-weight: 700; border-radius: 4px; padding: 1px 4px; ' + (df < 0 ? 'background: #EEF1F5; color: #9AA6B5;' : (hot ? 'background: #E67E22; color: #FFFFFF;' : 'background: #E3ECF8; color: #2F5590;')) }; });
+    items.forEach(function (it, k) { if (k > 0 && items[k - 1].dk === it.dk) { it.d = ''; it.dd = ''; } });
+    if (!items.length) items = [{ d: '', t: LANG_JA ? '今後の期限なし' : '앞으로 기한 없음' }];
     return { t: LANG_JA ? (b.getFullYear() + '年' + (b.getMonth() + 1) + '月' + (o === 0 ? '（今月）' : (o === 1 ? '（来月）' : '（再来月）'))) : (b.getFullYear() + '년 ' + (b.getMonth() + 1) + '월' + (o === 0 ? '(이번 달)' : (o === 1 ? '(다음 달)' : '(다다음 달)'))), items: items };
   });
   return { mon: LANG_JA ? ((m + 1) + '月') : ((m + 1) + '월'), title: LANG_JA ? (y + '年' + (m + 1) + '月') : (y + '년 ' + (m + 1) + '월'), today: (LANG_JA ? '今日 ' : '오늘 ') + fmt(today), head: g.head, cells: g.cells, near: near.length ? near : [{ d: '', t: LANG_JA ? '過去2週間に期限はありませんでした' : '지난 2주간 기한 없음', style: 'color: #8A94A3' }], months: months };
