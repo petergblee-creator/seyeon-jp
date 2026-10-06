@@ -23,6 +23,10 @@
 .home-main>section{max-width:none!important}
 @media(min-width:861px){.home-main div[style*="minmax(160px"]{grid-template-columns:repeat(6,1fr)!important}}
 @media(max-width:860px){.home-wrap{flex-direction:column-reverse;padding:0;align-items:stretch}.home-side{position:static;width:auto;align-self:stretch;margin:16px}}
+.sy-hdqr{display:flex;gap:10px;align-items:flex-start}
+.sy-hdqr a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11.5px;font-weight:700;text-decoration:none;line-height:1.2}
+.sy-hdqr img{width:64px;height:64px}
+@media(max-width:860px){.sy-hdqr img{display:none}.sy-hdqr a{flex-direction:row;padding:7px 12px;border-radius:18px;color:#FFFFFF!important;font-size:13px}.sy-hdqr a.ln{background:#06813C}.sy-hdqr a.kk{background:#3E6DB0}.sy-contact{display:none!important}.home-side{display:none}}
 </style>
 </head>
 <body>
@@ -69,6 +73,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <a href="tel:+821039456101" style="font-size: 19px; font-weight: 700; color: #222222; text-decoration: none">+82-10-3945-6101</a>
 <span style="font-size: 12px; color: #555555">대표 02-6356-1105｜<b style="color: #D32F2F">해외에서는 카카오·LINE 통화 무료</b></span>
 </div>
+<div class="sy-hdqr"><a href="https://line.me/ti/p/Y5AQ7ZEVl9" target="_blank" rel="noopener" class="ln" style="color: #06813C"><img src="img/line-qr.png" alt="LINE QR코드">LINE 상담</a><a href="https://open.kakao.com/o/sF4UcUPi" target="_blank" rel="noopener" class="kk" style="color: #3E6DB0"><img src="img/kakao-qr.png" alt="카카오톡 QR코드">카카오 상담</a></div>
 <button type="button" onClick="{{go.service}}" style="min-height: 48px; padding: 0 18px; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 3px; font: inherit; font-weight: 700; cursor: pointer; line-height: 1.3">회계사 무료 점검<br><span style="font-size: 11px; font-weight: 400">놓친 부분을 무료로 점검</span></button>
 </div>
 </div>
@@ -145,17 +150,13 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 
 <div class="home-wrap">
 <aside class="home-side">
-<div style="padding: 14px; background: #F6F8FB; font-size: 13px; display: flex; flex-direction: column; gap: 4px">
+<div class="sy-contact" style="padding: 14px; background: #F6F8FB; font-size: 13px; display: flex; flex-direction: column; gap: 4px">
 <b>상담 창구</b>
 <span>휴대폰 010-3945-6101(직통)</span>
 <span>대표 02-6356-1105</span>
 <span>gblee@seyeon-tax.com</span>
-<img src="img/kakao-qr.png" alt="카카오톡 QR코드" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
-<a href="https://open.kakao.com/o/sF4UcUPi" style="text-align: center; font-weight: 700; color: #3E6DB0">카카오톡 상담</a>
-<img src="img/line-qr.png" alt="LINE QR코드" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
-<a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="text-align: center; font-weight: 700; color: #06813C">LINE 상담</a>
-<span style="font-size: 12px; color: #555555; text-align: center">가벼운 상담도 편하게. <b style="color: #D32F2F">해외에서도 통화 무료</b></span>
-<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><b style="font-size: 14px; white-space: nowrap">✎ 문의하기 양식</b><span style="font-size: 11px; opacity: 0.9; white-space: nowrap">연락 희망 시간도 OK·하루 안에 회신</span></button>
+<span style="margin-top: 6px; font-size: 12px; color: #555555; text-align: center">가벼운 상담도 편하게.<br>카카오·LINE QR은 화면 위쪽에</span>
+<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><span style="display: flex; align-items: center; gap: 6px"><span style="display: inline-flex; background: #FFFFFF; border-radius: 50%; padding: 3px"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span><b style="font-size: 14px; white-space: nowrap">Google 양식으로 문의</b></span><span style="font-size: 11px; opacity: 0.95; line-height: 1.45; text-align: center">보내도 바로 전화가 가지 않아요<br>원하시는 시간·방법으로 연락드려요</span></button>
 </div>
 </aside>
 <div class="home-main">
@@ -294,17 +295,13 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <sc-for list="{{side}}" as="it" hint-placeholder-count="4">
 <button type="button" onClick="{{it.go}}" style="{{it.style}}">{{it.t}}<span style="display: block; font-size: 12px; font-weight: 400; opacity: 0.8">{{it.t2}}</span></button>
 </sc-for>
-<div style="padding: 14px; background: #F6F8FB; font-size: 13px; display: flex; flex-direction: column; gap: 4px">
+<div class="sy-contact" style="padding: 14px; background: #F6F8FB; font-size: 13px; display: flex; flex-direction: column; gap: 4px">
 <b>상담 창구</b>
 <span>휴대폰 010-3945-6101(직통)</span>
 <span>대표 02-6356-1105</span>
 <span>gblee@seyeon-tax.com</span>
-<img src="img/kakao-qr.png" alt="카카오톡 QR코드" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
-<a href="https://open.kakao.com/o/sF4UcUPi" style="text-align: center; font-weight: 700; color: #3E6DB0">카카오톡 상담</a>
-<img src="img/line-qr.png" alt="LINE QR코드" style="width: 110px; height: 110px; margin-top: 6px; align-self: center">
-<a href="https://line.me/ti/p/Y5AQ7ZEVl9" style="text-align: center; font-weight: 700; color: #06813C">LINE 상담</a>
-<span style="font-size: 12px; color: #555555; text-align: center">가벼운 상담도 편하게. <b style="color: #D32F2F">해외에서도 통화 무료</b></span>
-<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><b style="font-size: 14px; white-space: nowrap">✎ 문의하기 양식</b><span style="font-size: 11px; opacity: 0.9; white-space: nowrap">연락 희망 시간도 OK·하루 안에 회신</span></button>
+<span style="margin-top: 6px; font-size: 12px; color: #555555; text-align: center">가벼운 상담도 편하게.<br>카카오·LINE QR은 화면 위쪽에</span>
+<button type="button" onClick="{{openForm}}" style="margin-top: 10px; width: 100%; background: #B5532A; color: #FFFFFF; border: 0; border-radius: 6px; padding: 12px 8px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.35"><span style="display: flex; align-items: center; gap: 6px"><span style="display: inline-flex; background: #FFFFFF; border-radius: 50%; padding: 3px"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span><b style="font-size: 14px; white-space: nowrap">Google 양식으로 문의</b></span><span style="font-size: 11px; opacity: 0.95; line-height: 1.45; text-align: center">보내도 바로 전화가 가지 않아요<br>원하시는 시간·방법으로 연락드려요</span></button>
 </div>
 </aside>
 
