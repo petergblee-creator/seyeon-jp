@@ -32,6 +32,8 @@
 .sy-hdqr img{width:64px;height:64px}
 @media(max-width:860px){.sy-hdqr img{display:block;width:34px;height:34px;background:#FFFFFF;border-radius:6px;padding:2px;box-sizing:border-box;flex:none}.sy-hdqr a{flex-direction:row;gap:7px;padding:3px 13px 3px 3px;border-radius:18px;color:#FFFFFF!important;font-size:13px}.sy-hdqr a.ln{background:#06813C}.sy-hdqr a.kk{background:#3E6DB0}.sy-contact{display:none!important}.home-side{display:none}}
 @media(max-width:860px){.sy-bar>div{padding:4px 12px!important;gap:10px!important;font-size:12px!important}.sy-bar span{display:none}.sy-bar b{display:none}.sy-bar button{margin-left:auto}.sy-bar button{padding:3px 10px!important;font-size:12px!important}.sy-barsp{height:30px!important}.sy-subside{display:none}}
+.sy-qrbar{display:none}
+@media(max-width:1024px){.sy-hdqr{display:none!important}.sy-qrbar{display:flex;gap:8px;padding:8px 12px;background:#EEF3FA;border-bottom:1px solid #C3D6EE}.sy-qrbar a{flex:1 1 0;display:flex;align-items:center;justify-content:center;gap:8px;min-height:46px;border-radius:23px;color:#FFFFFF!important;font-weight:700;font-size:15px;text-decoration:none;padding:3px 10px 3px 4px}.sy-qrbar img{width:38px;height:38px;background:#FFFFFF;border-radius:50%;padding:3px;box-sizing:border-box}.sy-qrbar .ln{background:#06813C}.sy-qrbar .kk{background:#3E6DB0}}
 </style>
 </head>
 <body>
@@ -102,6 +104,7 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 </div>
 </sc-if>
 </nav>
+<div class="sy-qrbar"><a href="https://line.me/ti/p/Y5AQ7ZEVl9" target="_blank" rel="noopener" class="ln" style="color: #06813C"><img src="img/line-qr.png" alt="LINE QR코드">LINE 상담</a><a href="https://open.kakao.com/o/sF4UcUPi" target="_blank" rel="noopener" class="kk" style="color: #3E6DB0"><img src="img/kakao-qr.png" alt="카카오톡 QR코드">카카오 상담</a></div>
 <div style="background: #FFF8EC; border-bottom: 1px solid #F0DDB8"><div style="max-width: 1200px; margin: 0 auto; padding: 7px 16px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 13px"><b style="color: #9A3412">🇰🇷 한국 생활 정보(일본어)</b><a href="https://www.konest.com/" target="_blank" rel="noopener">コネスト ↗</a><a href="https://www.seoulnavi.com/" target="_blank" rel="noopener">ソウルナビ ↗</a><a href="https://www.kr.emb-japan.go.jp/" target="_blank" rel="noopener">주한 일본대사관 ↗</a><a href="https://www.sjchp.co.kr/" target="_blank" rel="noopener">서울재팬클럽 ↗</a><span style="color: #6B7684; font-size: 12px">주재원·가족 생활 정보</span></div></div>
 <div style="background: #FFFFFF; border-bottom: 1px solid #E6ECF3"><div style="max-width: 1200px; margin: 0 auto; padding: 8px 16px; font-size: 13px; color: #4A5565">일본계 법인·일본인 개인의 회계·세무｜본사와는 일본어, 임직원과는 한국어로</div></div>
 <sc-if value="{{showPopup}}" hint-placeholder-val="{{false}}">
