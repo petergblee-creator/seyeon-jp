@@ -94,6 +94,11 @@ a{color:#3E6DB0}a:hover{color:#163A75}
 <button type="button" onClick="{{m.go}}" onFocus="{{m.enter}}" style="{{m.style}}">{{m.t}} ▾</button>
 </div>
 </sc-for>
+<div class="sy-life" title="韓国生活に役立つサイト" style="margin-left: auto; display: flex; align-items: center; gap: 6px; padding: 0 4px">
+<a href="https://www.seoulnavi.com/" target="_blank" rel="noopener" style="font-size: 12.5px; font-weight: 700; color: #0B2A6B; background: #FFFFFF; border: 1px solid #9FB8DA; border-radius: 4px; padding: 5px 9px; text-decoration: none; white-space: nowrap">ソウルナビ ↗</a>
+<a href="https://www.konest.com/" target="_blank" rel="noopener" style="font-size: 12.5px; font-weight: 700; color: #0B2A6B; background: #FFFFFF; border: 1px solid #9FB8DA; border-radius: 4px; padding: 5px 9px; text-decoration: none; white-space: nowrap">コネスト ↗</a>
+</div>
+<style>@media (max-width: 1180px){.sy-life{display:none!important}}</style>
 </div>
 <sc-if value="{{megaOpen}}" hint-placeholder-val="{{false}}">
 <div class="sy-mega" style="position: absolute; left: 0; right: 0; top: 100%; background: #0B2A6B; color: #FFFFFF; box-shadow: 0 14px 30px rgba(0,0,0,0.25); border-top: 3px solid #B5532A">
