@@ -1091,7 +1091,7 @@ function popHidden() { try { var v = +localStorage.getItem(POP_KEY); return v &&
 function popHide(days) { try { var d = new Date(); if (days === 1) { d.setHours(24, 0, 0, 0); } else { d = new Date(Date.now() + days * 86400000); } localStorage.setItem(POP_KEY, String(d.getTime())); } catch (e) {} }
 function splitLbl(s) { var i = s.search(/[（(]/); return i > 0 ? [s.slice(0, i), s.slice(i)] : [s, '']; }
 var MENU = [
-  { t: 'サービス', subs: [['svc', 'サービス一覧', '6分野の概要'], ['report', '本社レポーティング', '本社レポーティング'], ['books', '記帳（経理確認）', '記帳'], ['close', '決算・法人税申告', '決算'], ['staff', '駐在員給与・4大保険', '駐在員・4大保険'], ['cfo', '経理代行（社外CFO）', '経理代行'], ['eaudit', '外部監査（法定監査）', '外部監査'], ['vaudit', '任意監査（本社パッケージ）', '任意監査'], ['audit', '内部統制', '内部統制'], ['intl', '国際税務（移転価格）', '国際税務']] },
+  { t: 'サービス', subs: [['svc', 'サービス一覧', '6分野の概要'], ['fee', '報酬表（料金）', '料金・シミュレーター'], ['report', '本社レポーティング', '本社レポーティング'], ['books', '記帳（経理確認）', '記帳'], ['close', '決算・法人税申告', '決算'], ['staff', '駐在員給与・4大保険', '駐在員・4大保険'], ['cfo', '経理代行（社外CFO）', '経理代行'], ['eaudit', '外部監査（法定監査）', '外部監査'], ['vaudit', '任意監査（本社パッケージ）', '任意監査'], ['audit', '内部統制', '内部統制'], ['intl', '国際税務（移転価格）', '国際税務']] },
   { t: '新規韓国進出', subs: [['entry', '韓国進出・運営・撤退', '韓国進出・運営'], ['forms', '進出形態の比較', '新設か買収か'], ['diag', 'ステップ診断', '進出形態の診断'], ['taxcmp', '日本との税制比較', '実効税率の差'], ['ma', '買収・吸収合併', 'M&A・合併'], ['game', 'ゲーム・IP企業の論点', 'ゲーム・IP'], ['incent', '補助金・優遇制度', '補助金・優遇']] },
   { t: '見落とし診断', subs: [['service', '会計士の無料診断（資料をもとに書面で）', '会計士の無料診断'], ['check', '1分セルフチェック（ご自身で）', '1分セルフチェック']] },
   { t: '日本税務', subs: [['jpqa', '日本の税務・労務 Q&A', 'Q&A（23問）'], ['jpcal', '日本の税務カレンダー', '税務カレンダー・祝日']] },
@@ -1300,7 +1300,8 @@ class Component extends DCLogic {
     var page = s.page || 'home';
     var go = {}, on = {}, titles = {};
     var cat = null;
-    var nav = function (k) { return function () { self.setState({ page: k, hover: null }); try { window.scrollTo(0, 0); } catch (e) {} }; };
+    var EXT = { fee: '/fee.html' };
+    var nav = function (k) { return function () { if (EXT[k]) { location.href = EXT[k]; return; } self.setState({ page: k, hover: null }); try { window.scrollTo(0, 0); } catch (e) {} }; };
     go.home = nav('home');
     on.home = page === 'home';
     MENU.forEach(function (m) {
