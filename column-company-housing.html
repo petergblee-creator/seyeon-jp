@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>韓国子会社の社宅 —— 契約名義ひとつで課税が分かれる｜世淵（セヨン）会計法人 イ・ギュボム</title>
+<meta name="description" content="韓国法人が役員・駐在員に社宅を提供する際の非課税要件と損金処理。株主かどうか、契約名義、共同賃借の落とし穴を実務目線で解説します。">
+<link rel="canonical" href="https://jp.seyeon-tax.com/column-company-housing.html">
+<link rel="icon" href="favicon-32x32.png">
+<style>
+:root{--blue:#3E6DB0;--navy:#1A2B4A;--ink:#222;--muted:#5d6775;--line:#D8E2EE}
+*{box-sizing:border-box}body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;color:var(--ink);line-height:1.85;background:#fff}
+header{background:var(--navy);padding:14px 20px}header a{color:#fff;text-decoration:none;font-weight:700}
+main{max-width:760px;margin:0 auto;padding:36px 20px 60px}
+h1{font-size:26px;line-height:1.45;margin:0 0 8px;color:var(--navy)}
+.meta{color:var(--muted);font-size:14px;margin-bottom:26px}
+h2{font-size:19px;color:var(--blue);border-left:4px solid var(--blue);padding-left:10px;margin:34px 0 10px}
+.key{background:#F3F7FD;border:1px solid var(--line);padding:14px 18px;margin:18px 0}
+.path{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 4px;font-size:14px}
+.path span{background:#F6F8FB;border:1px solid var(--line);padding:4px 10px;border-radius:4px}.path i{font-style:normal;color:var(--muted)}
+ol{padding-left:22px}ol li{margin:6px 0}
+.warn{border-left:4px solid #B5532A;background:#FBF4EF;padding:10px 14px;margin:16px 0}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:99;padding:12px;cursor:zoom-out}#lb.on{display:flex}#lb img{max-width:100%;max-height:100%;background:#fff}figure img{cursor:zoom-in}
+figure{margin:14px 0}figure img{width:100%;height:auto;border:1px solid var(--line)}figcaption{font-size:13px;color:var(--muted);margin-top:4px}
+.note{font-size:13px;color:var(--muted)}
+.cta{background:var(--navy);color:#fff;border-radius:10px;padding:22px 24px;margin-top:36px}.cta a{color:#F2C14E;font-weight:700}
+
+.fig{margin:18px 0;border:1px solid var(--line);background:#fff;padding:10px}.fig svg{width:100%;height:auto;display:block}.fig p{margin:6px 0 0;font-size:13px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#F6F8FB}</style>
+</head>
+<body>
+<header><a href="https://jp.seyeon-tax.com/">世淵（セヨン）会計法人｜イ・ギュボム チーム</a> <span style="color:#fff;opacity:.6">/</span> <a href="columns.html" style="font-weight:500">コラム</a></header>
+<main>
+<h1>韓国子会社の社宅 —— 契約名義ひとつで課税が分かれる</h1>
+<div class="meta">韓国公認会計士 イ・ギュボム（ピーター）｜2026年11月</div>
+
+<div class="key"><b>結論：</b>韓国法人が提供する社宅は、同じ物件・同じ金額でも<b>誰が使うか</b>と<b>誰の名義で契約したか</b>によって、非課税の福利厚生にも、給与課税にもなります。駐在員の赴任前に、この2点を整理しておくことが最も確実な対策です。</div>
+
+<h2>1. まず確認：利用者は誰か</h2>
+<p>会社が社宅を提供した場合、その利益は原則として給与所得です。ただし、<b>株主でない役員、持分1%未満の少数株主である役員、従業員</b>が会社の「社宅」を利用する場合は給与所得から除かれ、会社は関連費用を損金に算入できます。日本本社からの駐在員（出向者）も、韓国法人の株主でなければ通常この区分に入ります。</p>
+<p>一方、韓国法人の代表者が支配株主やその特殊関係人である場合は扱いが変わります。税務当局は時価より低い賃料で住宅を貸したものとみなし、時価家賃との差額を法人の益金に算入し、代表者への賞与として処分することがあります。</p>
+<div class="fig"><svg viewBox="0 0 720 400" role="img" aria-label="社宅課税の判定フロー" font-family='"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif'>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A2B4A"/></marker></defs>
+<rect x="250" y="14" width="220" height="44" rx="4" fill="#1A2B4A"/><text x="360" y="42" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">社宅を利用する人</text>
+<line x1="360" y1="58" x2="360" y2="88" stroke="#1A2B4A" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="200" y="90" width="320" height="50" rx="4" fill="#F3F7FD" stroke="#3E6DB0" stroke-width="1.5"/><text x="360" y="121" fill="#1A2B4A" font-size="15" font-weight="700" text-anchor="middle">会社の株主（出資者）か？</text>
+<line x1="360" y1="140" x2="360" y2="176" stroke="#1A2B4A" stroke-width="2" marker-end="url(#ar)"/><text x="372" y="164" font-size="13" fill="#5d6775">はい</text>
+<line x1="520" y1="115" x2="598" y2="115" stroke="#1A2B4A" stroke-width="2" marker-end="url(#ar)"/><text x="530" y="106" font-size="13" fill="#5d6775">いいえ</text>
+<rect x="600" y="88" width="110" height="56" rx="4" fill="#EAF4EC" stroke="#2E7D4F"/><text x="655" y="112" font-size="13" fill="#1F5E3A" text-anchor="middle" font-weight="700">非課税</text><text x="655" y="131" font-size="12" fill="#1F5E3A" text-anchor="middle">会社の損金算入</text>
+<rect x="200" y="178" width="320" height="50" rx="4" fill="#F3F7FD" stroke="#3E6DB0" stroke-width="1.5"/><text x="360" y="209" fill="#1A2B4A" font-size="15" font-weight="700" text-anchor="middle">持分1%未満の少数株主か？</text>
+<line x1="520" y1="203" x2="598" y2="203" stroke="#1A2B4A" stroke-width="2" marker-end="url(#ar)"/><text x="530" y="194" font-size="13" fill="#5d6775">はい</text>
+<rect x="600" y="176" width="110" height="56" rx="4" fill="#EAF4EC" stroke="#2E7D4F"/><text x="655" y="200" font-size="13" fill="#1F5E3A" text-anchor="middle" font-weight="700">非課税</text><text x="655" y="219" font-size="12" fill="#1F5E3A" text-anchor="middle">会社の損金算入</text>
+<line x1="360" y1="228" x2="360" y2="264" stroke="#1A2B4A" stroke-width="2" marker-end="url(#ar)"/><text x="372" y="252" font-size="13" fill="#5d6775">いいえ</text>
+<rect x="160" y="266" width="400" height="56" rx="4" fill="#FBF4EF" stroke="#B5532A" stroke-width="1.5"/><text x="360" y="290" fill="#8A3A1A" font-size="15" font-weight="700" text-anchor="middle">支配株主・特殊関係のある役員</text><text x="360" y="310" fill="#8A3A1A" font-size="13" text-anchor="middle">時価家賃相当の益金算入・賞与処分のリスク</text>
+<text x="20" y="360" font-size="13" fill="#5d6775">※ 判定の前提は「社宅」であること：会社所有の住宅、または会社が直接賃借して無償提供する住宅。</text><text x="20" y="382" font-size="13" fill="#5d6775">※ 根拠：所得税法施行令§38①6、同施行規則§15の2、法人税法施行令§88①6</text>
+</svg><p>図1. 社宅課税の判定フロー</p></div>
+
+<h2>2. 次に確認：賃貸借契約の名義</h2>
+<p>韓国税法上の「社宅」は2種類だけです。会社所有の住宅を提供する場合と、<b>会社が直接賃借して無償で提供する場合</b>です。実務上の失敗の多くはここで起きます。</p>
+<div class="fig"><svg viewBox="0 0 720 386" role="img" aria-label="契約形態別の取扱い比較" font-family='"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif'><rect x="0" y="10" width="720" height="44" fill="#1A2B4A"/><text x="20" y="38" fill="#fff" font-size="15" font-weight="700">契約形態</text><text x="300" y="38" fill="#fff" font-size="15" font-weight="700">内容</text><text x="520" y="38" fill="#fff" font-size="15" font-weight="700">税務上の結果</text><rect x="0" y="70" width="720" height="68" fill="#F6F8FB"/><rect x="510" y="80" width="200" height="48" rx="4" fill="#EAF4EC"/><text x="20" y="98" font-size="15" font-weight="700" fill="#1A2B4A">会社名義で賃借</text><text x="300" y="98" font-size="13" fill="#333">会社が直接契約し</text><text x="300" y="118" font-size="13" fill="#333">保証金・家賃を負担</text><text x="610" y="102" font-size="13" font-weight="700" fill="#1F5E3A" text-anchor="middle">非課税の社宅</text><text x="610" y="120" font-size="13" font-weight="700" fill="#1F5E3A" text-anchor="middle">（要件充足時）</text><rect x="0" y="144" width="720" height="68" fill="#F6F8FB"/><rect x="510" y="154" width="200" height="48" rx="4" fill="#FBF4EF"/><text x="20" y="172" font-size="15" font-weight="700" fill="#1A2B4A">会社・社員の共同賃借</text><text x="300" y="172" font-size="13" fill="#333">保証金の一部のみ会社負担</text><text x="300" y="192" font-size="13" fill="#333">契約者に社員も含む</text><text x="610" y="176" font-size="13" font-weight="700" fill="#8A3A1A" text-anchor="middle">給与所得として課税</text><text x="610" y="194" font-size="13" font-weight="700" fill="#8A3A1A" text-anchor="middle">（住宅資金の無償貸付）</text><rect x="0" y="218" width="720" height="68" fill="#F6F8FB"/><rect x="510" y="228" width="200" height="48" rx="4" fill="#FBF4EF"/><text x="20" y="246" font-size="15" font-weight="700" fill="#1A2B4A">社員名義＋会社補助</text><text x="300" y="246" font-size="13" fill="#333">社員が契約し</text><text x="300" y="266" font-size="13" fill="#333">会社が家賃・保証金を補助</text><text x="610" y="250" font-size="13" font-weight="700" fill="#8A3A1A" text-anchor="middle">給与所得として課税</text><text x="610" y="268" font-size="13" font-weight="700" fill="#8A3A1A" text-anchor="middle">（給与と同じ）</text><rect x="0" y="292" width="720" height="68" fill="#F6F8FB"/><rect x="510" y="302" width="200" height="48" rx="4" fill="#EAF4EC"/><text x="20" y="320" font-size="15" font-weight="700" fill="#1A2B4A">会社所有の住宅</text><text x="300" y="320" font-size="13" fill="#333">会社資産を無償または</text><text x="300" y="340" font-size="13" fill="#333">低額で提供</text><text x="610" y="324" font-size="13" font-weight="700" fill="#1F5E3A" text-anchor="middle">非課税の社宅</text><text x="610" y="342" font-size="13" font-weight="700" fill="#1F5E3A" text-anchor="middle">（要件充足時）</text></svg><p>図2. 契約形態別の税務上の取扱い</p></div>
+<p>特に注意したいのは、保証金（チョンセ・ウォルセの保証金）が社内基準を超え、<b>会社と社員が共同で賃借する</b>ケースです。韓国の租税審判院は、こうした共同賃借住宅を非課税の社宅とは認めず、会社負担の保証金を社員が住宅資金を無償で借りた利益として給与課税した事例を複数示しています。基準超過分を社員が負担する場合でも、契約は会社単独名義にしておくのが安全です。</p>
+
+<h2>3. 費用処理で見落としやすい点</h2>
+<table>
+<tr><th>項目</th><th>実務上の目安</th></tr>
+<tr><td>家賃・管理費</td><td>会社名義の契約であれば福利厚生費として損金算入。私的な費用（通信・ガス等）は給与として処理するのが明確です。</td></tr>
+<tr><td>賃貸保証金</td><td>従業員用の賃借社宅の保証金は業務関連資産とされます。支配株主である役員用の場合は、業務無関連資産の問題が生じ得ます。</td></tr>
+<tr><td>社宅規程</td><td>対象者・上限額・退職時の返還などを社内規程として定めておくと、税務調査で「福利厚生制度」であることを説明しやすくなります。</td></tr>
+</table>
+
+<h2>4. 提供前の3つのチェック</h2>
+<ol>
+<li>利用者の持分確認：株主でないか、1%未満か。</li>
+<li>賃貸借契約の名義：会社単独名義か。共同名義は避けます。</li>
+<li>規程と証憑：社宅規程、契約書、保証金・家賃の振込記録を一式で保管します。</li>
+</ol>
+<p>社宅は駐在員の生活を支える重要な制度であると同時に、設計を誤ると数年分をまとめて修正することになりかねません。契約書に押印する前の確認が、最もコストの小さい対策です。</p>
+
+<div class="cta"><b>社宅契約の前に、一度ご相談ください。</b><br>契約書案と利用者の情報があれば、課税関係と費用処理の方法を日本語で整理いたします。初回のご相談は無料です。<a href="https://jp.seyeon-tax.com/">お問い合わせはこちら →</a></div>
+
+<p class="note" style="margin-top:26px">根拠：所得税法施行令§38①6・7、同施行規則§15の2、法人税法施行令§88①6、租税審判院 2012中3366。本記事は一般的な情報であり、個別の税務助言ではありません。</p>
+</main>
+</body>
+</html>
